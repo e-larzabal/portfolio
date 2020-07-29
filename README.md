@@ -35,4 +35,7 @@
   - Update contact OK
   - Update language OK
   - Update formation OK
-  
+  - Delete language OK
+  - Delete formation OK
+  - Add a language KO : id is null
+  - Add a formation KO : id is null

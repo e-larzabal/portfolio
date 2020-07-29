@@ -2,7 +2,6 @@ package com.wcs.checkpoint2.portfolio.service;
 
 
 import com.wcs.checkpoint2.portfolio.dao.BaseDao;
-import com.wcs.checkpoint2.portfolio.dao.ContactDao;
 import com.wcs.checkpoint2.portfolio.dao.LanguageDao;
 import com.wcs.checkpoint2.portfolio.model.Language;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,11 @@ public class LanguageService extends AbstractBaseService<Language> {
     private LanguageDao languageDao;
 
     @Override
-    public BaseDao<Language> getDao() {
-        return null;
+    public BaseDao<Language> getDao() { return languageDao; }
+
+    // CRUD : C
+    public Language create(Language language) {
+        return super.create(language);
     }
 }
 

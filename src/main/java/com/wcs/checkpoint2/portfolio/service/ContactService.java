@@ -28,10 +28,7 @@ public class ContactService extends AbstractBaseService<Contact> {
     }
 
     // CRUD : U
-    public Contact update(Contact contact) {
-        System.out.println(contact.toString());
-        return super.update(contact);
-    }
+    public Contact update(Contact contact) { return super.update(contact); }
 
     // CRUD : D
     public boolean delete(Long id) { return super.delete(id); }

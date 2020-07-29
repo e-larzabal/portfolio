@@ -14,6 +14,11 @@ public class FormationService extends AbstractBaseService<Formation> {
 
     @Override
     public BaseDao<Formation> getDao() {
-        return null;
+        return formationDao;
+    }
+
+    // CRUD : C
+    public Formation create(Formation formation) {
+        return super.create(formation);
     }
 }

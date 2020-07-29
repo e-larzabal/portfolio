@@ -14,10 +14,12 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
 
     @Override
     public Optional<T> find(Long id) { return getDao().findById(id); }
+
     @Override
     public List<T> list() {
         return getDao().findAll();
     }
+
     @Override
     public T create(T model) {
 
@@ -37,6 +39,7 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
             return getDao().save(model);
         }
     }
+
     @Override
     public T update(T model) {
 

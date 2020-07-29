@@ -33,6 +33,8 @@ public class FormationController {
                 // update a formation
                 formation = optionalFormation.get();
             }
+        } else {
+
         }
         model.addAttribute("formation", formation);
         return "formation";
