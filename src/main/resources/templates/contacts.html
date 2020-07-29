@@ -45,8 +45,8 @@
         <!--<td th:text="${contact.id">id</td> -->
         <td th:text="${contact.firstName}">firstName</td>
         <td th:text="${contact.lastName}">lastName</td>
-        <td th:text="${contact.githubLink}">githubLink</td>
-        <td th:text="${contact.linkedInLink}">linkedInLink</td>
+        <td th:text="${contact.githubLink}">Github link </td>
+        <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
         <td><a th:href="@{/contact(id=${contact.id})}">Edit</a></td>
         <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td>
