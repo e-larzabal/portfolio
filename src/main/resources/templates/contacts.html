@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact list</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: left;
+    }
+</style>
+<body>
+<h3>Contact</h3>
+<a href="/school">Add a new contact !</a>
+<br><br>
+<table>
+    <thead>
+    <tr>
+        <!--<th>Id</th>-->
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Github link</th>
+        <th>LinkedIn link</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contact : ${contacts}">
+        <!--<td th:text="${contact.id">id</td> -->
+        <td th:text="${contact.firstName}">firstName</td>
+        <td th:text="${contact.lastName}">lastName</td>
+        <td th:text="${contact.githubLink}">githubLink</td>
+        <td th:text="${contact.linkedInLink}">linkedInLink</td>
+
+        <td><a th:href="@{/contact(id=${contact.id})}">Edit</a></td>
+        <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/">Return to the index</a>
+</body>
+</html>

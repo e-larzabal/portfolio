@@ -2,6 +2,8 @@ package com.wcs.checkpoint2.portfolio.model;
 
 import org.hibernate.annotations.Type;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
@@ -10,13 +12,14 @@ import java.util.UUID;
 public class BaseModel {
 
     @Id
-    @Type(type="uuid-char")
-    protected UUID uuid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
 
-    public UUID getUuid() {
-        return uuid;
+    public Long getId() {
+        return id;
     }
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

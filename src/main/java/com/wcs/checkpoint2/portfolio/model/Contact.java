@@ -1,11 +1,16 @@
 package com.wcs.checkpoint2.portfolio.model;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.ZonedDateTime;
 
 @Entity
+//@Table(name="contact")
 public class Contact extends BaseModel {
+//public class Contact {
+
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //private Long id;
     private String firstName;
     private String lastName;
     private ZonedDateTime birthDate;
@@ -15,6 +20,16 @@ public class Contact extends BaseModel {
     @Embedded
     private Address address;
 
+
+  /*  public Contact(Long id, String firstName, String lastName, ZonedDateTime birthDate, String githubLink, String linkedInLink, Address address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.githubLink = githubLink;
+        this.linkedInLink = linkedInLink;
+        this.address = address;
+    }*/
 
     public String getFirstName() { return firstName; }
 

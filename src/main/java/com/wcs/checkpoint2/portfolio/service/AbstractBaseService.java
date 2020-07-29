@@ -7,14 +7,14 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 public abstract class AbstractBaseService<T extends BaseModel> implements BaseService<T> {
 
     @Override
-    public Optional<T> find(UUID uuid) {
-        return getDao().findById(uuid);
-    }
+    //public Optional<T> find(UUID uuid) { return getDao().findById(uuid); }
+    public Optional<T> find(Long id) { return getDao().findById(id); }
     @Override
     public List<T> list() {
         return getDao().findAll();
@@ -23,49 +23,52 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
     public T create(T model) {
 
 
-        // generate uuids when needed
-        if (model.getUuid() == null) {
-            model.setUuid(UUID.randomUUID());
+        // generate id when needed
+        if (model.getId() == null) {
+            Random rd = new Random(); // creating Random object
+            Long id = rd.nextLong();
+            model.setId(id);
         }
 
         // when conflict
-        if (getDao().existsById(model.getUuid())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "could not create model (conflict) for uuid> " + model.getUuid());
+        if (getDao().existsById(model.getId())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "could not create model (conflict) for id> "
+                    + model.getId());
+        } else {
+            // create
+            return getDao().save(model);
         }
-
-        // create
-        else return getDao().save(model);
     }
     @Override
     public T update(T model) {
 
         // check that model can be updated
-        if (!getDao().existsById(model.getUuid())) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not update model (not found) for uuid> " + model.getUuid());
-        }
-
-        // update
-        else {
+        if (!getDao().existsById(model.getId())) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not update model (not found) for id > "
+                    + model.getId());
+        } else {
+            // update
             T savedModel = getDao().save(model);
             return savedModel;
         }
     }
 
     @Override
-    public boolean delete(UUID uuid) {
+    public boolean delete(Long id) {
 
         // check that model can be deleted
-        if (!getDao().existsById(uuid)) {
+        if (!getDao().existsById(id)) {
            return false;
         }
 
         // delete
         else {
-            getDao().deleteById(uuid);
+            getDao().deleteById(id);
             return true;
         }
     }
 
     public abstract BaseDao<T> getDao();
+
 
 }

@@ -21,8 +21,8 @@ public class ContactService extends AbstractBaseService<Contact> {
     }
 
     // CRUD : R
-    //@Override
-    //public Optional<Contact> find(UUID uuid){ return super.find(uuid);}
+    @Override
+    public Optional<Contact> find(Long id){ return super.find(id);}
 
     // CRUD : R
     @Override
@@ -31,13 +31,13 @@ public class ContactService extends AbstractBaseService<Contact> {
     }
 
     // CRUD : U
-    //public Contact update(Contact contact) {
-     //   return super.update(contact);
-    //}
+    public Contact update(Contact contact) {
+        return super.update(contact);
+    }
 
     // CRUD : D
-    public boolean delete(UUID uuid) {
-        return super.delete(uuid);
+    public boolean delete(Long id) {
+        return super.delete(id);
     }
 
 }
