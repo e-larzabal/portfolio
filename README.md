@@ -27,4 +27,6 @@
 - Problem : in fact hello.html is not OK. I ask for help at 13:22 to Mathieu.
   - Solution : add dependency of ThymeLeaf
 
-- Create a Contacts.html
+- Create a contacts.html file
+- Create a contact.html file
+ - Read is OK, update is KO

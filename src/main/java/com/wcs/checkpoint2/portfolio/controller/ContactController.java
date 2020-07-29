@@ -1,7 +1,7 @@
 package com.wcs.checkpoint2.portfolio.controller;
 
 import com.wcs.checkpoint2.portfolio.model.Contact;
-import com.wcs.checkpoint2.portfolio.service.ContactService;
+import com.wcs.checkpoint2.portfolio.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,26 +14,27 @@ import java.util.Optional;
 public class ContactController {
 
     @Autowired
-    private ContactService contactService;
+    private ContactRepository contactRepository;
 
-    @GetMapping("/index")
+    @GetMapping({"/","/index"})
     public String getIndex() {
         return "index";
     }
 
     @GetMapping("/contacts")
+    // find all contacts
     public String getAll(Model model) {
-        model.addAttribute("contacts", contactService.list());
+        model.addAttribute("contacts", contactRepository.findAll());
         return "contacts";
     }
 
     @GetMapping("/contact")
     public String getContact(Model model, @RequestParam Long id) {
-
+        // find one contact by id
         Contact contact = new Contact();
         if (id != null){
             // update a contact
-            Optional<Contact> optionalContact = contactService.find(id);
+            Optional<Contact> optionalContact = contactRepository.findById(id);
             if (optionalContact.isPresent()) {
                 // update a contact
                 contact = optionalContact.get();
@@ -50,9 +51,9 @@ public class ContactController {
         Long id = contact.getId();
         Contact contactUpdated = new Contact();
         if (id != null){
-            contactUpdated = contactService.update(contact);
+            contactUpdated = contactRepository.save(contact);
         } else {
-            contactUpdated= contactService.create(contact);
+            //contactUpdated= contactRepository.create(contact);
         }
 
         return "redirect:/contacts";

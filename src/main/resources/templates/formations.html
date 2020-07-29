@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>School List</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: left;
+    }
+</style>
+<body>
+<h3>Formation</h3>
+<a href="/formation">Add a new formation !</a>
+<br><br>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>School</th>
+        <th>Diploma</th>
+        <th>BAC +</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="formation : ${formations}">
+        <td th:text="${formation.getId()}">id</td>
+        <td th:text="${formation.name}">name</td>
+        <td th:text="${formation.description}">description</td>
+        <td th:text="${formation.schoolName}">schoolName</td>
+        <td th:text="${formation.diploma}">diploma</td>
+        <td th:text="${formation.numberYearsAfterBac}">numberYearsAfterBac</td>
+        <td><a th:href="@{/formation(id=${formation.getId()})}">Edit</a></td>
+        <td><a th:href="@{/formation/delete(id=${formation.getId()})}">Remove</a></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/index">Return to the index</a>
+</body>
+</html>

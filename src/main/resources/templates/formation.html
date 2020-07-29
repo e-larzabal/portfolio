@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formation</title>
+</head>
+<body>
+<h3 th:text="${formation.getId()} ? 'Edit Formation' : 'Create Formation'">Formation</h3>
+<form method="post" th:action="@{/formation}" th:object="${formation}">
+    <input name="id" th:field="*{id}" type="hidden">
+    <label for="formation-name">Name :</label>
+    <input id="formation-name" name="name" placeholder="name" required th:field="*{name}" type="text">
+    <br><br>
+    <label for="formation-description">Description :</label>
+    <input id="formation-description" name="capacity" placeholder="description" required th:field="*{description}" type="text">
+    <br><br>
+    <label for="formation-schoolName">School name :</label>
+    <input id="formation-schoolName" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">
+    <br><br>
+    <label for="formation-diploma">Diploma :</label>
+    <input id="formation-diploma" name="diploma" placeholder="diploma" required th:field="*{diploma}" type="text">
+    <br><br>
+    <label for="formation-numberYearsAfterBac">Bac + :</label>
+    <input id="formation-numberYearsAfterBac" name="numberYearsAfterBac" numberYearsAfterBac="diploma" required th:field="*{numberYearsAfterBac}" type="number">
+    <br><br>
+    <input type="submit" value="Send">
+</form>
+<br>
+<a href="/index">Return to the index</a>
+</body>
+</html>

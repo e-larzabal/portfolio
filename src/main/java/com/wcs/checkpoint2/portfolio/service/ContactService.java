@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class ContactService extends AbstractBaseService<Contact> {
@@ -16,9 +15,7 @@ public class ContactService extends AbstractBaseService<Contact> {
     private ContactDao contactDao;
 
     // CRUD : C
-    public Contact create(Contact contact) {
-        return super.create(contact);
-    }
+    public Contact create(Contact contact) { return super.create(contact); }
 
     // CRUD : R
     @Override
@@ -32,12 +29,11 @@ public class ContactService extends AbstractBaseService<Contact> {
 
     // CRUD : U
     public Contact update(Contact contact) {
+        System.out.println(contact.toString());
         return super.update(contact);
     }
 
     // CRUD : D
-    public boolean delete(Long id) {
-        return super.delete(id);
-    }
+    public boolean delete(Long id) { return super.delete(id); }
 
 }

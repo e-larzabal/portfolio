@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h3 th:text="${contact.id} ? 'Edit contact' : 'Create contact'">Contact</h3>
+<h3 th:text="${contact.getId()} ? 'Edit contact' : 'Create contact'">Contact</h3>
 
 <form method="post" th:action="@{/contact}" th:object="${contact}">
     <input name="id" th:field="*{id}" type="hidden">

@@ -48,7 +48,7 @@
         <td th:text="${contact.githubLink}">Github link </td>
         <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
-        <td><a th:href="@{/contact(id=${contact.id})}">Edit</a></td>
+        <td><a th:href="@{/contact(id=${contact.getId()})}">Edit</a></td>
         <!--- <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td> -->
     </tr>
     </tbody>
