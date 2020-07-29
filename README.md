@@ -39,3 +39,6 @@
   - Delete formation OK
   - Add a language KO : id is null
   - Add a formation KO : id is null
+- Fix add a language and add a formation : constructors is needed
+- Push to master
+- send the url before 00:00
