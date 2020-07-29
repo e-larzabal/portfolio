@@ -26,12 +26,12 @@
 </style>
 <body>
 <h3>Contact</h3>
-<a href="/school">Add a new contact !</a>
+<!-- <a href="/contact">Add a new contact !</a> -->
 <br><br>
 <table>
     <thead>
     <tr>
-        <!--<th>Id</th>-->
+        <th>Id</th>
         <th>FirstName</th>
         <th>LastName</th>
         <th>Github link</th>
@@ -42,18 +42,18 @@
     </thead>
     <tbody>
     <tr th:each="contact : ${contacts}">
-        <!--<td th:text="${contact.id">id</td> -->
+        <td th:text="${contact.getId()}">id</td>
         <td th:text="${contact.firstName}">firstName</td>
         <td th:text="${contact.lastName}">lastName</td>
         <td th:text="${contact.githubLink}">Github link </td>
         <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
         <td><a th:href="@{/contact(id=${contact.id})}">Edit</a></td>
-        <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td>
+        <!--- <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td> -->
     </tr>
     </tbody>
 </table>
 <br>
-<a href="/">Return to the index</a>
+<a href="/index">Return to the index</a>
 </body>
 </html>

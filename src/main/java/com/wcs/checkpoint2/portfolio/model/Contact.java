@@ -1,18 +1,16 @@
 package com.wcs.checkpoint2.portfolio.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.ZonedDateTime;
 
 @Entity
-//@Table(name="contact")
 public class Contact extends BaseModel {
-//public class Contact {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long id;
     private String firstName;
     private String lastName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private ZonedDateTime birthDate;
     private String githubLink;
     private String linkedInLink;

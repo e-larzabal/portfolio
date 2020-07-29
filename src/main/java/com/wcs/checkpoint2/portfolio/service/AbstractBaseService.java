@@ -13,7 +13,6 @@ import java.util.UUID;
 public abstract class AbstractBaseService<T extends BaseModel> implements BaseService<T> {
 
     @Override
-    //public Optional<T> find(UUID uuid) { return getDao().findById(uuid); }
     public Optional<T> find(Long id) { return getDao().findById(id); }
     @Override
     public List<T> list() {
@@ -21,7 +20,6 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
     }
     @Override
     public T create(T model) {
-
 
         // generate id when needed
         if (model.getId() == null) {
