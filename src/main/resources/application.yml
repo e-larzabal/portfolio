@@ -1,0 +1,22 @@
+spring:
+
+
+  output.ansi.enabled: ALWAYS
+  datasource:
+
+    # Connection url for the database
+    url: jdbc:mysql://127.0.0.1:3306/portfolio?serverTimezone=GMT
+    username: portfolio_root
+    password: portfolio_password
+
+
+  jpa:
+    # Show log for each sql query
+    show-sql: true
+
+    # Hibernate ddl auto (create, create-drop, update): with "update" the database
+    # schema will be automatically updated accordingly to java entities found in the project
+    hibernate.ddl-auto: update
+
+    # Allows Hibernate to generate SQL optimized for a particular DBMS
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
