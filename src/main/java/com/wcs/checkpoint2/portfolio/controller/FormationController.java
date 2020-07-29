@@ -23,27 +23,26 @@ public class FormationController {
     }
 
     @GetMapping("/formation")
-    public String getFormation(Model model, @RequestParam Long id) {
+    public String getFormation(Model model, @RequestParam(required = false) Long id) {
         // find one formation by id
         Formation formation = new Formation();
         if (id != null) {
-            // update a formation
             Optional<Formation> optionalFormation = formationRepository.findById(id);
             if (optionalFormation.isPresent()) {
-                // update a formation
                 formation = optionalFormation.get();
             }
-        } else {
-
         }
         model.addAttribute("formation", formation);
+
         return "formation";
     }
+
 
     @PostMapping("/formation")
     public String postFormation(@ModelAttribute Formation formation) {
         // create or update a formation
         formationRepository.save(formation);
+
         return "redirect:/formations";
     }
 

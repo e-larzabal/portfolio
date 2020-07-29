@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Langage</title>
+    <title>Language</title>
 </head>
 <body>
-<h3 th:text="${language.getId()} ? 'Edit Language' : 'Create Language'">Formation</h3>
+<h3 th:text="${language.id} ? 'Edit Language' : 'Create Language'">Formation</h3>
 <form method="post" th:action="@{/language}" th:object="${language}">
     <input name="id" th:field="*{id}" type="hidden">
     <label for="language-name">Name :</label>
     <input id="language-name" name="name" placeholder="name" required th:field="*{name}" type="text">
     <br><br>
     <label for="language-description">Description :</label>
-    <input id="language-description" name="capacity" placeholder="description" required th:field="*{description}" type="text">
+    <input id="language-description" name="description" placeholder="description" required th:field="*{description}" type="text">
     <br><br>
     <label for="language-level">level :</label>
     <input id="language-level" name="level" placeholder="level" required th:field="*{level}" type="text">

@@ -2,18 +2,30 @@ package com.wcs.checkpoint2.portfolio.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Formation extends BaseModel{
+public class Formation extends BaseModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
 
     private String name;
     private String description;
     private String schoolName;
     private String diploma;
     private Integer numberYearsAfterBac;
-    //private Date dateObtained = DateTimeFormatter.BASIC_ISO_DATE;
+    //private Date dateObtained;
     //private String logo;
 
+
+    public Formation() { }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

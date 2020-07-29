@@ -25,18 +25,17 @@ public class LanguageController {
     }
 
     @GetMapping("/language")
-    public String getLanguage(Model model, @RequestParam Long id) {
+    public String getLanguage(Model model, @RequestParam(required = false) Long id) {
         // find one language by id
         Language language = new Language();
         if (id != null) {
-            // update a language
             Optional<Language> optionalLanguage = languageRepository.findById(id);
             if (optionalLanguage.isPresent()) {
-                // update a language
                 language = optionalLanguage.get();
             }
         }
         model.addAttribute("language", language);
+
         return "language";
     }
 
@@ -44,6 +43,7 @@ public class LanguageController {
     public String postLanguage(@ModelAttribute Language language) {
         // create or update a language
         languageRepository.save(language);
+
         return "redirect:/languages";
     }
 

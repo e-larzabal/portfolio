@@ -5,14 +5,14 @@
     <title>Formation</title>
 </head>
 <body>
-<h3 th:text="${formation.getId()} ? 'Edit Formation' : 'Create Formation'">Formation</h3>
+<h3 th:text="${formation.id} ? 'Edit Formation' : 'Create Formation'">Formation</h3>
 <form method="post" th:action="@{/formation}" th:object="${formation}">
     <input name="id" th:field="*{id}" type="hidden">
     <label for="formation-name">Name :</label>
     <input id="formation-name" name="name" placeholder="name" required th:field="*{name}" type="text">
     <br><br>
     <label for="formation-description">Description :</label>
-    <input id="formation-description" name="capacity" placeholder="description" required th:field="*{description}" type="text">
+    <input id="formation-description" name="description" placeholder="description" required th:field="*{description}" type="text">
     <br><br>
     <label for="formation-schoolName">School name :</label>
     <input id="formation-schoolName" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">

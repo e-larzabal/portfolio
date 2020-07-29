@@ -9,7 +9,6 @@ public class Contact extends BaseModel {
 
     private String firstName;
     private String lastName;
-    //@DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
     private String githubLink;
     private String linkedInLink;
