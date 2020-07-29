@@ -30,3 +30,9 @@
 - Create a contacts.html file
 - Create a contact.html file
  - Read is OK, update is KO
+- Create Formation.java + language.java + formation.html + language.html
+- Test
+  - Update contact OK
+  - Update language OK
+  - Update formation OK
+  
