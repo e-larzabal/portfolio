@@ -21,3 +21,7 @@
 - Create a hello.html
 - test first execution
 
+- Create the first model : contact
+- test create contact into the database
+
+- Problem : in fact hello.html is not OK. I ask for help at 13:22 to Mathieu.
