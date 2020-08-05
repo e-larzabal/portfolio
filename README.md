@@ -13,32 +13,17 @@
 
 # History
 
-- Create project with [https://start.spring.io/](https://start.spring.io/)
-- Create repository GitHub
-- Create the REAME.md to valid connection local project and remote
-- Create a database
-- Create a application.yml
-- Create a hello.html
-- test first execution
+- 29/07/2020
+ - Create project with [https://start.spring.io/](https://start.spring.io/)
+ - Create repository GitHub
+ - Create the README.md to valid connection local project and remote
+ - Create a database
+ - Create a application.yml
+ - Create a hello.html
+ - Create models : contact, formation, language
+ - Create CRUD for all models
+ - Create a contacts.html, contact.html, formations.html, formation.html, languages.html, language.html
 
-- Create the first model : contact
-- test create contact into the database
-
-- Problem : in fact hello.html is not OK. I ask for help at 13:22 to Mathieu.
-  - Solution : add dependency of ThymeLeaf
-
-- Create a contacts.html file
-- Create a contact.html file
- - Read is OK, update is KO
-- Create Formation.java + language.java + formation.html + language.html
-- Test
-  - Update contact OK
-  - Update language OK
-  - Update formation OK
-  - Delete language OK
-  - Delete formation OK
-  - Add a language KO : id is null
-  - Add a formation KO : id is null
-- Fix add a language and add a formation : constructors is needed
-- Push to master
-- send the url before 00:00
+- 05/08/2020
+ - Add address in contact model and in contact.html
+ - delete application.yml

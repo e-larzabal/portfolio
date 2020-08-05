@@ -2,6 +2,7 @@ package com.wcs.checkpoint2.portfolio.service;
 
 import com.wcs.checkpoint2.portfolio.dao.BaseDao;
 import com.wcs.checkpoint2.portfolio.dao.ContactDao;
+import com.wcs.checkpoint2.portfolio.model.Address;
 import com.wcs.checkpoint2.portfolio.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,9 +29,12 @@ public class ContactService extends AbstractBaseService<Contact> {
     }
 
     // CRUD : U
-    public Contact update(Contact contact) { return super.update(contact); }
+    public Contact update(Contact contact) {
+        return super.update(contact);
+    }
 
     // CRUD : D
     public boolean delete(Long id) { return super.delete(id); }
+
 
 }

@@ -1,5 +1,6 @@
 package com.wcs.checkpoint2.portfolio.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import java.sql.Date;
 
@@ -13,8 +14,9 @@ public class Contact extends BaseModel {
     private String githubLink;
     private String linkedInLink;
 
-    //@Embedded
-    //private Address address;
+    @Embedded
+    private Address address;
+
 
 
     public String getFirstName() { return firstName; }
@@ -28,4 +30,6 @@ public class Contact extends BaseModel {
     public String getLinkedInLink() { return linkedInLink; }
     public void setLinkedInLink(String linkedInLink) { this.linkedInLink = linkedInLink; }
 
+    public Address getAddress() { return address; }
+    public void setAddress(Address address) { this.address = address; }
 }

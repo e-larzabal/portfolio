@@ -1,5 +1,6 @@
 package com.wcs.checkpoint2.portfolio.controller;
 
+import com.wcs.checkpoint2.portfolio.model.Address;
 import com.wcs.checkpoint2.portfolio.model.Contact;
 import com.wcs.checkpoint2.portfolio.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,17 @@ public class ContactController {
         Long id = contact.getId();
         Contact contactUpdated = new Contact();
         if (id != null){
+
+            if (contact.getAddress() == null) {
+                Address myAddress = new Address("","","",0);
+                contact.setAddress(myAddress);
+            } else {
+                if (contact.getAddress().getLine1().equals(null)) contact.getAddress().setLine1("");
+                if (contact.getAddress().getLine2().equals(null)) contact.getAddress().setLine2("");
+                if (contact.getAddress().getZipCode().equals(null)) contact.getAddress().setZipCode(0);
+                if (contact.getAddress().getCity().equals(null)) contact.getAddress().setCity("");
+            }
+
             contactUpdated = contactRepository.save(contact);
         } else {
             //contactUpdated= contactRepository.create(contact);

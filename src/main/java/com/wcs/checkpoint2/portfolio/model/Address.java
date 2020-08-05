@@ -1,16 +1,25 @@
 package com.wcs.checkpoint2.portfolio.model;
 
-import javax.persistence.Column;
+
 
 public class Address {
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String line1;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String line2;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String city;
-    private int zipCode;
+    private Integer zipCode;
+
+    public Address() { }
+
+    public Address(String line1, String line2, String city, Integer zipCode) {
+        this.line1 = line1;
+        this.line2 = line2;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
 
     public String getLine1() {
         return line1;
@@ -30,10 +39,10 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
-    public int getZipCode() {
+    public Integer getZipCode() {
         return zipCode;
     }
-    public void setZipCode(int zipCode) {
+    public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
     }
 }

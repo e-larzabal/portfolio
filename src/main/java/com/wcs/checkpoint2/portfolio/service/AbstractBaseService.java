@@ -8,7 +8,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
-import java.util.UUID;
 
 public abstract class AbstractBaseService<T extends BaseModel> implements BaseService<T> {
 
@@ -32,6 +31,7 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
 
         // when conflict
         if (getDao().existsById(model.getId())) {
+            // error message
             throw new ResponseStatusException(HttpStatus.CONFLICT, "could not create model (conflict) for id> "
                     + model.getId());
         } else {
@@ -45,7 +45,8 @@ public abstract class AbstractBaseService<T extends BaseModel> implements BaseSe
 
         // check that model can be updated
         if (!getDao().existsById(model.getId())) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not update model (not found) for id > "
+            // error message
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not update model (not found) for id> "
                     + model.getId());
         } else {
             // update

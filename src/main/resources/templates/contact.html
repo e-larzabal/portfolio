@@ -10,10 +10,10 @@
 
 <form method="post" th:action="@{/contact}" th:object="${contact}">
     <input name="id" th:field="*{id}" type="hidden">
-    <label for="contact-name">Name :</label>
+    <label for="contact-name">Firstname :</label>
     <input id="contact-name" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
     <br><br>
-    <label for="school-lastName">Last name :</label>
+    <label for="school-lastName">Lastname :</label>
     <input id="school-lastName" name="lastName" placeholder="lastName" required th:field="*{lastName}" type="text">
     <br><br>
     <label for="school-birthDate">Birthdate :</label>
@@ -24,6 +24,19 @@
     <br><br>
     <label for="school-linkedInLink">LinkedIn link :</label>
     <input id="school-linkedInLink" name="linkedInLink" placeholder="linkedInLink" required th:field="*{linkedInLink}" type="text">
+    <br><br>
+    <label for="address-line1">Address line 1 :</label>
+    <input id="address-line1" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
+    <br><br>
+    <label for="address-line2">Address line 2 :</label>
+    <input id="address-line2" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
+    <br><br>
+    <label for="address-zipcode">Address zip code :</label>
+    <input id="address-zipcode" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
+    <br><br>
+    <label for="address-city">Address city :</label>
+    <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
+
     <br><br>
     <input type="submit" value="Send">
 </form>
