@@ -8,20 +8,10 @@
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to my portfolio!</h1>
-        <img src="/img/lauburu01.jpg" alt="lauburu image" width="75" height="75" />
-        <ul>
-            <li><a href="/index">Home</a></li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Blog</li>
-        </ul>
+    <header th:replace="fragments/header.html :: top">
     </header>
 
     <section>
-        <hr />
-
         <div>
             <h2>Menu</h2>
             <ul>
@@ -30,7 +20,6 @@
                 <li> <a href="/formations">Browse all formations</a> <br><br></li>
             </ul>
         </div>
-
     </section>
 
     <footer th:replace="fragments/footer.html :: bottom">
