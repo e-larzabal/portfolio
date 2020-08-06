@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>School List</title>
+    <title>Portfolio/School List</title>
 </head>
+
 <style>
     table {
         border-collapse: collapse;
@@ -24,33 +27,44 @@
         text-align: left;
     }
 </style>
+
 <body>
-<h3>Language</h3>
-<a href="/language">Add a new language !</a>
-<br><br>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>level</th>
-        <th></th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="language : ${languages}">
-        <td th:text="${language.getId()}">id</td>
-        <td th:text="${language.name}">name</td>
-        <td th:text="${language.description}">description</td>
-        <td th:text="${language.level}">level</td>
-        <td><a th:href="@{/language(id=${language.getId()})}">Edit</a></td>
-        <td><a th:href="@{/language/delete(id=${language.getId()})}">Remove</a></td>
-    </tr>
-    </tbody>
-</table>
-<br>
-<a href="/index">Return to the index</a>
+
+    <header>
+    </header>
+
+    <section>
+        <h3>Language</h3>
+        <a href="/language">Add a new language !</a>
+        <br><br>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>level</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="language : ${languages}">
+                <td th:text="${language.getId()}">id</td>
+                <td th:text="${language.name}">name</td>
+                <td th:text="${language.description}">description</td>
+                <td th:text="${language.level}">level</td>
+                <td><a th:href="@{/language(id=${language.getId()})}">Edit</a></td>
+                <td><a th:href="@{/language/delete(id=${language.getId()})}">Remove</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/index">Return to the index</a>
+    </section>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
 </body>
 </html>

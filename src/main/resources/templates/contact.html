@@ -1,47 +1,60 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
+    <title>Portfolio/Contact</title>
 </head>
+
 <body>
 
-<h3 th:text="${contact.getId()} ? 'Edit contact' : 'Create contact'">Contact</h3>
+    <header>
+    </header>
 
-<form method="post" th:action="@{/contact}" th:object="${contact}">
-    <input name="id" th:field="*{id}" type="hidden">
-    <label for="contact-name">Firstname :</label>
-    <input id="contact-name" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
-    <br><br>
-    <label for="school-lastName">Lastname :</label>
-    <input id="school-lastName" name="lastName" placeholder="lastName" required th:field="*{lastName}" type="text">
-    <br><br>
-    <label for="school-birthDate">Birthdate :</label>
-    <input id="school-birthDate" name="birthDate" placeholder="birthDate" required th:field="*{birthDate}" type="date">
-    <br><br>
-    <label for="school-githubLink">Github link :</label>
-    <input id="school-githubLink" name="githubLink" placeholder="githubLink" required th:field="*{githubLink}" type="text">
-    <br><br>
-    <label for="school-linkedInLink">LinkedIn link :</label>
-    <input id="school-linkedInLink" name="linkedInLink" placeholder="linkedInLink" required th:field="*{linkedInLink}" type="text">
-    <br><br>
-    <label for="address-line1">Address line 1 :</label>
-    <input id="address-line1" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
-    <br><br>
-    <label for="address-line2">Address line 2 :</label>
-    <input id="address-line2" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
-    <br><br>
-    <label for="address-zipcode">Address zip code :</label>
-    <input id="address-zipcode" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
-    <br><br>
-    <label for="address-city">Address city :</label>
-    <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
+    <section>
+        <h3 th:text="${contact.getId()} ? 'Edit contact' : 'Create contact'">Contact</h3>
 
-    <br><br>
-    <input type="submit" value="Send">
-</form>
+        <form method="post" th:action="@{/contact}" th:object="${contact}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <label for="contact-name">Firstname :</label>
+            <input id="contact-name" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
+            <br><br>
+            <label for="school-lastName">Lastname :</label>
+            <input id="school-lastName" name="lastName" placeholder="lastName" required th:field="*{lastName}" type="text">
+            <br><br>
+            <label for="school-birthDate">Birthdate :</label>
+            <input id="school-birthDate" name="birthDate" placeholder="birthDate" required th:field="*{birthDate}" type="date">
+            <br><br>
+            <label for="school-githubLink">Github link :</label>
+            <input id="school-githubLink" name="githubLink" placeholder="githubLink" required th:field="*{githubLink}" type="text">
+            <br><br>
+            <label for="school-linkedInLink">LinkedIn link :</label>
+            <input id="school-linkedInLink" name="linkedInLink" placeholder="linkedInLink" required th:field="*{linkedInLink}" type="text">
+            <br><br>
+            <label for="address-line1">Address line 1 :</label>
+            <input id="address-line1" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
+            <br><br>
+            <label for="address-line2">Address line 2 :</label>
+            <input id="address-line2" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
+            <br><br>
+            <label for="address-zipcode">Address zip code :</label>
+            <input id="address-zipcode" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
+            <br><br>
+            <label for="address-city">Address city :</label>
+            <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
 
-<br>
-<a href="/contacts">Return to the list</a>
+            <br><br>
+            <input type="submit" value="Send">
+        </form>
+
+        <br>
+        <a href="/index">Return to the index</a> <br>
+        <a href="/contacts">Return to the contacts list</a>
+    </section>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
 </body>
 </html>

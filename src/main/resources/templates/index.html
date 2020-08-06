@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Portfolio/index</title>
 </head>
+
 <body>
     <header>
         <h1>Welcome to my portfolio!</h1>
@@ -38,8 +41,7 @@
 
     </section>
 
-    <footer> 
-        Portfolio &copy; 2020
+    <footer th:replace="fragments/footer.html :: bottom">
     </footer>
 
 </body>
