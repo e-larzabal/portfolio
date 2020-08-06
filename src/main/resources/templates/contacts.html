@@ -33,43 +33,45 @@
     <header th:replace="fragments/header.html :: top">
     </header>
 
-    <section>
-        <h3>Contact</h3>
-        <!-- <a href="/contact">Add a new contact !</a> -->
-        <br><br>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Github link</th>
-                <th>LinkedIn link</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="contact : ${contacts}">
-                <td th:text="${contact.getId()}">id</td>
-                <td th:text="${contact.firstName}">firstName</td>
-                <td th:text="${contact.lastName}">lastName</td>
-                <td th:text="${contact.githubLink}">Github link </td>
-                <td th:text="${contact.githubLink}">
-                    <a th:href="${contact.githubLink}" href="github link" />
-                </td>
-                <td th:text="${contact.linkedInLink}">linkedInLink </td>
+    <main>
+        <section>
+            <h3>Contact</h3>
+            <!-- <a href="/contact">Add a new contact !</a> -->
+            <br><br>
+            <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Github link</th>
+                    <th>LinkedIn link</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contact : ${contacts}">
+                    <td th:text="${contact.getId()}">id</td>
+                    <td th:text="${contact.firstName}">firstName</td>
+                    <td th:text="${contact.lastName}">lastName</td>
+                    <td th:text="${contact.githubLink}">Github link </td>
+                    <td th:text="${contact.githubLink}">
+                        <a th:href="${contact.githubLink}" href="github link" />
+                    </td>
+                    <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
-                <td><a th:href="@{/contact(id=${contact.getId()})}">Edit</a></td>
-                <!--- <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td> -->
-            </tr>
-            </tbody>
-        </table>
-        <br>
-        <p>
-            <a href="/index">Return to the index</a>
-        </p>
-    </section>
+                    <td><a th:href="@{/contact(id=${contact.getId()})}">Edit</a></td>
+                    <!--- <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td> -->
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <p>
+                <a href="/index">Return to the index</a>
+            </p>
+        </section>
+    </main>
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>

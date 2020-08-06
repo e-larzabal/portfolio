@@ -33,38 +33,39 @@
     <header th:replace="fragments/header.html :: top">
     </header>
 
-    <section>
-        <h3>Language</h3>
-        <a href="/language">Add a new language !</a>
-        <br><br>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>level</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="language : ${languages}">
-                <td th:text="${language.getId()}">id</td>
-                <td th:text="${language.name}">name</td>
-                <td th:text="${language.description}">description</td>
-                <td th:text="${language.level}">level</td>
-                <td><a th:href="@{/language(id=${language.getId()})}">Edit</a></td>
-                <td><a th:href="@{/language/delete(id=${language.getId()})}">Remove</a></td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
-        <p>
-            <a href="/index">Return to the index</a>
-        </p>
-
-    </section>
+    <main>
+        <section>
+            <h3>Language</h3>
+            <a href="/language">Add a new language !</a>
+            <br><br>
+            <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>level</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="language : ${languages}">
+                    <td th:text="${language.getId()}">id</td>
+                    <td th:text="${language.name}">name</td>
+                    <td th:text="${language.description}">description</td>
+                    <td th:text="${language.level}">level</td>
+                    <td><a th:href="@{/language(id=${language.getId()})}">Edit</a></td>
+                    <td><a th:href="@{/language/delete(id=${language.getId()})}">Remove</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <p>
+                <a href="/index">Return to the index</a>
+            </p>
+        </section>
+    </main>
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
