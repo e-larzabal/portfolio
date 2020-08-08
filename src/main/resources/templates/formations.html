@@ -36,14 +36,14 @@
                 </thead>
                 <tbody>
                 <tr th:each="formation : ${formations}">
-                    <td th:text="${formation.getId()}">id</td>
+                    <td th:text="${formation.id}">id</td>
                     <td th:text="${formation.name}">name</td>
                     <td th:text="${formation.description}">description</td>
                     <td th:text="${formation.schoolName}">schoolName</td>
                     <td th:text="${formation.diploma}">diploma</td>
                     <td th:text="${formation.numberYearsAfterBac}">numberYearsAfterBac</td>
-                    <td><a th:href="@{/formation(id=${formation.getId()})}">Edit</a></td>
-                    <td><a th:href="@{/formation/delete(id=${formation.getId()})}">Remove</a></td>
+                    <td><a th:href="@{/formation(id=${formation.id})}">Edit</a></td>
+                    <td><a th:href="@{/formation/delete(id=${formation.id})}">Remove</a></td>
                 </tr>
                 </tbody>
             </table>

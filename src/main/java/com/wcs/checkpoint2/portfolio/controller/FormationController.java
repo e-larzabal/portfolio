@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Controller
 public class FormationController {
@@ -22,7 +23,7 @@ public class FormationController {
         return "formations";
     }
 
-    @GetMapping("/formation")
+   @GetMapping("/formation")
     public String getFormation(Model model, @RequestParam(required = false) Long id) {
         // find one formation by id
         Formation formation = new Formation();
@@ -37,7 +38,6 @@ public class FormationController {
         return "formation";
     }
 
-
     @PostMapping("/formation")
     public String postFormation(@ModelAttribute Formation formation) {
         // create or update a formation
@@ -46,11 +46,10 @@ public class FormationController {
         return "redirect:/formations";
     }
 
-    @GetMapping("/formation/delete")
+   @GetMapping("/formation/delete")
     public String deleteFormation(@RequestParam Long id) {
         // delete a formation
         formationRepository.deleteById(id);
         return "redirect:/formations";
     }
-
 }

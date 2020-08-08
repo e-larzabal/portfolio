@@ -9,10 +9,6 @@ import javax.persistence.Id;
 @Entity
 public class Formation extends BaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
-
     private String name;
     private String description;
     private String schoolName;
@@ -23,9 +19,6 @@ public class Formation extends BaseModel {
 
 
     public Formation() { }
-
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
