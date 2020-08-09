@@ -5,6 +5,17 @@
 - Duration : 1 day
 
 
+# Library
+
+ - spring-boot-starter-data-jpa
+ - spring-boot-starter-web
+ - spring-boot-devtools
+ - mysql-connector-java
+ - spring-boot-starter-test
+ - junit-vintage-engine
+ - spring-boot-starter-thymeleaf
+
+
 # Tools
 
 - IntelliJ
