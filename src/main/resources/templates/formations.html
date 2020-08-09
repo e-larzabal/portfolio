@@ -19,12 +19,14 @@
     <main>
         <section>
             <h3>Formation</h3>
+
             <a href="/formation">Add a new formation !</a>
+
             <br><br>
             <table>
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>Uuid</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>School</th>
@@ -36,14 +38,14 @@
                 </thead>
                 <tbody>
                 <tr th:each="formation : ${formations}">
-                    <td th:text="${formation.id}">id</td>
+                    <td th:text="${formation.uuid}">id</td>
                     <td th:text="${formation.name}">name</td>
                     <td th:text="${formation.description}">description</td>
                     <td th:text="${formation.schoolName}">schoolName</td>
                     <td th:text="${formation.diploma}">diploma</td>
                     <td th:text="${formation.numberYearsAfterBac}">numberYearsAfterBac</td>
-                    <td><a th:href="@{/formation(id=${formation.id})}">Edit</a></td>
-                    <td><a th:href="@{/formation/delete(id=${formation.id})}">Remove</a></td>
+                    <td><a th:href="@{/formation(uuid=${formation.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/formation/delete(uuid=${formation.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
             </table>

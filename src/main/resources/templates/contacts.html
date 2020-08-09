@@ -19,12 +19,16 @@
     <main>
         <section>
             <h3>Contact</h3>
-            <!-- <a href="/contact">Add a new contact !</a> -->
+
+            <th:block th:if="${contacts.isEmpty()}">
+                <a href="/contact">Add a new contact !</a>
+            </th:block>
+
             <br><br>
             <table>
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>Uuid</th>
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Github link</th>
@@ -35,7 +39,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="contact : ${contacts}">
-                    <td th:text="${contact.getId()}">id</td>
+                    <td th:text="${contact.uuid}">uuid</td>
                     <td th:text="${contact.firstName}">firstName</td>
                     <td th:text="${contact.lastName}">lastName</td>
                     <td th:text="${contact.githubLink}">Github link </td>
@@ -44,8 +48,8 @@
                     </td>
                     <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
-                    <td><a th:href="@{/contact(id=${contact.getId()})}">Edit</a></td>
-                    <!--- <td><a th:href="@{/contact/delete(id=${contact.id})}">Remove</a></td> -->
+                    <td><a th:href="@{/contact(uuid=${contact.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/contact/delete(uuid=${contact.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
             </table>

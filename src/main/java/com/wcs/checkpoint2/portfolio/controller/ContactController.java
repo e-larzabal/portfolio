@@ -2,20 +2,21 @@ package com.wcs.checkpoint2.portfolio.controller;
 
 import com.wcs.checkpoint2.portfolio.model.Address;
 import com.wcs.checkpoint2.portfolio.model.Contact;
-import com.wcs.checkpoint2.portfolio.repository.ContactRepository;
+import com.wcs.checkpoint2.portfolio.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Controller
 public class ContactController {
 
     @Autowired
-    private ContactRepository contactRepository;
+    private ContactService contactService;
 
     @GetMapping({"/","/index"})
     public String getIndex() {
@@ -23,25 +24,22 @@ public class ContactController {
     }
 
     @GetMapping("/contacts")
-    // find all contacts
     public String getAll(Model model) {
-        model.addAttribute("contacts", contactRepository.findAll());
+        // find all contacts
+        model.addAttribute("contacts", contactService.list());
         return "contacts";
     }
 
     @GetMapping("/contact")
-    public String getContact(Model model, @RequestParam Long id) {
-        // find one contact by id
+    public String getContact(Model model, @RequestParam(required = false) UUID uuid) {
+        // find one contact by uuid
         Contact contact = new Contact();
-        if (id != null){
-            // update a contact
-            Optional<Contact> optionalContact = contactRepository.findById(id);
+        if (uuid != null){
+            Optional<Contact> optionalContact = contactService.find(uuid);
             if (optionalContact.isPresent()) {
-                // update a contact
                 contact = optionalContact.get();
             }
         }
-
         model.addAttribute("contact", contact);
         return "contact";
     }
@@ -49,26 +47,31 @@ public class ContactController {
     @PostMapping("/contact")
     public String postContact(@ModelAttribute Contact contact) {
 
-        Long id = contact.getId();
-        Contact contactUpdated = new Contact();
-        if (id != null){
-
-            if (contact.getAddress() == null) {
-                Address myAddress = new Address("","","",0);
-                contact.setAddress(myAddress);
-            } else {
-                if (contact.getAddress().getLine1().equals(null)) contact.getAddress().setLine1("");
-                if (contact.getAddress().getLine2().equals(null)) contact.getAddress().setLine2("");
-                if (contact.getAddress().getZipCode().equals(null)) contact.getAddress().setZipCode(0);
-                if (contact.getAddress().getCity().equals(null)) contact.getAddress().setCity("");
-            }
-
-            contactUpdated = contactRepository.save(contact);
+        if (contact.getAddress() == null) {
+            Address myAddress = new Address("","","",0);
+            contact.setAddress(myAddress);
         } else {
-            //contactUpdated= contactRepository.create(contact);
+            if (contact.getAddress().getLine1().equals(null)) contact.getAddress().setLine1("");
+            if (contact.getAddress().getLine2().equals(null)) contact.getAddress().setLine2("");
+            if (contact.getAddress().getZipCode().equals(null)) contact.getAddress().setZipCode(0);
+            if (contact.getAddress().getCity().equals(null)) contact.getAddress().setCity("");
+        }
+
+        if (contact.getUuid() == null){
+            // create a contact
+            contactService.create(contact);
+        } else {
+            // update a contact
+            contactService.update(contact);
         }
 
         return "redirect:/contacts";
     }
 
+    @GetMapping("/contact/delete")
+    public String deleteContact(@RequestParam UUID uuid) {
+        // delete a contact
+        contactService.delete(uuid);
+        return "redirect:/contacts";
+    }
 }

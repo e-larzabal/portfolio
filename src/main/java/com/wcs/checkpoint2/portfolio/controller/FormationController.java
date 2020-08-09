@@ -1,7 +1,7 @@
 package com.wcs.checkpoint2.portfolio.controller;
 
 import com.wcs.checkpoint2.portfolio.model.Formation;
-import com.wcs.checkpoint2.portfolio.repository.FormationRepository;
+import com.wcs.checkpoint2.portfolio.service.FormationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,42 +14,47 @@ import java.util.UUID;
 public class FormationController {
 
     @Autowired
-    private FormationRepository formationRepository;
+    private FormationService formationService;
 
     @GetMapping("/formations")
     public String getAll(Model model) {
         // find all formations
-        model.addAttribute("formations", formationRepository.findAll());
+        model.addAttribute("formations", formationService.list());
         return "formations";
     }
 
    @GetMapping("/formation")
-    public String getFormation(Model model, @RequestParam(required = false) Long id) {
-        // find one formation by id
+    public String getFormation(Model model, @RequestParam(required = false) UUID uuid) {
+        // find one formation by uuid
         Formation formation = new Formation();
-        if (id != null) {
-            Optional<Formation> optionalFormation = formationRepository.findById(id);
+        if (uuid != null) {
+            Optional<Formation> optionalFormation = formationService.find(uuid);
             if (optionalFormation.isPresent()) {
                 formation = optionalFormation.get();
             }
         }
         model.addAttribute("formation", formation);
-
         return "formation";
     }
 
     @PostMapping("/formation")
     public String postFormation(@ModelAttribute Formation formation) {
-        // create or update a formation
-        formationRepository.save(formation);
+
+        if (formation.getUuid() == null) {
+            // create a formation
+            formationService.create(formation);
+        } else {
+            // update a formation
+            formationService.update(formation);
+        }
 
         return "redirect:/formations";
     }
 
    @GetMapping("/formation/delete")
-    public String deleteFormation(@RequestParam Long id) {
+    public String deleteFormation(@RequestParam UUID uuid) {
         // delete a formation
-        formationRepository.deleteById(id);
+       formationService.delete(uuid);
         return "redirect:/formations";
     }
 }

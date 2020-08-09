@@ -18,10 +18,10 @@
 
     <main>
         <section>
-            <h3 th:text="${contact.getId()} ? 'Edit contact' : 'Create contact'">Contact</h3>
+            <h3 th:text="${contact.uuid} ? 'Edit contact' : 'Create contact'">Contact</h3>
 
             <form method="post" th:action="@{/contact}" th:object="${contact}">
-                <input name="id" th:field="*{id}" type="hidden">
+                <input name="uuid" th:field="*{uuid}" type="hidden">
                 <label for="contact-name">Firstname :</label>
                 <input id="contact-name" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
                 <br><br>
@@ -48,11 +48,9 @@
                 <br><br>
                 <label for="address-city">Address city :</label>
                 <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
-
                 <br><br>
                 <input type="submit" value="Send">
             </form>
-
             <br>
             <p>
                 <a href="/index">Return to the index</a> <br>
