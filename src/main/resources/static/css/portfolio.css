@@ -24,7 +24,13 @@ th, td {
 
 .flottant {
     float: left;
-    padding-right: 2em;
+    width: auto;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+
+.header-ul {
+    padding-left : 8em;
 }
 
 input:focus {
