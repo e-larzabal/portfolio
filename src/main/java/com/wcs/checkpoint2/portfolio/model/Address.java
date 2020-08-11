@@ -11,6 +11,7 @@ public class Address {
     //@Column(nullable = false)
     private String city;
     private Integer zipCode;
+    private String phone;
 
     public Address() { }
 
@@ -45,4 +46,6 @@ public class Address {
     public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
     }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 }

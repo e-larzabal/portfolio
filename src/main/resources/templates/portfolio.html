@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
-<html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Profile &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-    <meta name="author" content="freehtml5.co" />
-
+    <title>Portfolio/portfolio</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+
     <!--
     //////////////////////////////////////////////////////
 
@@ -59,172 +59,187 @@
 <body>
 
 	<div id="page">
-    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="display-t js-fullheight">
-                        <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                            <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
-                            <h1><span>Emmanuelle LARZABAL</span></h1>
-                            <h3><span>Concepteur Développeur Web Java</span></h3>
-                            <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/emmanuelle-larzabal-aba692162/" target="_blank" ><i class="icon-linkedin2"></i></a></li>
-                                <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                            </ul>
-                            </p>
+        <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="display-t js-fullheight">
+                                <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+                                    <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
+                                    <div th:if="${contact != null}">
+                                        <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
+                                        <h3><span th:text="${contact.profession}">profession </span></h3>
+                                    </div>
+
+                                    <p>
+                                        <ul class="fh5co-social-icons">
+                                            <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                                            <!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
+                                            <li><a href="https://www.linkedin.com/in/emmanuelle-larzabal..." th:href="${contact.linkedInLink}" target="_blank" ><i class="icon-linkedin2" ></i></a></li>
+                                            <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li> -->
+                                            <li><a href="https://github.com/e-larzabal" th:href="${contact.githubLink}" target="_blank" ><i class="icon-github2" ></i></a></li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div id="fh5co-about" class="animate-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>About Me</h2>
+        <div id="fh5co-about" class="animate-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>About me</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="info">
-                        <li><span class="first-block">Full Name:</span><span class="second-block">Louie Jie Mahusay</span></li>
-                        <li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li>
-                        <li><span class="first-block">Email:</span><span class="second-block">info@yoursite.com</span></li>
-                        <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li>
-                        <li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li>
-                    </ul>
-                </div>
-                <div class="col-md-8">
-                    <h2>Hello There!</h2>
-                    <p>There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.</p>
-                    <p>Far far away, behind the word mountains, Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci there live the blind texts from the countries Vokalia and Consonantia, there live the blind texts. Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci.</p>
-                    <p>
-                    <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook3"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div th:if="${contact != null}">
+                            <ul class="info">
+                                <li><span class="first-block">Full Name:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
+                                <li><span class="first-block">Phone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
+                                <li><span class="first-block">Email:</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
+                                <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
+                                <li><span class="first-block">Address:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
+                                ${contact.getAddress().getLine2()} &lt;br/&gt;
+                                ${contact.getAddress().getZipCode()} ${contact.getAddress().getCity()}|">198 West 21th Street, Suite 721 New York NY 10016</span></li>
+                            </ul>
+                        </div>
 
-    <div id="fh5co-resume" class="fh5co-bg-color">
-        <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>My Resume</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-md-offset-0">
-                    <ul class="timeline">
-                        <li class="timeline-heading text-center animate-box">
-                            <div><h3>Work Experience</h3></div>
-                        </li>
-                        <li class="animate-box timeline-unverted">
-                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Senior Developer</h3>
-                                    <span class="company">Company Name - 2016 - Current</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted animate-box">
-                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Junior Developer</h3>
-                                    <span class="company">Company Name - 2013 - 2015</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="animate-box timeline-unverted">
-                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">UI/UX Designer</h3>
-                                    <span class="company">Company Name - 2010 - 2012</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <br>
-                        <li class="timeline-heading text-center animate-box">
-                            <div><h3>Education</h3></div>
-                        </li>
-                        <li class="timeline-inverted animate-box">
-                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Masters Degree</h3>
-                                    <span class="company">University Name - 2007 - 2009</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="animate-box timeline-unverted">
-                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Bachelors Degree</h3>
-                                    <span class="company">University Name - 2002 - 2006</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted animate-box">
-                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Diploma Course</h3>
-                                    <span class="company">College Name - 1999 - 2001</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="animate-box timeline-unverted">
-                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">Graduation</h3>
-                                    <span class="company">College Name - 1994 - 1998</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    </div>
+                    <div class="col-md-7">
+                        <h2>Hello there!</h2>
+                        <div th:if="${contact != null}">
+                            <p th:utext="${contact.presentation}"> </p>
+                        </div>
+                        <p>
+                            <ul class="fh5co-social-icons">
+                                <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
+                                <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
+                                <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
+                                <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" t></i></a></li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div id="fh5co-resume" class="fh5co-bg-color">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>My resume</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
+                        <ul class="timeline">
+                            <li class="timeline-heading text-center animate-box">
+                                <div><h3>Work experience</h3></div>
+                            </li>
+
+                            <li class="animate-box timeline-unverted">
+                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Senior Developer</h3>
+                                        <span class="company">Company Name - 2016 - Current</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted animate-box">
+                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Junior Developer</h3>
+                                        <span class="company">Company Name - 2013 - 2015</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animate-box timeline-unverted">
+                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">UI/UX Designer</h3>
+                                        <span class="company">Company Name - 2010 - 2012</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <br>
+
+                            <li class="timeline-heading text-center animate-box">
+                                <div><h3>Education</h3></div>
+                            </li>
+                            <li class="timeline-inverted animate-box">
+                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Masters Degree</h3>
+                                        <span class="company">University Name - 2007 - 2009</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animate-box timeline-unverted">
+                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Bachelors Degree</h3>
+                                        <span class="company">University Name - 2002 - 2006</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted animate-box">
+                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Diploma Course</h3>
+                                        <span class="company">College Name - 1999 - 2001</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animate-box timeline-unverted">
+                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Graduation</h3>
+                                        <span class="company">College Name - 1994 - 1998</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     <div id="fh5co-features" class="animate-box">
@@ -238,9 +253,9 @@
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-paintbrush"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-paintbrush"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Web Design</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -250,9 +265,9 @@
 
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-briefcase"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-briefcase"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Branding</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -262,9 +277,9 @@
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-search"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-search"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Analytics</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -278,9 +293,9 @@
                     <div class="col-md-4 text-center">
 
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-bargraph"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-bargraph"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Web Developent</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -291,9 +306,9 @@
 
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-genius"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-genius"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Web Marketing</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -303,9 +318,9 @@
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
-							<span class="icon">
-								<i class="icon-chat"></i>
-							</span>
+                            <span class="icon">
+                                <i class="icon-chat"></i>
+                            </span>
                             <div class="feature-copy">
                                 <h3>Support</h3>
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
@@ -632,23 +647,23 @@
 </div>
 
 <!-- jQuery -->
-<script src="/vendor/bootstrap/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
-<!-- Stellar Parallax -->
-<script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
-<!-- Easy PieChart -->
-<script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="/vendor/bootstrap/js/google_map.js"></script>
+    <script src="/vendor/bootstrap/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
+    <!-- Easy PieChart -->
+    <script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+    <script src="/vendor/bootstrap/js/google_map.js"></script>
 
-<!-- Main -->
-<script src="/vendor/bootstrap/js/main.js"></script>
+    <!-- Main -->
+    <script src="/vendor/bootstrap/js/main.js"></script>
 
 </body>
 </html>
