@@ -20,17 +20,25 @@
         <section>
             <h3 th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
             <form method="post" th:action="@{/language}" th:object="${language}">
-                <input name="uid" th:field="*{uuid}" type="hidden">
-                <label for="language-name">Name :</label>
-                <input id="language-name" name="name" placeholder="name" required th:field="*{name}" type="text">
-                <br><br>
-                <label for="language-description">Description :</label>
-                <input id="language-description" name="description" placeholder="description" required th:field="*{description}" type="text">
-                <br><br>
-                <label for="language-level">level :</label>
-                <input id="language-level" name="level" placeholder="level" required th:field="*{level}" type="text">
-                <br><br>
-                <input type="submit" value="Send">
+                <div>
+                    <input name="uid" th:field="*{uuid}" type="hidden">
+                </div>
+                <div>
+                    <label for="language-name">Name :</label>
+                    <input id="language-name" name="name" placeholder="name" required th:field="*{name}" type="text">
+                </div>
+                <div>
+                    <label for="language-description">Description :</label>
+                    <textarea id="language-description" name="description" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
+                </div>
+                <div>
+                    <label for="language-level">Level :</label>
+                    <input id="language-level" name="level" placeholder="level" required th:field="*{level}" type="text">
+                </div>
+                <div>
+                    <input type="submit" value="Send">
+                </div>
+
             </form>
             <br>
             <p>

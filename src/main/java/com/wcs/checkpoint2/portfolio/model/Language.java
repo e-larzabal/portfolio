@@ -1,12 +1,14 @@
 package com.wcs.checkpoint2.portfolio.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Language extends BaseModel {
 
     private String name;
+    @Column(columnDefinition="VARCHAR(1500)")
     private String description;
     private String level;
 
