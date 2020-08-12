@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio/Contact</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
+    <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/css/portfolio.css">
+</head>
+
+<body>
+
+    <header th:replace="fragments/header.html :: top">
+    </header>
+
+    <main>
+        <section>
+            <h3 th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
+
+            <form method="post" th:action="@{/experience}" th:object="${experience}">
+                <input name="uuid" th:field="*{uuid}" type="hidden">
+                <div>
+                    <label for="experience-profession">Profession :</label>
+                    <input id="experience-profession" name="profession" placeholder="profession" required th:field="*{profession}" type="text">
+                </div>
+                <div>
+                    <label for="experience-description">Description :</label>
+                    <textarea id="experience-description" name="description" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
+                </div>
+                <div>
+                    <label for="experience-society">Society :</label>
+                    <input id="experience-society" name="society" placeholder="society" required th:field="*{society}" type="text">
+                </div>
+                <div>
+                    <label for="experience-dateBegin">Date start :</label>
+                    <input id="experience-dateBegin" name="startdate" numberYearsAfterBac="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                    <label for="experience-dateEnd">Date end :</label>
+                    <input id="experience-dateEnd" name="dateEnd" numberYearsAfterBac="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
+                </div>
+                <div>
+                    <label for="address-line1">Address line 1 :</label>
+                    <input id="address-line1" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
+                </div>
+                <div>
+                    <label for="address-line2">Address line 2 :</label>
+                    <input id="address-line2" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
+                </div>
+                <div>
+                    <label for="address-zipcode">Address zip code :</label>
+                    <input id="address-zipcode" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
+                </div>
+                <div>
+                    <label for="address-city">Address city :</label>
+                    <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
+                </div>
+                <div>
+                    <label for="experience-logo">Logo :</label>
+                    <input id="experience-logo" name="logo" numberYearsAfterBac="logo" required th:field="*{logo}" type="file" >
+                </div>
+
+                <div>
+                    <input type="submit" value="Send">
+                </div>
+
+            </form>
+            <br>
+            <p>
+                <a href="/index">Return to the index</a> <br>
+                <a href="/experiences">Return to the experiences list</a>
+            </p>
+        </section>
+    </main>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
+    <link rel="stylesheet" href="/javascript/portfolio.js">
+
+</body>
+</html>

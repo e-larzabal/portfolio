@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio/School List</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
+    <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/css/portfolio.css">
+</head>
+
+<body>
+
+    <header th:replace="fragments/header.html :: top">
+    </header>
+
+    <main>
+        <section>
+            <h3>Experience</h3>
+            <a href="/experience">Add a new experience !</a>
+            <br><br>
+            <table>
+                <thead>
+                <tr>
+                    <th>Uuid</th>
+                    <th>Profession</th>
+                    <th>Description</th>
+                    <th>society</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="experience : ${experiences}">
+                    <td th:text="${experience.uuid}">Uuid</td>
+                    <td th:text="${experience.profession}">Profession</td>
+                    <td th:text="${experience.description}">description</td>
+                    <td th:text="${experience.society}">Society</td>
+                    <td><a th:href="@{/experience(uuid=${experience.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/experience/delete(uuid=${experience.uuid})}">Remove</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <p>
+                <a href="/index">Return to the index</a>
+            </p>
+        </section>
+    </main>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
+    <link rel="stylesheet" href="/javascript/portfolio.js">
+
+</body>
+</html>
