@@ -42,17 +42,17 @@
                 </div>
                 <div>
                     <label for="formation-numberYearsAfterBac">Bac + :</label>
-                    <input id="formation-numberYearsAfterBac" name="numberYearsAfterBac" numberYearsAfterBac="diploma" required th:field="*{numberYearsAfterBac}" type="number">
+                    <input id="formation-numberYearsAfterBac" name="numberYearsAfterBac" placeholder="diploma" required th:field="*{numberYearsAfterBac}" type="number">
                 </div>
                 <div>
                     <label for="formation-dateBegin">Date start :</label>
-                    <input id="formation-dateBegin" name="startdate" numberYearsAfterBac="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                    <input id="formation-dateBegin" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
                     <label for="formation-dateEnd">Date end :</label>
-                    <input id="formation-dateEnd" name="dateEnd" numberYearsAfterBac="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
+                    <input id="formation-dateEnd" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                 </div>
                 <div>
                     <label for="formation-logo">Logo :</label>
-                    <input id="formation-logo" name="logo" numberYearsAfterBac="logo" required th:field="*{logo}" type="file" >
+                    <input id="formation-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
                 <div>
                     <input type="submit" value="Send">
