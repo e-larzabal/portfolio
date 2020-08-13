@@ -149,7 +149,7 @@
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
                                         <h3 class="timeline-title" th:text="${experience.profession}">Experience</h3>
-                                        <span class="company" th:text="|${experience.society} - ${experience.dateBegin} - ${experience.dateEnd}|">School - 2007 - 2009</span>
+                                        <span class="company" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                     </div>
                                     <div class="timeline-body">
                                         <p th:text="${experience.description}">description</p>
@@ -168,7 +168,7 @@
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
                                         <h3 class="timeline-title" th:text="${formation.name}">Formation</h3>
-                                        <span class="company" th:text="|${formation.schoolName} - ${formation.dateBegin} - ${formation.dateEnd}|">School - 2007 - 2009</span>
+                                        <span class="company" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
                                     </div>
                                     <div class="timeline-body">
                                         <p th:text="${formation.description}">description</p>

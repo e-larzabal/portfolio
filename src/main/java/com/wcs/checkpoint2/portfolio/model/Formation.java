@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Formation extends BaseModel {
+public class Formation extends BaseModel implements Comparable<Formation> {
 
     private String name;
     @Column(columnDefinition="VARCHAR(1500)")
@@ -46,4 +46,12 @@ public class Formation extends BaseModel {
     public String getLogo() { return logo; }
     public void setLogo(String logo) { this.logo = logo; }
 
+    @Override
+    public int compareTo(Formation formation) {
+        // from oldest to most recent
+        //return this.getDateEnd().compareTo(formation.getDateEnd());
+
+        // from most recent to oldest
+        return formation.getDateEnd().compareTo(this.getDateEnd());
+    }
 }

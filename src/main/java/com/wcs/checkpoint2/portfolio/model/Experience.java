@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Experience extends BaseModel{
+public class Experience extends BaseModel implements Comparable<Experience>{
 
     private String profession;
     @Column(columnDefinition="VARCHAR(1500)")
@@ -40,4 +40,15 @@ public class Experience extends BaseModel{
     public void setLogo(String logo) { this.logo = logo; }
     public Address getAddress() { return address; }
     public void setAddress(Address address) { this.address = address; }
+
+
+    @Override
+    public int compareTo(Experience experience) {
+        // from oldest to most recent
+        //return this.getDateEnd().compareTo(experience.getDateEnd());
+
+        // from most recent to oldest
+        return experience.getDateEnd().compareTo(this.getDateEnd());
+    }
+
 }

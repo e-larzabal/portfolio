@@ -4,11 +4,8 @@ package com.wcs.checkpoint2.portfolio.model;
 
 public class Address {
 
-    //@Column(nullable = false)
     private String line1;
-    //@Column(nullable = false)
     private String line2;
-    //@Column(nullable = false)
     private String city;
     private Integer zipCode;
     private String phone;
