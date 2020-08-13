@@ -10,8 +10,6 @@ import java.util.Date;
 public class Formation extends BaseModel implements Comparable<Formation> {
 
     private String name;
-    @Column(columnDefinition="VARCHAR(1500)")
-    private String description;
     private String schoolName;
     private String diploma;
     private Integer numberYearsAfterBac;
@@ -30,8 +28,6 @@ public class Formation extends BaseModel implements Comparable<Formation> {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
     public String getSchoolName() { return schoolName; }
     public void setSchoolName(String schoolName) { this.schoolName = schoolName; }
     public String getDiploma() { return diploma; }

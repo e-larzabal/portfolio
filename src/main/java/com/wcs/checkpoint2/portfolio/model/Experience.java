@@ -9,8 +9,6 @@ import java.util.Date;
 public class Experience extends BaseModel implements Comparable<Experience>{
 
     private String profession;
-    @Column(columnDefinition="VARCHAR(1500)")
-    private String description;
     private String society;
     @Basic
     @Temporal(TemporalType.DATE)
@@ -28,8 +26,6 @@ public class Experience extends BaseModel implements Comparable<Experience>{
 
     public String getProfession() { return profession; }
     public void setProfession(String profession) { this.profession = profession; }
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
     public String getSociety() { return society; }
     public void setSociety(String society) { this.society = society; }
     public Date getDateBegin() { return dateBegin; }
@@ -40,7 +36,6 @@ public class Experience extends BaseModel implements Comparable<Experience>{
     public void setLogo(String logo) { this.logo = logo; }
     public Address getAddress() { return address; }
     public void setAddress(Address address) { this.address = address; }
-
 
     @Override
     public int compareTo(Experience experience) {

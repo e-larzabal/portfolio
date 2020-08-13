@@ -69,7 +69,7 @@
                                     <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
                                     <div th:if="${contact != null}">
                                         <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
-                                        <h3><span th:text="${contact.profession}">profession </span></h3>
+                                        <h3><span th:text="${contact.profession}">profession</span></h3>
                                     </div>
 
                                     <p>
@@ -93,18 +93,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>About me</h2>
+                        <h2>À propos</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
                         <div th:if="${contact != null}">
                             <ul class="info">
-                                <li><span class="first-block">Full Name:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
-                                <li><span class="first-block">Phone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
+                                <li><span class="first-block">Nom:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
+                                <li><span class="first-block">Téléphone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
                                 <li><span class="first-block">Email:</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
                                 <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
-                                <li><span class="first-block">Address:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
+                                <li><span class="first-block">Adresse:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
                                 ${contact.getAddress().getLine2()} &lt;br/&gt;
                                 ${contact.getAddress().getZipCode()} ${contact.getAddress().getCity()}|">198 West 21th Street, Suite 721 New York NY 10016</span></li>
                             </ul>
@@ -112,9 +112,9 @@
 
                     </div>
                     <div class="col-md-7">
-                        <h2>Hello there!</h2>
+                        <h2>Bienvenue sur mon Portfolio</h2>
                         <div th:if="${contact != null}">
-                            <p th:utext="${contact.presentation}"> </p>
+                            <p th:utext="${contact.description}"> </p>
                         </div>
                         <p>
                             <ul class="fh5co-social-icons">
@@ -134,14 +134,14 @@
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>My resume</h2>
+                        <h2>Mon CV</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0">
                         <ul class="timeline">
                             <li class="timeline-heading text-center animate-box">
-                                <div><h3>Work experience</h3></div>
+                                <div><h3>Expérience professionnelle</h3></div>
                             </li>
 
                             <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
@@ -161,7 +161,7 @@
                             <br>
 
                             <li class="timeline-heading text-center animate-box">
-                                <div><h3>Education</h3></div>
+                                <div><h3>Formation</h3></div>
                             </li>
 
                             <li th:each="formation,iter : ${formations}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
@@ -190,7 +190,7 @@
             <div class="services-padding">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>My Services</h2>
+                        <h2>Mes compétences</h2>
                     </div>
                 </div>
                 <div class="row">

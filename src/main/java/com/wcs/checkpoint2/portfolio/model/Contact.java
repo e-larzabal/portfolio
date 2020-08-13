@@ -16,8 +16,6 @@ public class Contact extends BaseModel {
     private String linkedInLink;
     private String profession;
     private String email;
-    @Column(columnDefinition="VARCHAR(1500)")
-    private String presentation;
 
     @Embedded
     private Address address;
@@ -38,8 +36,6 @@ public class Contact extends BaseModel {
     public void setProfession(String function) { this.profession = function; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-    public String getPresentation() { return presentation; }
-    public void setPresentation(String presentation) { this.presentation = presentation; }
 
     public Address getAddress() { return address; }
     public void setAddress(Address address) { this.address = address; }
