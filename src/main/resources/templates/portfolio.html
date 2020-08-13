@@ -144,39 +144,15 @@
                                 <div><h3>Work experience</h3></div>
                             </li>
 
-                            <li class="animate-box timeline-unverted">
+                            <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
                                 <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
-                                        <h3 class="timeline-title">Senior Developer</h3>
-                                        <span class="company">Company Name - 2016 - Current</span>
+                                        <h3 class="timeline-title" th:text="${experience.profession}">Experience</h3>
+                                        <span class="company" th:text="|${experience.society} - ${experience.dateBegin} - ${experience.dateEnd}|">School - 2007 - 2009</span>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="timeline-inverted animate-box">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Junior Developer</h3>
-                                        <span class="company">Company Name - 2013 - 2015</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="animate-box timeline-unverted">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">UI/UX Designer</h3>
-                                        <span class="company">Company Name - 2010 - 2012</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <p th:text="${experience.description}">description</p>
                                     </div>
                                 </div>
                             </li>
