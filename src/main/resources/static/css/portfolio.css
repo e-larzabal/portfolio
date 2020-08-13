@@ -34,8 +34,14 @@ div {
     padding-left: 0.5em;
 }
 
-.header-ul {
-    padding-left : 8em;
+.header-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
 }
 
 input:focus {
