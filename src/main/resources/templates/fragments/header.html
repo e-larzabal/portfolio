@@ -1,17 +1,17 @@
 <header th:fragment="top" xmlns:th="http://www.thymeleaf.org">
 
-    <div class="header-column">
-        <div>
+    <div class="flex-column header" id="fh5co-features">
+        <div class="flex-element-center">
             <h1>Welcome to my portfolio!</h1>
         </div>
-        <div class="header-row">
-            <img class="flottant" src="/img/lauburu01.jpg" alt="lauburu image" width="75" height="75" />
-            <ul>
+        <div class="flex-row">
+            <img src="/img/lauburu01.jpg" alt="lauburu image" width="75" height="75" />
+            <ul class="nav flex-row">
                 <li><a href="/index">Home</a></li>
                 <li><a href="/portfolio" target="_blank">Portfolio</a></li>
+                <li><a href="/download/emmanuelleLarzabal082020.pdf" target="_blank">Download CV</a></li>
             </ul>
         </div>
     </div>
 
-    <hr />
 </header>

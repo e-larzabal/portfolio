@@ -8,7 +8,22 @@
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
 <body>
@@ -16,17 +31,23 @@
     </header>
 
     <nav>
-        <h2>Menu</h2>
-        <ul>
-            <li> <a href="/contacts">Browse all contacts</a></li>
-            <li> <a href="/languages">Browse all languages</a></li>
-            <li> <a href="/formations">Browse all formations</a></li>
-            <li> <a href="/experiences">Browse all experiences</a></li>
-        </ul>
+        <div class="flex-column">
+            <div>
+                <h2>Menu</h2>
+            </div>
+            <div class="flex-row">
+                <ul>
+                    <li> <a href="/contacts">Browse all contacts</a></li>
+                    <li> <a href="/languages">Browse all languages</a></li>
+                    <li> <a href="/formations">Browse all formations</a></li>
+                    <li> <a href="/experiences">Browse all experiences</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <main>
-        <a href="/download/emmanuelleLarzabal082020.pdf" target="_blank">Download CV</a>
+
     </main>
 
     <footer th:replace="fragments/footer.html :: bottom">

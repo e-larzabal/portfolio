@@ -27,22 +27,31 @@ div {
     padding-left: 1.5rem;
 }
 
-.flottant {
-    float: left;
-    width: auto;
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+.header {
+    height: 180px;
 }
 
-.header-column {
+/*
+ flexbox
+ */
+
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.header-row {
+.flex-row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.flex-element-center {
+    align-self: center;
+}
+
+
 
 input:focus {
     background-color: aliceblue;

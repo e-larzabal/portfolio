@@ -59,131 +59,131 @@
 
 <body>
 
-	<div id="page">
-        <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
-            <div class="overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center">
-                            <div class="display-t js-fullheight">
-                                <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                                    <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
-                                    <div th:if="${contact != null}">
-                                        <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
-                                        <h3><span th:text="${contact.profession}">profession</span></h3>
-                                    </div>
-
-                                    <p>
-                                        <ul class="fh5co-social-icons">
-                                            <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
-                                            <!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
-                                            <li><a href="https://www.linkedin.com/in/emmanuelle-larzabal..." th:href="${contact.linkedInLink}" target="_blank" ><i class="icon-linkedin2" ></i></a></li>
-                                            <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li> -->
-                                            <li><a href="https://github.com/e-larzabal" th:href="${contact.githubLink}" target="_blank" ><i class="icon-github2" ></i></a></li>
-                                        </ul>
-                                    </p>
+<div id="page">
+    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t js-fullheight">
+                            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+                                <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
+                                <div th:if="${contact != null}">
+                                    <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
+                                    <h3><span th:text="${contact.profession}">profession</span></h3>
                                 </div>
+
+                                <p>
+                                <ul class="fh5co-social-icons">
+                                    <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                                    <!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
+                                    <li><a href="https://www.linkedin.com/in/emmanuelle-larzabal..." th:href="${contact.linkedInLink}" target="_blank" ><i class="icon-linkedin2" ></i></a></li>
+                                    <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li> -->
+                                    <li><a href="https://github.com/e-larzabal" th:href="${contact.githubLink}" target="_blank" ><i class="icon-github2" ></i></a></li>
+                                </ul>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <div id="fh5co-about" class="animate-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>À propos</h2>
-                    </div>
+    <div id="fh5co-about" class="animate-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>À propos</h2>
                 </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <div th:if="${contact != null}">
-                            <ul class="info">
-                                <li><span class="first-block">Nom:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
-                                <li><span class="first-block">Téléphone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
-                                <li><span class="first-block">Email:</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
-                                <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
-                                <li><span class="first-block">Adresse:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div th:if="${contact != null}">
+                        <ul class="info">
+                            <li><span class="first-block">Nom:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
+                            <li><span class="first-block">Téléphone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
+                            <li><span class="first-block">Email:</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
+                            <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
+                            <li><span class="first-block">Adresse:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
                                 ${contact.getAddress().getLine2()} &lt;br/&gt;
                                 ${contact.getAddress().getZipCode()} ${contact.getAddress().getCity()}|">198 West 21th Street, Suite 721 New York NY 10016</span></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-md-7">
-                        <h2>Bienvenue sur mon Portfolio</h2>
-                        <div th:if="${contact != null}">
-                            <p th:utext="${contact.description}"> </p>
-                        </div>
-                        <p>
-                            <ul class="fh5co-social-icons">
-                                <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
-                                <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
-                                <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
-                                <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
-                                <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" t></i></a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="fh5co-resume" class="fh5co-bg-color">
-            <div class="container">
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Mon CV</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-md-offset-0">
-                        <ul class="timeline">
-                            <li class="timeline-heading text-center animate-box">
-                                <div><h3>Expérience professionnelle</h3></div>
-                            </li>
-
-                            <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title" th:text="${experience.profession}">Experience</h3>
-                                        <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
-                                        <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p th:text="${experience.description}">description</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <br>
-
-                            <li class="timeline-heading text-center animate-box">
-                                <div><h3>Formation</h3></div>
-                            </li>
-
-                            <li th:each="formation,iter : ${formations}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
-                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title" th:text="${formation.name}">Formation</h3>
-                                        <span class="company" th:if="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} |">School - 2007 - 2009</span>
-                                        <span class="company" th:unless="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p th:text="${formation.description}">description</p>
-                                    </div>
-                                </div>
-                            </li>
-
                         </ul>
                     </div>
+
+                </div>
+                <div class="col-md-7">
+                    <h2>Bienvenue sur mon Portfolio</h2>
+                    <div th:if="${contact != null}">
+                        <p th:utext="${contact.description}"> </p>
+                    </div>
+                    <p>
+                    <ul class="fh5co-social-icons">
+                        <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                        <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
+                        <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
+                        <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
+                        <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" t></i></a></li>
+                    </ul>
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="fh5co-resume" class="fh5co-bg-color">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Mon CV</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0">
+                    <ul class="timeline">
+                        <li class="timeline-heading text-center animate-box">
+                            <div><h3>Expérience professionnelle</h3></div>
+                        </li>
+
+                        <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
+                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3 class="timeline-title" th:text="${experience.profession}">Experience</h3>
+                                    <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
+                                    <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p th:text="${experience.description}">description</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <br>
+
+                        <li class="timeline-heading text-center animate-box">
+                            <div><h3>Formation</h3></div>
+                        </li>
+
+                        <li th:each="formation,iter : ${formations}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
+                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3 class="timeline-title" th:text="${formation.name}">Formation</h3>
+                                    <span class="company" th:if="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} |">School - 2007 - 2009</span>
+                                    <span class="company" th:unless="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p th:text="${formation.description}">description</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div id="fh5co-features" class="animate-box">
@@ -194,6 +194,7 @@
                         <h2>Mes compétences</h2>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
@@ -235,7 +236,6 @@
 
                 <div class="row">
                     <div class="col-md-4 text-center">
-
                         <div class="feature-left">
                             <span class="icon">
                                 <i class="icon-bargraph"></i>
@@ -245,7 +245,6 @@
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="col-md-4 text-center">
@@ -258,8 +257,8 @@
                                 <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
                             </div>
                         </div>
-
                     </div>
+
                     <div class="col-md-4 text-center">
                         <div class="feature-left">
                             <span class="icon">
@@ -271,6 +270,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -575,41 +575,34 @@
 
 </div>
 
-<footer>
-    <div id="fh5co-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>  &copy; 2020 Portfolio by Emmanuelle LARZABAL. All rights reserved. </p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<footer th:replace="fragments/footer.html :: bottom">
 </footer>
 
 
 <div class="gototop js-top">
+    <a href="/download/emmanuelleLarzabal082020.pdf" target="_blank" title="Download CV"><i class="icon-">CV</i></a>
     <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 </div>
 
 <!-- jQuery -->
-    <script src="/vendor/bootstrap/js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
-    <!-- Stellar Parallax -->
-    <script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
-    <!-- Easy PieChart -->
-    <script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-    <script src="/vendor/bootstrap/js/google_map.js"></script>
+<script src="/vendor/bootstrap/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
+<!-- Easy PieChart -->
+<script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+<script src="/vendor/bootstrap/js/google_map.js"></script>
 
-    <!-- Main -->
-    <script src="/vendor/bootstrap/js/main.js"></script>
+<!-- Main -->
+<script src="/vendor/bootstrap/js/main.js"></script>
 
 </body>
 </html>
