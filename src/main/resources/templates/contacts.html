@@ -40,7 +40,7 @@
             </th:block>
 
             <br><br>
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
                     <th>Uuid</th>
@@ -58,9 +58,6 @@
                     <td th:text="${contact.firstName}">firstName</td>
                     <td th:text="${contact.lastName}">lastName</td>
                     <td th:text="${contact.githubLink}">Github link </td>
-                    <td th:text="${contact.githubLink}">
-                        <a th:href="${contact.githubLink}" href="github link" />
-                    </td>
                     <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
                     <td><a th:href="@{/contact(uuid=${contact.uuid})}">Edit</a></td>

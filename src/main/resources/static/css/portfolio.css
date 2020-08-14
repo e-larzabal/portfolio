@@ -2,33 +2,12 @@
     portfolio.ss
  */
 
-table {
-    border-collapse: collapse;
-}
-
-th {
-    /*background-color: #4CAF50;*/
-    background-color: #2784d2;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-th, td {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 5px;
-    text-align: left;
-}
-
-div {
-    padding-top: 1rem;
-    padding-left: 1.5rem;
+input:focus {
+    background-color: aliceblue;
 }
 
 .header {
-    height: 180px;
+    height: 170px;
 }
 
 /*
@@ -38,6 +17,7 @@ div {
 .flex-column {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .flex-row {
@@ -49,12 +29,6 @@ div {
 
 .flex-element-center {
     align-self: center;
-}
-
-
-
-input:focus {
-    background-color: aliceblue;
 }
 
 /*
