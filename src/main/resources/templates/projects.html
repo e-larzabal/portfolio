@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Portfolio/index</title>
+    <title>Portfolio/School List</title>
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
@@ -27,28 +27,42 @@
 </head>
 
 <body>
+
     <header th:replace="fragments/header.html :: top">
     </header>
 
-    <nav>
-        <div class="flex-column">
-            <div>
-                <h2>Menu</h2>
-            </div>
-            <div class="flex-row">
-                <ul>
-                    <li> <a href="/contacts">Browse all contacts</a></li>
-                    <li> <a href="/languages">Browse all languages</a></li>
-                    <li> <a href="/formations">Browse all formations</a></li>
-                    <li> <a href="/experiences">Browse all experiences</a></li>
-                    <li> <a href="/projects">Browse all projects</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <main>
+        <section>
+            <h3>Project</h3>
 
+            <a href="/project">Add a new project !</a>
+
+            <br><br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Uuid</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="project : ${projects}">
+                    <td th:text="${project.uuid}">id</td>
+                    <td th:text="${project.name}">name</td>
+                    <td th:text="${project.description}">description</td>
+                    <td><a th:href="@{/project(uuid=${project.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/project/delete(uuid=${project.uuid})}">Remove</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <a href="/index">Return to the index</a>
+            </p>
+        </section>
     </main>
 
     <footer th:replace="fragments/footer.html :: bottom">

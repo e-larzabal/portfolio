@@ -14,7 +14,7 @@ public class BaseModel {
     @Type(type="uuid-char")
     protected UUID uuid;
 
-    @Column(columnDefinition="VARCHAR(1500)")
+    @Column(columnDefinition="VARCHAR(3000)")
     private String description;
 
     public UUID getUuid() {

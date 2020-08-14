@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio/Formation</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
+    <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/portfolio.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+</head>
+
+<body>
+
+    <header th:replace="fragments/header.html :: top">
+    </header>
+
+    <main>
+        <section>
+            <h3 th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
+
+            <form method="post" th:action="@{/project}" th:object="${project}">
+                <div>
+                    <input name="uuid" th:field="*{uuid}" type="hidden">
+                </div>
+                <div>
+                    <label for="project-name">Name :</label>
+                    <input id="project-name" name="name" placeholder="name" required th:field="*{name}" type="text">
+                </div>
+                <div>
+                    <label for="project-description">Description :</label>
+                    <textarea id="project-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
+                </div>
+                <div>
+                    <label for="project-dateBegin">Date start :</label>
+                    <input id="project-dateBegin" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                    <label for="project-dateEnd">Date end :</label>
+                    <input id="project-dateEnd" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
+                </div>
+                <div>
+                    <label for="project-logo">Logo :</label>
+                    <input id="project-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                </div>
+                <div>
+                    <label for="project-link">Link :</label>
+                    <input id="project-link" name="link" placeholder="link" required th:field="*{link}" type="text">
+                </div>
+                <div>
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+
+            <p>
+                <a href="/index">Return to the index</a> <br>
+                <a href="/formations">Return to the projects list</a>
+            </p>
+        </section>
+    </main>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
+    <link rel="stylesheet" href="/javascript/portfolio.js">
+
+</body>
+</html>
