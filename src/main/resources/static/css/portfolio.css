@@ -42,8 +42,13 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-
+.flex-column-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin : 4px;
 }
 
 .flex-element-center {

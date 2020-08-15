@@ -318,14 +318,13 @@
 
             <div class="flex-row-langages ">
                 <div th:each="project : ${projects}" >
-                    <div class="flex-column-langages ">
+                    <div class="flex-column-projects ">
                         <a href="#" class="work" th:style="|background-image: url(${project.logo});|" >
                             <div class="desc">
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <span th:text="${project.description}">Illustration</span>
                             </div>
                         </a>
-                        <br>
                     </div>
                 </div>
             </div>
