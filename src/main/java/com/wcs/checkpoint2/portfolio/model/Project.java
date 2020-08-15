@@ -30,7 +30,7 @@ public class Project extends BaseModel{
     public void setDateBegin(Date dateBegin) { this.dateBegin = dateBegin; }
     public Date getDateEnd() { return dateEnd; }
     public void setDateEnd(Date dateEnd) { this.dateEnd = dateEnd; }
-    public String getLogo() { return logo; }
+    public String getLogo() { return "/img/"+logo; }
     public void setLogo(String logo) { this.logo = logo; }
     public String getLink() { return link; }
     public void setLink(String link) { this.link = link; }

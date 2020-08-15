@@ -1,13 +1,7 @@
 package com.wcs.checkpoint2.portfolio.controller;
 
-import com.wcs.checkpoint2.portfolio.model.Contact;
-import com.wcs.checkpoint2.portfolio.model.Experience;
-import com.wcs.checkpoint2.portfolio.model.Formation;
-import com.wcs.checkpoint2.portfolio.model.Language;
-import com.wcs.checkpoint2.portfolio.service.ContactService;
-import com.wcs.checkpoint2.portfolio.service.FormationService;
-import com.wcs.checkpoint2.portfolio.service.ExperienceService;
-import com.wcs.checkpoint2.portfolio.service.LanguageService;
+import com.wcs.checkpoint2.portfolio.model.*;
+import com.wcs.checkpoint2.portfolio.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +25,12 @@ public class PortfolioController {
     @Autowired
     private LanguageService languageService;
 
+    @Autowired
+    private ToolService toolService;
+
+    @Autowired
+    private ProjectService projectService;
+
     @GetMapping("/portfolio")
     public String getPortfolio(Model model) {
 
@@ -53,6 +53,14 @@ public class PortfolioController {
         // Languages
         List<Language> languages = languageService.list();
         model.addAttribute("languages",languages);
+
+        // Tools
+        List<Tool> tools = toolService.list();
+        model.addAttribute("tools",tools);
+
+        // Projects
+        List<Project> projects = projectService.list();
+        model.addAttribute("projects",projects);
 
         return "portfolio";
     }
