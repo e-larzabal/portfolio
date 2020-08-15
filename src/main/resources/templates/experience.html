@@ -33,7 +33,7 @@
 
     <main>
         <section>
-            <h3 th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
+            <h3 class="h-orange" th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
 
             <form method="post" th:action="@{/experience}" th:object="${experience}">
                 <input name="uuid" th:field="*{uuid}" type="hidden">

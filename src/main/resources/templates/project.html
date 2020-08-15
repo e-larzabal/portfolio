@@ -33,7 +33,7 @@
 
     <main>
         <section>
-            <h3 th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
+            <h3 class="h-orange" th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
 
             <form method="post" th:action="@{/project}" th:object="${project}">
                 <div>

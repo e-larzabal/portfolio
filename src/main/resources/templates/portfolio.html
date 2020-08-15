@@ -55,6 +55,7 @@
     <script src="/vendor/bootstrap/js/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="/css/portfolio.css">
 </head>
 
 <body>
@@ -282,14 +283,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Langages</h2>
+                    <h2>Langages & outils</h2>
+                </div>
+            </div>
+
+            <div class="flex-row-langages ">
+                <div th:each="language : ${languages}" >
+                    <div class="flex-column-langages ">
+                        <div> <img th:src="${language.logo}" th:title="${language.name}" width="75" height="75" /> </div>
+                        <div> <label th:text="${language.name}"></label>   </div>
+                    </div>
                 </div>
             </div>
 
             <div class="row row-pb-md">
                 <div th:each="language : ${languages}" >
                     <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <img th:src="${language.logo}" th:alt="${language.name}" width="75" height="75" />
+                        <label th:text="${language.name}"></label>
+                        <img th:src="${language.logo}" th:title="${language.name}" width="75" height="75" />
                     </div>
                 </div>
             </div>
@@ -457,6 +468,7 @@
         </div>
     </div>
 
+    <!--
     <div id="fh5co-blog">
         <div class="container">
             <div class="row animate-box">
@@ -527,6 +539,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <div id="fh5co-consult">
         <div class="video fh5co-video" style="background-image: url(images/cover_bg_1.jpg);">

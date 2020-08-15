@@ -33,7 +33,7 @@
 
     <main>
         <section>
-            <h3 th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
+            <h3 class="h-orange" th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
             <form method="post" th:action="@{/language}" th:object="${language}">
                 <div>
                     <input name="uid" th:field="*{uuid}" type="hidden">
