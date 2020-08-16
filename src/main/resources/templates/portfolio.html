@@ -61,14 +61,15 @@
 <body>
 
 <div id="page">
-    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <!-- <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(/img/lauburu01.jpg);" data-stellar-background-ratio="0.5"> -->
+    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" data-stellar-background-ratio="0.5">
         <div class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t js-fullheight">
                             <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                                <div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
+                                <div class="profile-thumb" style="background: url(/img/lauburu01.jpg);"></div>
                                 <div th:if="${contact != null}">
                                     <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
                                     <h3><span th:text="${contact.profession}">profession</span></h3>
@@ -287,18 +288,18 @@
                 </div>
             </div>
 
-            <div class="flex-row-langages ">
+            <div class="flex-langages ">
                 <div th:each="language : ${languages}" >
-                    <div class="flex-column-langages ">
+                    <div class="flex-element-langages ">
                         <div> <img th:src="${language.logo}" th:title="${language.name}" width="75" height="75" /> </div>
                         <div> <label th:text="${language.name}"></label> </div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex-row-langages ">
+            <div class="flex-langages ">
                 <div th:each="tool : ${tools}" >
-                    <div class="flex-column-langages ">
+                    <div class="flex-element-langages ">
                         <div> <img th:src="${tool.logo}" th:title="${tool.name}" width="75" height="75" /> </div>
                         <div> <label th:text="${tool.name}"></label> </div>
                     </div>
@@ -316,10 +317,10 @@
                 </div>
             </div>
 
-            <div class="flex-row-langages ">
+            <div class="flex-projects ">
                 <div th:each="project : ${projects}" >
-                    <div class="flex-column-projects ">
-                        <a href="#" class="work" th:style="|background-image: url(${project.logo});|" >
+                    <div class="flex-element-projects ">
+                        <a href="#" class="work " th:style="|background-image: url(${project.logo});|" >
                             <div class="desc">
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <span th:text="${project.description}">Illustration</span>
