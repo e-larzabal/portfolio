@@ -42,7 +42,8 @@
                     <th>Uuid</th>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>level</th>
+                    <th>Level</th>
+                    <th>Ordre</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -50,9 +51,10 @@
                 <tbody>
                 <tr th:each="language : ${languages}">
                     <td th:text="${language.uuid}">Uuid</td>
-                    <td th:text="${language.name}">name</td>
-                    <td th:text="${language.description}">description</td>
-                    <td th:text="${language.level}">level</td>
+                    <td th:text="${language.name}">Name</td>
+                    <td th:text="${language.description}">Description</td>
+                    <td th:text="${language.order}">Ordre</td>
+                    <td th:text="${language.level}">Level</td>
                     <td><a th:href="@{/language(uuid=${language.uuid})}">Edit</a></td>
                     <td><a th:href="@{/language/delete(uuid=${language.uuid})}">Remove</a></td>
                 </tr>

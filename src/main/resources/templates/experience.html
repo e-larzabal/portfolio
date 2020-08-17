@@ -39,7 +39,7 @@
                 <input name="uuid" th:field="*{uuid}" type="hidden">
                 <div>
                     <label for="experience-profession">Profession :</label>
-                    <input id="experience-profession" name="profession" placeholder="profession" required th:field="*{profession}" type="text">
+                    <input id="experience-profession" name="profession" placeholder="profession" required th:field="*{name}" type="text">
                 </div>
                 <div>
                     <label for="experience-description">Description :</label>
@@ -73,6 +73,7 @@
                 </div>
                 <div>
                     <label for="experience-logo">Logo :</label>
+                    <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" width="75" height="75" /> </div>
                     <input id="experience-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                 </div>
 

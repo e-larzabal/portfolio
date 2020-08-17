@@ -50,8 +50,8 @@
                 <tbody>
                 <tr th:each="experience : ${experiences}">
                     <td th:text="${experience.uuid}">Uuid</td>
-                    <td th:text="${experience.profession}">Profession</td>
-                    <td th:text="${experience.description}">description</td>
+                    <td th:text="${experience.name}">Profession</td>
+                    <td th:text="${experience.description}">Description</td>
                     <td th:text="${experience.society}">Society</td>
                     <td><a th:href="@{/experience(uuid=${experience.uuid})}">Edit</a></td>
                     <td><a th:href="@{/experience/delete(uuid=${experience.uuid})}">Remove</a></td>

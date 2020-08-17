@@ -52,7 +52,12 @@
                 </div>
                 <div>
                     <label for="language-logo">Logo :</label>
-                    <input id="language-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
+                    <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" height="75" />
+                    <input id="language-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                </div>
+                <div>
+                    <label for="language-order">Ordre :</label>
+                    <input id="language-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
                 <div>

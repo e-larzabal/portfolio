@@ -42,6 +42,7 @@
                     <th>Uuid</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Order</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -49,8 +50,9 @@
                 <tbody>
                 <tr th:each="tool : ${tools}">
                     <td th:text="${tool.uuid}">Uuid</td>
-                    <td th:text="${tool.name}">name</td>
-                    <td th:text="${tool.description}">description</td>
+                    <td th:text="${tool.name}">Name</td>
+                    <td th:text="${tool.description}">Description</td>
+                    <td th:text="${tool.order}">Order</td>
                     <td><a th:href="@{/tool(uuid=${tool.uuid})}">Edit</a></td>
                     <td><a th:href="@{/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
                 </tr>

@@ -44,11 +44,16 @@
                 </div>
                 <div>
                     <label for="tool-description">Description :</label>
-                    <textarea id="tool-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
+                    <textarea id="tool-description" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
                 </div>
                 <div>
                     <label for="tool-logo">Logo :</label>
-                    <input id="tool-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
+                    <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" height="75" /> </div>
+                    <input id="tool-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                </div>
+                <div>
+                    <label for="tool-order">Ordre :</label>
+                    <input id="tool-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
                 <div>

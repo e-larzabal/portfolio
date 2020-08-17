@@ -44,15 +44,17 @@
                     <th>Uuid</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Order</th>
                     <th></th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="project : ${projects}">
-                    <td th:text="${project.uuid}">id</td>
-                    <td th:text="${project.name}">name</td>
-                    <td th:text="${project.description}">description</td>
+                    <td th:text="${project.uuid}">UUID</td>
+                    <td th:text="${project.name}">Name</td>
+                    <td th:text="${project.description}">Description</td>
+                    <td th:text="${project.order}">Ordre</td>
                     <td><a th:href="@{/project(uuid=${project.uuid})}">Edit</a></td>
                     <td><a th:href="@{/project/delete(uuid=${project.uuid})}">Remove</a></td>
                 </tr>

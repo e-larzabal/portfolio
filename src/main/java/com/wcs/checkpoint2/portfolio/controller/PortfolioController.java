@@ -52,14 +52,17 @@ public class PortfolioController {
 
         // Languages
         List<Language> languages = languageService.list();
+        Collections.sort(languages);
         model.addAttribute("languages",languages);
 
         // Tools
         List<Tool> tools = toolService.list();
+        Collections.sort(tools);
         model.addAttribute("tools",tools);
 
         // Projects
         List<Project> projects = projectService.list();
+        Collections.sort(projects);
         model.addAttribute("projects",projects);
 
         return "portfolio";

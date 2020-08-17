@@ -151,7 +151,7 @@
                             <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3 class="timeline-title" th:text="${experience.profession}">Experience</h3>
+                                    <h3 class="timeline-title" th:text="${experience.name}">Experience</h3>
                                     <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
                                     <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
@@ -300,8 +300,8 @@
             <div class="flex-langages ">
                 <div th:each="tool : ${tools}" >
                     <div class="flex-element-langages ">
-                        <div> <img th:src="${tool.logo}" th:title="${tool.name}" width="75" height="75" /> </div>
-                        <div> <label th:text="${tool.name}"></label> </div>
+                        <div> <img th:src="${tool.getLogo()}" th:title="${tool.getName()}" width="75" height="75" /> </div>
+                        <div> <label th:text="${tool.getName()}"></label> </div>
                     </div>
                 </div>
             </div>
@@ -407,7 +407,7 @@
     -->
 
     <div id="fh5co-consult">
-        <div class="video fh5co-video" style="background-image: url(images/cover_bg_1.jpg);">
+        <div class="video fh5co-video" style="background-image: url(/img/SJDL_port.jpg);">
             <div class="overlay"></div>
         </div>
         <div class="choose animate-box">

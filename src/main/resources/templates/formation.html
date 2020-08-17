@@ -67,6 +67,7 @@
                 </div>
                 <div>
                     <label for="formation-logo">Logo :</label>
+                    <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" height="75" /> </div>
                     <input id="formation-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
                 <div>
