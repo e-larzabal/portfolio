@@ -37,15 +37,16 @@
             <a href="/experience">Add a new experience !</a>
             <br><br>
             <table class="table">
+                <caption>List of experiences</caption>
                 <thead>
-                <tr>
-                    <th>Uuid</th>
-                    <th>Profession</th>
-                    <th>Description</th>
-                    <th>society</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Profession</th>
+                        <th>Description</th>
+                        <th>society</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
                 <tr th:each="experience : ${experiences}">
@@ -57,6 +58,16 @@
                     <td><a th:href="@{/experience/delete(uuid=${experience.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Profession</th>
+                        <th>Description</th>
+                        <th>society</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
             </table>
 
             <p>

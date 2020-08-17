@@ -147,7 +147,7 @@
                             <div><h3>Expérience professionnelle</h3></div>
                         </li>
 
-                        <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
+                        <li th:each="experience,iter : ${experiences}" th:class="${iter.odd}? 'timeline-inverted animate-box ul-align-left' : 'animate-box timeline-unverted ul-align-right' ">
                             <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -156,7 +156,7 @@
                                     <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
                                 <div class="timeline-body">
-                                    <p th:text="${experience.description}">description</p>
+                                    <p th:utext="${experience.description}">description</p>
                                 </div>
                             </div>
                         </li>
@@ -176,7 +176,7 @@
                                     <span class="company" th:unless="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
                                 <div class="timeline-body">
-                                    <p th:text="${formation.description}">description</p>
+                                    <p th:utext="${formation.description}">description</p>
                                 </div>
                             </div>
                         </li>
@@ -323,7 +323,7 @@
                         <a href="#" class="work " th:style="|background-image: url(${project.logo});|" >
                             <div class="desc">
                                 <h3 th:text="${project.name}">Project Name</h3>
-                                <span th:text="${project.description}">Illustration</span>
+                                <span th:utext="${project.description}">Illustration</span>
                             </div>
                         </a>
                     </div>

@@ -48,8 +48,8 @@
                 </div>
                 <div>
                     <label for="tool-logo">Logo :</label>
+                    <input id="tool-logo" name="logo" placeholder="logo" th:field="*{logo}" th:value="${tool.logo}" type="file" >
                     <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" height="75" /> </div>
-                    <input id="tool-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
                 <div>
                     <label for="tool-order">Ordre :</label>

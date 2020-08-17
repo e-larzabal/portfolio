@@ -56,10 +56,10 @@
                 <div>
                     <label for="project-logo">Logo :</label>
                     <input id="project-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                    <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" height="75" /> </div>
                 </div>
                 <div>
                     <label for="project-link">Link :</label>
-                    <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" height="75" /> </div>
                     <input id="project-link" name="link" placeholder="link" required th:field="*{link}" type="text">
                 </div>
                 <div>

@@ -37,15 +37,16 @@
             <a href="/tool">Add a new tool !</a>
             <br><br>
             <table class="table">
+                <caption>List of tools</caption>
                 <thead>
-                <tr>
-                    <th>Uuid</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Order</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Order</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
                 <tr th:each="tool : ${tools}">
@@ -56,6 +57,16 @@
                     <td><a th:href="@{/tool(uuid=${tool.uuid})}">Edit</a></td>
                     <td><a th:href="@{/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
                 </tr>
+                <tfoot>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Order</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
                 </tbody>
             </table>
 

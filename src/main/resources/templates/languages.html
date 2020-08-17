@@ -37,16 +37,17 @@
             <a href="/language">Add a new language !</a>
             <br><br>
             <table class="table">
+                <caption>List of languages</caption>
                 <thead>
-                <tr>
-                    <th>Uuid</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Level</th>
-                    <th>Ordre</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Level</th>
+                        <th>Ordre</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
                 <tr th:each="language : ${languages}">
@@ -59,6 +60,17 @@
                     <td><a th:href="@{/language/delete(uuid=${language.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
+                <tfoot>
+                <tr>
+                    <th>Uuid</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Level</th>
+                    <th>Ordre</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </tfoot>
             </table>
 
             <p>

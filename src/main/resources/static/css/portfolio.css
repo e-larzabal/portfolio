@@ -14,6 +14,10 @@ input:focus {
  color : #FF9000;
 }
 
+div img {
+    margin: 5px;
+}
+
 /*
  flexbox
  */
@@ -58,7 +62,15 @@ input:focus {
     width: auto;
 }
 
+.ul-align-right {
+    text-align: right;
+    list-style-position: inside;
+}
 
+.ul-align-left {
+    text-align: left;
+   /* list-style-position: inside;*/
+}
 
 /*
  links
