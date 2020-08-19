@@ -431,27 +431,29 @@
         </div>
         <div class="choose animate-box">
             <h2>Contact</h2>
-            <form action="#">
+            <!--<form action="#">
+            <form action="mailto:emmanuelle.larzabal64@gmail.com" method="post" enctype="text/plain">-->
+            <form action="#" method="post" onsubmit="sendMail(); return false;" enctype="text/plain">
                 <div class="row form-group">
                     <div class="col-md-6">
-                        <input type="text" id="fname" class="form-control" placeholder="Votre prénom">
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-6">
-                        <input type="text" id="lname" class="form-control" placeholder="Votre nom">
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom">
                     </div>
                 </div>
 
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <input type="text" id="email" class="form-control" placeholder="Votre adresse">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse">
                     </div>
                 </div>
 
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <input type="text" id="subject" class="form-control" placeholder="Votre sujet du message">
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message">
                     </div>
                 </div>
 
@@ -480,6 +482,19 @@
     <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 </div>
 
+<script type="text/javascript">
+    function sendMail() {
+        let elms=document.forms[0].elements;
+        let mailTo='emmanuelle.larzabal64@gmail.com';
+        let mailFrom=elms.email.value;
+        let subject=elms.subject.value;
+        let body='Message : '+elms.message.value+'\n\r De :'+elms.firstName.value+' '+elms.lastName.value+'\n\r';
+
+        document.forms[0].action='mailto:'+mailTo+'?subject='+subject+'&cc='+mailFrom+'&body='+body+' ';
+        document.forms[0].submit();
+    }
+</script>
+
 <!-- jQuery -->
 <script src="/vendor/bootstrap/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
@@ -499,6 +514,9 @@
 
 <!-- Main -->
 <script src="/vendor/bootstrap/js/main.js"></script>
+
+
+
 
 </body>
 </html>
