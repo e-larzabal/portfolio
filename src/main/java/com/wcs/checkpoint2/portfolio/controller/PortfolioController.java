@@ -31,6 +31,9 @@ public class PortfolioController {
     @Autowired
     private ProjectService projectService;
 
+    @Autowired
+    private SkillService skillService;
+
     @GetMapping("/portfolio")
     public String getPortfolio(Model model) {
 
@@ -64,6 +67,11 @@ public class PortfolioController {
         List<Project> projects = projectService.list();
         Collections.sort(projects);
         model.addAttribute("projects",projects);
+
+        // Skills
+        List<Skill> skills = skillService.list();
+        Collections.sort(skills);
+        model.addAttribute("skills",skills);
 
         return "portfolio";
     }

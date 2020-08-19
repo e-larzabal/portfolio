@@ -2,7 +2,7 @@
 
 # Informations
 - Repository name :  biarritz-202007-java-poec-checkpoint2
-- Duration : 1 day
+- Duration : 1 day for the checkpoint2 and open to finish
 
 
 # Library

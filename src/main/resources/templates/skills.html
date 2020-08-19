@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Portfolio/School List</title>
+    <title>Portfolio/Skills List</title>
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
@@ -33,33 +33,32 @@
 
     <main>
         <section>
-            <h3 class="h-orange">Project</h3>
-
-            <a href="/project">Add a new project !</a>
-
+            <h3 class="h-orange">Skill</h3>
+            <a href="/skill">Add a new skill !</a>
             <br><br>
             <table class="table">
-                <caption>List of projects</caption>
+                <caption>List of skills</caption>
                 <thead>
-                <tr>
-                    <th>Uuid</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Order</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Icon</th>
+                        <th>Order</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr th:each="project : ${projects}">
-                    <td th:text="${project.uuid}">UUID</td>
-                    <td th:text="${project.name}">Name</td>
-                    <td th:text="${project.description}">Description</td>
-                    <td th:text="${project.order}">Ordre</td>
-                    <td><a th:href="@{/project(uuid=${project.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/project/delete(uuid=${project.uuid})}">Remove</a></td>
+                <tr th:each="skill : ${skills}">
+                    <td th:text="${skill.uuid}">Uuid</td>
+                    <td th:text="${skill.name}">Name</td>
+                    <td th:text="${skill.description}">Description</td>
+                    <td th:text="${skill.iconClass}">iconClass</td>
+                    <td th:text="${skill.order}">Order</td>
+                    <td><a th:href="@{/skill(uuid=${skill.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
                 </tr>
-                </tbody>
                 <tfoot>
                     <tr>
                         <th>Uuid</th>
@@ -69,6 +68,8 @@
                         <th></th>
                         <th></th>
                     </tr>
+                </tfoot>
+                </tbody>
             </table>
 
             <p>

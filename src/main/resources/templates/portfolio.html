@@ -198,82 +198,100 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-paintbrush"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Web Design</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-briefcase"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Branding</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-search"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Analytics</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+                    <div th:each="skill : ${skills}" >
+                        <div class="col-md-4 text-center">
+                            <div class="feature-left">
+                                <span class="icon"> <i th:class="${skill.iconClass}" class="icon-paintbrush"></i> </span>
+                                <div class="feature-copy">
+                                    <h3 th:text="${skill.name}">Name of skill</h3>
+                                    <p th:utext="${skill.description}">Description</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- <div class="row">
+                    <span class="icon feature-left">
+                        <i class="icon-paintbrush"></i>
+                        <i class="icon-upload-to-cloud"></i>
+                        <i class="icon-cloud"></i>
+                        <i class="icon-earth"></i>
+                        <i class="icon-share"></i>
+                        <i class="icon-film"></i>
+                        <i class="icon-briefcase"></i>
+                        <i class="icon-support"></i>
+                        <i class="icon-cloud2"></i>
+                        <i class="icon-map-pin"></i>
+                        <i class="icon-genius"></i>
+                        <i class="icon-globe"></i>
+                        <i class="icon-search"></i>
+                        <i class="icon-network"></i>
+                        <i class="icon-command"></i>
+                        <i class="icon-classic-computer"></i>
+                         <i class="icon-paintbrush"></i>
+                        <i class="icon-tools-2"></i>
+                        <i class="icon-tools"></i>
+                        <i class="icon-toolbox"></i>
+                        <i class="icon-tools2"></i>
+                        <i class="icon-bargraph"></i>
+                         <i class="icon-pricetags"></i>
+                        <i class="icon-puzzle"></i>
+                        <i class="streetsign"></i>
+                         <i class="icon-tools"></i>
+                        <i class="icon-pencil"></i>
+                        <i class="icon-genius"></i>
+                        <i class="icon-layers"></i>
+                        <i class="icon-lightbulb"></i>
+                        <i class="icon-profile-female"></i>
+                        <i class="icon-strategy"></i>
+                        <i class="icon-magnifying-glass"></i>
+                        <i class="icon-chat"></i>
+                         <i class="icon-scope"></i>
+                        <i class="icon-shield"></i>
+                        <i class="icon-shrink"></i>
+                        <i class="icon-signal"></i>
+                        <i class="icon-sound"></i>
+                        <i class="icon-flickr"></i>
+                        <i class="icon-flickr2"></i>
+                        <i class="icon-flickr-with-circle"></i>
+                        <i class="icon-flattr"></i>
+                        <i class="icon-flattr2"></i>
+                        <i class="icon-circle-compass"></i>
+                        <i class="icon-circle-up"></i>
+                        <i class="icon-circular-graph"></i>
+                        <i class="icon-arrow-with-circle-down"></i>
+                        <i class="icon-arrow-with-circle-left"></i>
+                        <i class="icon-arrow-with-circle-right"></i>
+                        <i class="icon-arrow-with-circle-up"></i>
+                        <i class="icon-circle-compass"></i>
+                        <i class="icon-circle-with-cross"></i>
+                        <i class="icon-circle-right"></i>
+                        <i class="icon-dribbble-with-circle"></i>
+                        <i class="icon-meter"></i>
+                        <i class="icon-meter2"></i>
+                        <i class="icon-leaf"></i>
+                        <i class="icon-book-open"></i>
+                        <i class="icon-books"></i>
+                        <i class="icon-reply-all"></i>
+                        <i class="icon-reply-all2"></i>
+                        <i class="icon-hangouts"></i>
+                        <i class="icon-spell-check"></i>
+                        <i class="icon-scope"></i>
+                        <i class="icon-scribd"></i>
+                        <i class="icon-resize-full-screen"></i>
+                        <i class="icon-office"></i>
+                        <i class="icon-dial"></i>
+                        <i class="icon-graduation-cap"></i>
+                        <i class="icon-adjustments"></i>
+                        <i class="icon-quill"></i>
+                        <i class="icon-plus"></i>
+                        <i class="icon-plus2"></i>
+                        <i class="icon-plus3"></i>
+                        <i class="icon-eye-plus"></i>
+                    </span>
+                </div> -->
 
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-bargraph"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Web Developent</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-genius"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Web Marketing</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="feature-left">
-                            <span class="icon">
-                                <i class="icon-chat"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Support</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -475,8 +493,9 @@
 <!-- Easy PieChart -->
 <script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
 <!-- Google Map -->
+<!--
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="/vendor/bootstrap/js/google_map.js"></script>
+<script src="/vendor/bootstrap/js/google_map.js"></script> -->
 
 <!-- Main -->
 <script src="/vendor/bootstrap/js/main.js"></script>
