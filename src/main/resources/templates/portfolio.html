@@ -338,7 +338,7 @@
             <div class="flex-projects ">
                 <div th:each="project : ${projects}" >
                     <div class="flex-element-projects ">
-                        <a href="#" class="work " th:style="|background-image: url(${project.logo});|" >
+                        <a href="#" class="work " th:style="|background-image: url(${project.logo}); |" >
                             <div class="desc">
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <span th:utext="${project.description}">Illustration</span>
@@ -351,79 +351,6 @@
         </div>
     </div>
 
-    <!--
-    <div id="fh5co-blog">
-        <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Post on Medium</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="fh5co-blog animate-box">
-                        <a href="#" class="blog-bg" style="background-image: url(images/portfolio-1.jpg);"></a>
-                        <div class="blog-text">
-                            <span class="posted_on">Mar. 15th 2016</span>
-                            <h3><a href="#">Photoshoot On The Street</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <ul class="stuff">
-                                <li><i class="icon-heart2"></i>249</li>
-                                <li><i class="icon-eye2"></i>308</li>
-                                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="fh5co-blog animate-box">
-                        <a href="#" class="blog-bg" style="background-image: url(images/portfolio-2.jpg);"></a>
-                        <div class="blog-text">
-                            <span class="posted_on">Mar. 15th 2016</span>
-                            <h3><a href="#">Surfing at Philippines</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <ul class="stuff">
-                                <li><i class="icon-heart2"></i>249</li>
-                                <li><i class="icon-eye2"></i>308</li>
-                                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="fh5co-blog animate-box">
-                        <a href="#" class="blog-bg" style="background-image: url(images/portfolio-3.jpg);"></a>
-                        <div class="blog-text">
-                            <span class="posted_on">Mar. 15th 2016</span>
-                            <h3><a href="#">Capture Living On Uderwater</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <ul class="stuff">
-                                <li><i class="icon-heart2"></i>249</li>
-                                <li><i class="icon-eye2"></i>308</li>
-                                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="fh5co-started" class="fh5co-bg-dark">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Hire Me!</h2>
-                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                    <p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
-
     <div id="fh5co-consult">
         <div class="video fh5co-video" style="background-image: url(/img/SJDL_port.jpg);"
              alt="Le port de pêche de Saint-Jean de luz, un ponton d'accès aux bateaux et la Rhune en fond de paysage.">
@@ -431,8 +358,6 @@
         </div>
         <div class="choose animate-box">
             <h2>Contact</h2>
-            <!--<form action="#">
-            <form action="mailto:emmanuelle.larzabal64@gmail.com" method="post" enctype="text/plain">-->
             <form action="#" method="post" onsubmit="sendMail(); return false;" enctype="text/plain">
                 <div class="row form-group">
                     <div class="col-md-6">
@@ -444,19 +369,16 @@
                         <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom">
                     </div>
                 </div>
-
                 <div class="row form-group">
                     <div class="col-md-12">
                         <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse">
                     </div>
                 </div>
-
                 <div class="row form-group">
                     <div class="col-md-12">
                         <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message">
                     </div>
                 </div>
-
                 <div class="row form-group">
                     <div class="col-md-12">
                         <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
@@ -465,7 +387,6 @@
                 <div class="form-group">
                     <input type="submit" value="Envoyer le message" class="btn btn-primary">
                 </div>
-
             </form>
         </div>
     </div>

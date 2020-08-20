@@ -51,7 +51,7 @@ div img {
 
 .flex-projects {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -59,7 +59,8 @@ div img {
 .flex-element-projects {
     align-self: center;
     margin: 4px;
-    width: auto;
+    width: 100%;
+    flex: 0 1 auto;
 }
 
 .ul-align-right {
