@@ -2,6 +2,10 @@
     portfolio.css
  */
 
+.img-lauburu {
+    border : 0.08em solid #666666;
+}
+
 .btn-admin {
     margin: 30px 15px 15px 5px;
 }
@@ -15,7 +19,8 @@ textarea:focus{
 }
 
 .h-orange {
- color : #FF9000;
+    color : #FF9000;
+    padding: 0.75em 0.75em 0.75em 0.75em;
 }
 
 div img {
@@ -40,6 +45,10 @@ div textarea[id]{
     min-height: 110px;
 }
 
+section{
+    padding: 0.75em 0.75em 0.75em 0.75em;
+}
+
 /*
  flexbox
  */
@@ -48,7 +57,6 @@ div textarea[id]{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 
 .flex-row {
