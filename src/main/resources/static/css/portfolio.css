@@ -2,16 +2,14 @@
     portfolio.css
  */
 
-.body-admin {
-    background-color: #090909;
-}
+
 
 input:focus {
-    background-color: aliceblue;
+    background-color: #e7e7e7;
 }
 
-.header {
-    height: 170px;
+textarea:focus{
+    background-color: #e7e7e7;
 }
 
 .h-orange {
@@ -48,6 +46,7 @@ div textarea[id]{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
 }
 
 .flex-row {
@@ -55,6 +54,7 @@ div textarea[id]{
     flex-direction: row;
     align-content: flex-start;
     align-items: center;
+    padding-top: 2px;
 }
 
 .flex-langages {

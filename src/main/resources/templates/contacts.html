@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body class="body-admin">
+<body>
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -36,27 +36,27 @@
             <table class="table">
                 <caption>List of contacts</caption>
                 <thead>
-                <tr>
-                    <th>Uuid</th>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>Github link</th>
-                    <th>LinkedIn link</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Github link</th>
+                        <th>LinkedIn link</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr th:each="contact : ${contacts}">
-                    <td th:text="${contact.uuid}">uuid</td>
-                    <td th:text="${contact.firstName}">firstName</td>
-                    <td th:text="${contact.lastName}">lastName</td>
-                    <td th:text="${contact.githubLink}">Github link </td>
-                    <td th:text="${contact.linkedInLink}">linkedInLink </td>
+                    <tr th:each="contact : ${contacts}">
+                        <td th:text="${contact.uuid}">uuid</td>
+                        <td th:text="${contact.firstName}">firstName</td>
+                        <td th:text="${contact.lastName}">lastName</td>
+                        <td th:text="${contact.githubLink}">Github link </td>
+                        <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
-                    <td><a th:href="@{/contact(uuid=${contact.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/contact/delete(uuid=${contact.uuid})}">Remove</a></td>
-                </tr>
+                        <td><a th:href="@{/contact(uuid=${contact.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/contact/delete(uuid=${contact.uuid})}">Remove</a></td>
+                    </tr>
                 </tbody>
             </table>
 

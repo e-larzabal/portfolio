@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >-->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >-->
-
-    <!-- Animate.css -->
-    <!--<link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">-->
-    <!-- Icomoon Icon Fonts-->
-    <!--<link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">-->
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,32 +19,31 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body class="body-admin">
+<body>
     <header th:replace="fragments/header.html :: top">
     </header>
 
-    <nav>
-        <div class="flex-column">
-            <div>
-                <h2 class="h-orange">Menu</h2>
+    <body>
+        <main>
+            <div class="flex-column">
+                <div>
+                    <h2 class="h-orange">Menu</h2>
+                </div>
+                <div class="flex-row">
+                    <ul>
+                        <li> <a href="/contacts">Browse all contacts</a></li>
+                        <li> <a href="/languages">Browse all languages</a></li>
+                        <li> <a href="/formations">Browse all formations</a></li>
+                        <li> <a href="/experiences">Browse all experiences</a></li>
+                        <li> <a href="/projects">Browse all projects</a></li>
+                        <li> <a href="/tools">Browse all tools</a></li>
+                        <li> <a href="/skills">Browse all skills</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex-row">
-                <ul>
-                    <li> <a href="/contacts">Browse all contacts</a></li>
-                    <li> <a href="/languages">Browse all languages</a></li>
-                    <li> <a href="/formations">Browse all formations</a></li>
-                    <li> <a href="/experiences">Browse all experiences</a></li>
-                    <li> <a href="/projects">Browse all projects</a></li>
-                    <li> <a href="/tools">Browse all tools</a></li>
-                    <li> <a href="/skills">Browse all skills</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </main>
 
-    <main>
-
-    </main>
+    </body>
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
