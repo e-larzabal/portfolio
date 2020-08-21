@@ -353,12 +353,12 @@
 
     <div id="fh5co-consult">
         <div class="video fh5co-video" style="background-image: url(/img/SJDL_port.jpg);"
-             alt="Le port de pêche de Saint-Jean de luz, un ponton d'accès aux bateaux et la Rhune en fond de paysage.">
+             alt="Le port de pêche de Saint-Jean de luz sur la côte basque, un ponton d'accès aux bateaux et la Rhune en fond de paysage.">
             <div class="overlay"></div>
         </div>
         <div class="choose animate-box">
             <h2>Contact</h2>
-            <form action="#" method="post" onsubmit="sendMail(); return false;" enctype="text/plain">
+            <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
                 <div class="row form-group">
                     <div class="col-md-6">
                         <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom">
@@ -371,7 +371,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail">
                     </div>
                 </div>
                 <div class="row form-group">
@@ -404,9 +404,8 @@
 </div>
 
 <script type="text/javascript">
-    function sendMail() {
+    function sendMail(mailTo) {
         let elms=document.forms[0].elements;
-        let mailTo='emmanuelle.larzabal64@gmail.com';
         let mailFrom=elms.email.value;
         let subject=elms.subject.value;
         let body='Message : '+elms.message.value+'\n\r De :'+elms.firstName.value+' '+elms.lastName.value+'\n\r';

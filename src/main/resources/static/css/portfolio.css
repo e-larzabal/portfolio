@@ -1,6 +1,7 @@
 /*
-    portfolio.ss
+    portfolio.css
  */
+
 
 input:focus {
     background-color: aliceblue;
@@ -72,6 +73,7 @@ div img {
     text-align: left;
    /* list-style-position: inside;*/
 }
+
 
 /*
  links
