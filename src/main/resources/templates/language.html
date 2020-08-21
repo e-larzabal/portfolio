@@ -45,7 +45,7 @@
                 </div>
                 <div class="flex-row form-img">
                     <label for="language-logo">Logo :</label>
-                    <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" height="75" />
+                    <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" />
                     <input id="language-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
                 <div class="flex-row">
@@ -53,8 +53,8 @@
                     <input id="language-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div class="flex-row">
-                    <input class="btn-primary" type="submit" value="Send">
+                <div class="flex-row btn-admin">
+                    <input class="btn-primary btn-admin" type="submit" value="Send">
                 </div>
 
             </form>

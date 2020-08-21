@@ -2,7 +2,9 @@
     portfolio.css
  */
 
-
+.btn-admin {
+    margin: 30px 15px 15px 5px;
+}
 
 input:focus {
     background-color: #e7e7e7;

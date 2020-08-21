@@ -62,11 +62,11 @@
                 </div>
                 <div class="flex-row form-img">
                     <label for="formation-logo">Logo :</label>
-                    <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" height="75" />
+                    <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" />
                     <input id="formation-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
 
-                <div class="flex-row">
+                <div class="flex-row btn-admin">
                     <input class="btn-primary" type="submit" value="Send">
                 </div>
             </form>

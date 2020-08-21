@@ -68,11 +68,11 @@
                 </div>
                 <div class="flex-row form-img">
                     <label for="experience-logo">Logo :</label>
-                    <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" width="75" height="75" /> </div>
+                    <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" width="75" /> </div>
                     <input id="experience-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                 </div>
 
-                <div class="flex-row">
+                <div class="flex-row btn-admin">
                     <input class="btn-primary" type="submit" value="Send">
                 </div>
 

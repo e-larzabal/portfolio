@@ -41,7 +41,7 @@
                 </div>
                 <div class="flex-row form-img">
                     <label for="tool-logo">Logo :</label>
-                    <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" height="75" />
+                    <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" />
                     <input id="tool-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                 </div>
                 <div class="flex-row">
@@ -49,7 +49,7 @@
                     <input id="tool-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div class="flex-row">
+                <div class="flex-row btn-admin">
                     <input class="btn-primary" type="submit" value="Send">
                 </div>
 
