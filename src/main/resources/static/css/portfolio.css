@@ -2,6 +2,9 @@
     portfolio.css
  */
 
+.body-admin {
+    background-color: #090909;
+}
 
 input:focus {
     background-color: aliceblue;
@@ -17,6 +20,24 @@ input:focus {
 
 div img {
     margin: 5px;
+}
+
+div label[for]{
+    min-width: 170px;
+}
+
+div input[id]{
+    min-width: 1000px;
+}
+
+div textarea[id]{
+    min-width: 1000px;
+    min-height: 500px;
+}
+
+.form-img {
+    min-width: 200px;
+    min-height: 110px;
 }
 
 /*
@@ -74,10 +95,23 @@ div img {
    /* list-style-position: inside;*/
 }
 
+.flex-form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: flex-start;
+}
+
 
 /*
  links
  */
+
+a {
+    color: #FF9000;
+}
 
 a:hover {
     color : #2784d2;

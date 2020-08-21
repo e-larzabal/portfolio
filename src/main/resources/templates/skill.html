@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body>
+<body class="body-admin">
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -34,37 +27,37 @@
     <main>
         <section>
             <h3 class="h-orange" th:text="${skill.uuid} ? 'Edit Skill' : 'Create Skill'">Tool</h3>
-            <form method="post" th:action="@{/skill}" th:object="${skill}">
+            <form class="flex-form" method="post" th:action="@{/skill}" th:object="${skill}">
                 <div>
                     <input name="uid" th:field="*{uuid}" type="hidden">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="skill-name">Name :</label>
                     <input id="skill-name" name="name" placeholder="name" required th:field="*{name}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="skill-description">Description :</label>
                     <textarea id="skill-description" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="skill-iconClass">Icone class :</label>
                     <input id="skill-iconClass" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
                 </div>
-                <div>
+                <div class="flex-row ">
                     <label for="skill-order">Ordre :</label>
                     <input id="skill-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div>
-                    <input type="submit" value="Send">
+                <div class="flex-row">
+                    <input class="btn-primary" type="submit" value="Send">
                 </div>
 
             </form>
 
-            <p>
+            <div>
                 <a href="/index">Return to the index</a> <br>
                 <a href="/skills">Return to the skills list</a>
-            </p>
+            </div>
         </section>
     </main>
 

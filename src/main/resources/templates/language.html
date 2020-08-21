@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body>
+<body class="body-admin">
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -34,42 +27,42 @@
     <main>
         <section>
             <h3 class="h-orange" th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
-            <form method="post" th:action="@{/language}" th:object="${language}">
+            <form class="flex-form" method="post" th:action="@{/language}" th:object="${language}">
                 <div>
                     <input name="uid" th:field="*{uuid}" type="hidden">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="language-name">Name :</label>
                     <input id="language-name" name="name" placeholder="name" required th:field="*{name}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="language-description">Description :</label>
                     <textarea id="language-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="language-level">Level :</label>
                     <input id="language-level" name="level" placeholder="level" required th:field="*{level}" type="text">
                 </div>
-                <div>
+                <div class="flex-row form-img">
                     <label for="language-logo">Logo :</label>
-                    <input id="language-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                     <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" height="75" />
+                    <input id="language-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="language-order">Ordre :</label>
                     <input id="language-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div>
-                    <input type="submit" value="Send">
+                <div class="flex-row">
+                    <input class="btn-primary" type="submit" value="Send">
                 </div>
 
             </form>
 
-            <p>
+            <div>
                 <a href="/index">Return to the index</a> <br>
                 <a href="/languages">Return to the languages list</a>
-            </p>
+            </div>
         </section>
     </main>
 

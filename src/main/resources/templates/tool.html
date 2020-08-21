@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body>
+<body class="body-admin">
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -34,30 +27,30 @@
     <main>
         <section>
             <h3 class="h-orange" th:text="${tool.uuid} ? 'Edit Tool' : 'Create Tool'">Tool</h3>
-            <form method="post" th:action="@{/tool}" th:object="${tool}">
+            <form class="flex-form" method="post" th:action="@{/tool}" th:object="${tool}">
                 <div>
                     <input name="uid" th:field="*{uuid}" type="hidden">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="tool-name">Name :</label>
                     <input id="tool-name" name="name" placeholder="name" required th:field="*{name}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="tool-description">Description :</label>
                     <textarea id="tool-description" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
                 </div>
-                <div>
+                <div class="flex-row form-img">
                     <label for="tool-logo">Logo :</label>
-                    <input id="tool-logo" name="logo" placeholder="logo" th:field="*{logo}" th:value="${tool.logo}" type="file" >
-                    <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" height="75" /> </div>
+                    <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" height="75" />
+                    <input id="tool-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="tool-order">Ordre :</label>
                     <input id="tool-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div>
-                    <input type="submit" value="Send">
+                <div class="flex-row">
+                    <input class="btn-primary" type="submit" value="Send">
                 </div>
 
             </form>

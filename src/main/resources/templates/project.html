@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body>
+<body class="body-admin">
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -35,47 +28,49 @@
         <section>
             <h3 class="h-orange" th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
 
-            <form method="post" th:action="@{/project}" th:object="${project}">
+            <form class="flex-form" method="post" th:action="@{/project}" th:object="${project}">
                 <div>
                     <input name="uuid" th:field="*{uuid}" type="hidden">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="project-name">Name :</label>
                     <input id="project-name" name="name" placeholder="name" required th:field="*{name}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="project-description">Description :</label>
                     <textarea id="project-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="project-dateBegin">Date start :</label>
                     <input id="project-dateBegin" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                </div>
+                <div class="flex-row">
                     <label for="project-dateEnd">Date end :</label>
                     <input id="project-dateEnd" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                 </div>
-                <div>
+                <div class="flex-row form-img">
                     <label for="project-logo">Logo :</label>
+                    <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" height="75" />
                     <input id="project-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
-                    <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" height="75" /> </div>
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="project-link">Link :</label>
                     <input id="project-link" name="link" placeholder="link" required th:field="*{link}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="project-order">Ordre :</label>
                     <input id="project-order" name="order" placeholder="order" th:field="*{order}" type="number" >
                 </div>
 
-                <div>
-                    <input type="submit" value="Send">
+                <div class="flex-row">
+                    <input class="btn-primary" type="submit" value="Send">
                 </div>
             </form>
 
-            <p>
+            <div>
                 <a href="/index">Return to the index</a> <br>
                 <a href="/projects">Return to the projects list</a>
-            </p>
+            </div>
         </section>
     </main>
 

@@ -12,13 +12,6 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/portfolio.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script" >
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
@@ -26,7 +19,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
 </head>
 
-<body>
+<body class="body-admin">
 
     <header th:replace="fragments/header.html :: top">
     </header>
@@ -35,13 +28,13 @@
         <section>
             <h3 class="h-orange" th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
 
-            <form method="post" th:action="@{/experience}" th:object="${experience}">
+            <form class="flex-form" method="post" th:action="@{/experience}" th:object="${experience}">
                 <input name="uuid" th:field="*{uuid}" type="hidden">
-                <div>
+                <div class="flex-row">
                     <label for="experience-profession">Profession :</label>
                     <input id="experience-profession" name="profession" placeholder="profession" required th:field="*{name}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="experience-description">Description :</label>
                     <textarea id="experience-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
                 </div>
@@ -49,44 +42,46 @@
                     <label for="experience-society">Society :</label>
                     <input id="experience-society" name="society" placeholder="society" required th:field="*{society}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="experience-dateBegin">Date start :</label>
                     <input id="experience-dateBegin" name="startdate" numberYearsAfterBac="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                </div>
+                <div class="flex-row">
                     <label for="experience-dateEnd">Date end :</label>
                     <input id="experience-dateEnd" name="dateEnd" numberYearsAfterBac="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="address-line1">Address line 1 :</label>
                     <input id="address-line1" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="address-line2">Address line 2 :</label>
                     <input id="address-line2" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="address-zipcode">Address zip code :</label>
                     <input id="address-zipcode" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
                 </div>
-                <div>
+                <div class="flex-row">
                     <label for="address-city">Address city :</label>
                     <input id="address-city" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
                 </div>
-                <div>
+                <div class="flex-row form-img">
                     <label for="experience-logo">Logo :</label>
-                    <input id="experience-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                     <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" width="75" height="75" /> </div>
+                    <input id="experience-logo" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                 </div>
 
-                <div>
-                    <input type="submit" value="Send">
+                <div class="flex-row">
+                    <input class="btn-primary" type="submit" value="Send">
                 </div>
 
             </form>
 
-            <p>
+            <div>
                 <a href="/index">Return to the index</a> <br>
                 <a href="/experiences">Return to the experiences list</a>
-            </p>
+            </div>
         </section>
     </main>
 
