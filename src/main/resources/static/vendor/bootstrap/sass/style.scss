@@ -296,6 +296,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-features {
 	background: $brand-primary;
+
 	h2 {
 		color: $brand-white;
 	}
@@ -305,6 +306,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	.feature-left {
 		margin-bottom: 40px;
 		float: left;
+
 		@media screen and (max-width: $screen-md) {
 			margin-bottom: 30px;
 		}

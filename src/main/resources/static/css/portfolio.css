@@ -18,8 +18,15 @@ textarea:focus{
     background-color: #e7e7e7;
 }
 
+.text-color-white {
+    color : rgba(255, 255, 255, 0.7);
+    text-align: left;
+}
+
 .h-orange {
     color : #FF9000;
+    text-decoration: underline;
+    text-shadow: 1px 1px 0px #FF9000;;
     padding: 0.75em 0.75em 0.75em 0.75em;
 }
 
@@ -95,6 +102,20 @@ section{
     flex: 0 1 auto;
 }
 
+.flex-skill {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*align-items: stretch;*/
+}
+
+.flex-element-skill {
+    width: 30rem;
+    padding-top: 2rem;
+    margin: 1rem;
+}
+
 .ul-align-right {
     text-align: right;
     list-style-position: inside;
@@ -117,16 +138,24 @@ section{
 
 /*
  links
- */
+*/
 
-a {
-    color: #FF9000;
+.a-header-admin {
+    background-color: #f9f9f9;
+    margin-left: 1rem;
+    /*border : 0.08em solid #FFA939;*/
+    border : 0.08em solid #C67000;
 }
 
-a:hover {
-    color : #2784d2;
+.a-header-admin:hover {
+    background-color: #f9f9f9;
+    color : darkgrey;
 }
 
-a:visited {
+.a-header-admin:visited {
+    background-color: #f9f9f9;
     color : #666666;
 }
+
+
+
