@@ -18,7 +18,7 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @GetMapping({"/","/index"})
+    @GetMapping("/index")
     public String getIndex() {
         return "index";
     }
