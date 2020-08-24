@@ -34,6 +34,7 @@ div img {
     margin: 5px;
 }
 
+/*
 div label[for]{
     min-width: 170px;
 }
@@ -46,6 +47,7 @@ div textarea[id]{
     min-width: 1000px;
     min-height: 500px;
 }
+*/
 
 .form-img {
     min-width: 200px;
@@ -78,7 +80,7 @@ section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -125,15 +127,6 @@ section{
 .ul-align-left {
     text-align: left;
    /* list-style-position: inside;*/
-}
-
-.flex-form {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: baseline;
-    align-content: flex-start;
 }
 
 

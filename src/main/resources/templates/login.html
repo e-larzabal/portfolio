@@ -24,62 +24,63 @@
 <header th:replace="fragments/header.html :: top">
 </header>
 
-    <main>
+<main>
 
-        <section>
+    <section>
+        <h2 class="h-orange">Login</h2>
 
-            <div id="fh5co-consult">
+        <div id="fh5co-consult">
             <div class="choose animate-box">
-            <form class="pure-form pure-form-aligned">
-                <fieldset>
-                    <div class="row form-group">
-                        <div class="col-md-6">
-                            <label for="aligned-name">Username</label>
-                            <input type="text" id="aligned-name" placeholder="Username" />
-                            <span class="pure-form-message-inline">This is a required field.</span>
-                        </div>
-                    </div>
-                    <div class="row form-group">
+                <form class="pure-form pure-form-aligned">
+                    <fieldset>
+                        <div class="row form-group">
                             <div class="col-md-6">
-                            <label for="aligned-password">Password</label>
-                            <input type="password" id="aligned-password" placeholder="Password" />
+                                <label for="aligned-name">Username</label>
+                                <input type="text" id="aligned-name" placeholder="Username" />
+                                <span class="pure-form-message-inline">This is a required field.</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
+                        <div class="row form-group">
                             <div class="col-md-6">
-                            <label for="aligned-email">Email Address</label>
-                            <input type="email" id="aligned-email" placeholder="Email Address" />
+                                <label for="aligned-password">Password</label>
+                                <input type="password" id="aligned-password" placeholder="Password" />
+                            </div>
                         </div>
-                    </div>
-                    <!--
-                    <div class="row form-group">
+                        <div class="row form-group">
                             <div class="col-md-6">
-                            <label for="aligned-foo">Supercalifragilistic Label</label>
-                            <input type="text" id="aligned-foo" placeholder="Enter something here..." />
+                                <label for="aligned-email">Email Address</label>
+                                <input type="email" id="aligned-email" placeholder="Email Address" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                            <div class="col-md-6">
-                            <label for="aligned-cb" class="pure-checkbox">
-                                <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions</label>
-                            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                        <!--
+                        <div class="row form-group">
+                                <div class="col-md-6">
+                                <label for="aligned-foo">Supercalifragilistic Label</label>
+                                <input type="text" id="aligned-foo" placeholder="Enter something here..." />
+                            </div>
                         </div>
-                    </div>
-                    -->
-                </fieldset>
-            </form>
+                        <div class="row form-group">
+                                <div class="col-md-6">
+                                <label for="aligned-cb" class="pure-checkbox">
+                                    <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions</label>
+                                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                            </div>
+                        </div>
+                        -->
+                    </fieldset>
+                </form>
             </div>
-            </div>
+        </div>
 
-        </section>
+    </section>
 
 
-    </main>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
-    <link rel="stylesheet" href="/javascript/portfolio.js">
+<link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>
