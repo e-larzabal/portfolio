@@ -9,14 +9,14 @@
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
 
-    <!-- css -->
-    <link rel="stylesheet" href="/css/portfolio.css">
-
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
 </head>
 
 <body>
@@ -28,48 +28,81 @@
         <section>
             <h3 class="h-orange" th:text="${formation.uuid} ? 'Edit Formation' : 'Create Formation'">Formation</h3>
 
-            <form class="flex-form" method="post" th:action="@{/formation}" th:object="${formation}">
-                <div>
-                    <input name="uuid" th:field="*{uuid}" type="hidden">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-name">Name :</label>
-                    <input id="formation-name" name="name" placeholder="name" required th:field="*{name}" type="text">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-description">Description :</label>
-                    <textarea id="formation-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
-                </div>
-                <div class="flex-row">
-                    <label for="formation-schoolName">School name :</label>
-                    <input id="formation-schoolName" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-diploma">Diploma :</label>
-                    <input id="formation-diploma" name="diploma" placeholder="diploma" required th:field="*{diploma}" type="text">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-numberYearsAfterBac">Bac + :</label>
-                    <input id="formation-numberYearsAfterBac" name="numberYearsAfterBac" placeholder="diploma" required th:field="*{numberYearsAfterBac}" type="number">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-dateBegin">Date start :</label>
-                    <input id="formation-dateBegin" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
-                </div>
-                <div class="flex-row">
-                    <label for="formation-dateEnd">Date end :</label>
-                    <input id="formation-dateEnd" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
-                </div>
-                <div class="flex-row form-img">
-                    <label for="formation-logo">Logo :</label>
-                    <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" />
-                    <input id="formation-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
-                </div>
+            <div id="fh5co-consult">
+                <div class="choose animate-box">
 
-                <div class="flex-row btn-admin">
-                    <input class="btn-primary" type="submit" value="Send">
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/formation}" th:object="${formation}">
+
+                        <div>
+                            <input name="uuid" th:field="*{uuid}" type="hidden">
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-name">Name :</label>
+                                <input id="formation-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-description">Description :</label>
+                                <textarea id="formation-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-schoolName">School name :</label>
+                                <input id="formation-schoolName" class="form-control" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-diploma">Diploma :</label>
+                                <input id="formation-diploma" class="form-control" name="diploma" placeholder="diploma" required th:field="*{diploma}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-numberYearsAfterBac">Bac + :</label>
+                                <input id="formation-numberYearsAfterBac" class="form-control" name="numberYearsAfterBac" placeholder="diploma" required th:field="*{numberYearsAfterBac}" type="number">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-dateBegin">Date start :</label>
+                                <input id="formation-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-dateEnd">Date end :</label>
+                                <input id="formation-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="formation-logo">Logo :</label>
+                                <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" />
+                                <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <input class="btn-primary" type="submit" value="Send">
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
-            </form>
+            </div>
 
             <div>
                 <a href="/index">Return to the index</a> <br>

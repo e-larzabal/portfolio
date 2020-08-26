@@ -9,14 +9,14 @@
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
 
-    <!-- css -->
-    <link rel="stylesheet" href="/css/portfolio.css">
-
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
 </head>
 
 <body>
@@ -27,37 +27,61 @@
     <main>
         <section>
             <h3 class="h-orange" th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
-            <form class="flex-form" method="post" th:action="@{/language}" th:object="${language}">
-                <div>
-                    <input name="uid" th:field="*{uuid}" type="hidden">
-                </div>
-                <div class="flex-row">
-                    <label for="language-name">Name :</label>
-                    <input id="language-name" name="name" placeholder="name" required th:field="*{name}" type="text">
-                </div>
-                <div class="flex-row">
-                    <label for="language-description">Description :</label>
-                    <textarea id="language-description" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
-                </div>
-                <div class="flex-row">
-                    <label for="language-level">Level :</label>
-                    <input id="language-level" name="level" placeholder="level" required th:field="*{level}" type="text">
-                </div>
-                <div class="flex-row form-img">
-                    <label for="language-logo">Logo :</label>
-                    <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" />
-                    <input id="language-logo" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
-                </div>
-                <div class="flex-row">
-                    <label for="language-order">Ordre :</label>
-                    <input id="language-order" name="order" placeholder="order" th:field="*{order}" type="number" >
-                </div>
 
-                <div class="flex-row btn-admin">
-                    <input class="btn-primary btn-admin" type="submit" value="Send">
-                </div>
+            <div id="fh5co-consult">
+                <div class="choose animate-box">
 
-            </form>
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/language}" th:object="${language}">
+
+                        <div>
+                            <input name="uid" th:field="*{uuid}" type="hidden">
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="language-name">Name :</label>
+                                <input id="language-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="language-description">Description :</label>
+                                <textarea id="language-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="language-level">Level :</label>
+                                <input id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="language-logo">Logo :</label>
+                                <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" />
+                                <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="language-order">Ordre :</label>
+                                <input id="language-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <input class="btn-primary btn-admin" type="submit" value="Send">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
 
             <div>
                 <a href="/index">Return to the index</a> <br>

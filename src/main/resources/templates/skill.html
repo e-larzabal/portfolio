@@ -9,14 +9,14 @@
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
 
-    <!-- css -->
-    <link rel="stylesheet" href="/css/portfolio.css">
-
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
 </head>
 
 <body>
@@ -27,32 +27,53 @@
     <main>
         <section>
             <h3 class="h-orange" th:text="${skill.uuid} ? 'Edit Skill' : 'Create Skill'">Tool</h3>
-            <form class="flex-form" method="post" th:action="@{/skill}" th:object="${skill}">
-                <div>
-                    <input name="uid" th:field="*{uuid}" type="hidden">
-                </div>
-                <div class="flex-row">
-                    <label for="skill-name">Name :</label>
-                    <input id="skill-name" name="name" placeholder="name" required th:field="*{name}" type="text">
-                </div>
-                <div class="flex-row">
-                    <label for="skill-description">Description :</label>
-                    <textarea id="skill-description" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
-                </div>
-                <div class="flex-row">
-                    <label for="skill-iconClass">Icone class :</label>
-                    <input id="skill-iconClass" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
-                </div>
-                <div class="flex-row ">
-                    <label for="skill-order">Ordre :</label>
-                    <input id="skill-order" name="order" placeholder="order" th:field="*{order}" type="number" >
-                </div>
 
-                <div class="flex-row btn-admin">
-                    <input class="btn-primary" type="submit" value="Send">
-                </div>
+            <div id="fh5co-consult">
+                <div class="choose animate-box">
 
-            </form>
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/skill}" th:object="${skill}">
+
+                        <div>
+                            <input name="uid" th:field="*{uuid}" type="hidden">
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="skill-name">Name :</label>
+                                <input id="skill-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="skill-description">Description :</label>
+                                <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="skill-iconClass">Icone class :</label>
+                                <input id="skill-iconClass" class="form-control" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="skill-order">Ordre :</label>
+                                <input id="skill-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <input class="btn-primary" type="submit" value="Send">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
 
             <div>
                 <a href="/index">Return to the index</a> <br>

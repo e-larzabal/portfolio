@@ -34,21 +34,6 @@ div img {
     margin: 5px;
 }
 
-/*
-div label[for]{
-    min-width: 170px;
-}
-
-div input[id]{
-    min-width: 1000px;
-}
-
-div textarea[id]{
-    min-width: 1000px;
-    min-height: 500px;
-}
-*/
-
 .form-img {
     min-width: 200px;
     min-height: 110px;
@@ -128,6 +113,14 @@ section{
     text-align: left;
    /* list-style-position: inside;*/
 }
+
+.flex-form {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+
+
 
 
 /*

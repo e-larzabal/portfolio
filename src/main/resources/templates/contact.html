@@ -9,14 +9,14 @@
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
 
-    <!-- css -->
-    <link rel="stylesheet" href="/css/portfolio.css">
-
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
 </head>
 
 <body>
@@ -35,21 +35,21 @@
                         <input name="uuid" th:field="*{uuid}" type="hidden">
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="contact-name">Firstname :</label>
                                 <input id="contact-name" class="form-control" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="school-lastName">Lastname :</label>
                                 <input id="school-lastName" class="form-control" name="lastName" placeholder="lastName" required th:field="*{lastName}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="school-birthDate">Birthdate :</label>
                                 <input id="school-birthDate" class="form-control" name="birthDate" placeholder="birthDate" required th:field="*{birthDate}" type="date">
                             </div>
