@@ -36,70 +36,70 @@
                         <input name="uuid" th:field="*{uuid}" type="hidden">
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-profession">Profession :</label>
                                 <input id="experience-profession" class="form-control" name="profession" placeholder="profession" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-description">Description :</label>
                                 <textarea id="experience-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-society">Society :</label>
                                 <input id="experience-society" class="form-control" name="society" placeholder="society" required th:field="*{society}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-dateBegin">Date start :</label>
                                 <input id="experience-dateBegin" class="form-control" name="startdate" numberYearsAfterBac="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-dateEnd">Date end :</label>
                                 <input id="experience-dateEnd" class="form-control" name="dateEnd" numberYearsAfterBac="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="address-line1">Address line 1 :</label>
                                 <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="address-line2">Address line 2 :</label>
                                 <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="address-zipcode">Address zip code :</label>
                                 <input id="address-zipcode" class="form-control" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-6">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="address-city">Address city :</label>
                                 <input id="address-city" class="form-control" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-8">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="experience-logo">Logo :</label>
                                 <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" width="75" />
                                 <input id="experience-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >

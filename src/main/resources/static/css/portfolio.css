@@ -10,14 +10,6 @@
     margin: 30px 15px 15px 5px;
 }
 
-input:focus {
-    background-color: #e7e7e7;
-}
-
-textarea:focus{
-    background-color: #e7e7e7;
-}
-
 .text-color-white {
     color : rgba(255, 255, 255, 0.7);
     text-align: left;
@@ -61,6 +53,15 @@ section{
     padding-top: 2px;
 }
 
+.flex-form-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: stretch;
+}
+
 .flex-langages {
     display: flex;
     flex-direction: row;
@@ -90,20 +91,6 @@ section{
     flex: 0 1 auto;
 }
 
-.flex-skill {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    /*align-items: stretch;*/
-}
-
-.flex-element-skill {
-    width: 30rem;
-    padding-top: 2rem;
-    margin: 1rem;
-}
-
 .ul-align-right {
     text-align: right;
     list-style-position: inside;
@@ -114,13 +101,12 @@ section{
    /* list-style-position: inside;*/
 }
 
-.flex-form {
-    display: inline-flex;
-    flex-direction: row;
+
+.flex-form-div .form-control{
+    display: flex;
+    justify-content: center;
+    width: 70%;
 }
-
-
-
 
 
 /*

@@ -38,56 +38,56 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-name">Name :</label>
                                 <input id="formation-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-description">Description :</label>
                                 <textarea id="formation-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-schoolName">School name :</label>
                                 <input id="formation-schoolName" class="form-control" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-diploma">Diploma :</label>
                                 <input id="formation-diploma" class="form-control" name="diploma" placeholder="diploma" required th:field="*{diploma}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-numberYearsAfterBac">Bac + :</label>
                                 <input id="formation-numberYearsAfterBac" class="form-control" name="numberYearsAfterBac" placeholder="diploma" required th:field="*{numberYearsAfterBac}" type="number">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-dateBegin">Date start :</label>
                                 <input id="formation-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-dateEnd">Date end :</label>
                                 <input id="formation-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="formation-logo">Logo :</label>
                                 <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" width="75" />
                                 <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >

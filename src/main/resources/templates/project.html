@@ -38,35 +38,35 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-name">Name :</label>
                                 <input id="project-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-description">Description :</label>
                                 <textarea id="project-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-dateBegin">Date start :</label>
                                 <input id="project-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-dateEnd">Date end :</label>
                                 <input id="project-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                             <label for="project-logo">Logo :</label>
                                 <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" />
                                 <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
@@ -74,14 +74,14 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-link">Link :</label>
                                 <input id="project-link" class="form-control" name="link" placeholder="link" required th:field="*{link}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12">
+                            <div class="col-md-12 flex-form-div">
                                 <label for="project-order">Ordre :</label>
                                 <input id="project-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                             </div>
