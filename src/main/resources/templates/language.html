@@ -54,7 +54,15 @@
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                                 <label for="language-level">Level :</label>
-                                <input id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">
+                                <!--<input id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">-->
+
+                                <select id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">
+                                    <option th:value="DEBUTANT"      th:text="Débutant"     >Débutant</option>
+                                    <option th:value="INTERMEDIAIRE" th:text="Intermédiaire">Intermédiaire</option>
+                                    <option th:value="AVANCE"        th:text="Avancé"       >Avancé</option>
+                                    <option th:value="EXPERT"        th:text="Expert"       >Expert</option>
+                                </select>
+
                             </div>
                         </div>
 
