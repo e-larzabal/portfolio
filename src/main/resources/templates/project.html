@@ -47,7 +47,7 @@
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                                 <label for="project-description">Description :</label>
-                                <textarea id="project-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description </textarea>
+                                <textarea id="project-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" >Your description </textarea>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                             <label for="project-logo">Logo :</label>
-                                <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" width="75" />
+                                <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" th:alt="${project.getName()}" src="" alt="" width="75" />
                                 <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                             </div>
                         </div>

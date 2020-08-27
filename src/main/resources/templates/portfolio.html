@@ -76,7 +76,7 @@
                                     <h3><span th:text="${contact.profession}">profession</span></h3>
                                 </div>
 
-                                <p>
+                                <div>
                                     <ul class="fh5co-social-icons">
                                         <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
                                         <!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
@@ -84,7 +84,8 @@
                                         <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li> -->
                                         <li><a href="https://github.com/e-larzabal" th:href="${contact.githubLink}" target="_blank" ><i class="icon-github2" ></i></a></li>
                                     </ul>
-                                </p>
+                                </div>
+
                             </div>
 
                         </div>
@@ -105,11 +106,11 @@
                 <div class="col-md-5">
                     <div th:if="${contact != null}">
                         <ul class="info">
-                            <li><span class="first-block">Nom:</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
-                            <li><span class="first-block">Téléphone:</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
-                            <li><span class="first-block">Email:</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
+                            <li><span class="first-block">Nom :</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
+                            <li><span class="first-block">Téléphone :</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
+                            <li><span class="first-block">Email :</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
                             <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
-                            <li><span class="first-block">Adresse:</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
+                            <li><span class="first-block">Adresse :</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
                                 ${contact.getAddress().getLine2()} &lt;br/&gt;
                                 ${contact.getAddress().getZipCode()} ${contact.getAddress().getCity()}|">198 West 21th Street, Suite 721 New York NY 10016</span></li>
                         </ul>
@@ -121,15 +122,15 @@
                     <div th:if="${contact != null}">
                         <p th:utext="${contact.description}"> </p>
                     </div>
-                    <p>
-                    <ul class="fh5co-social-icons">
-                        <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
-                        <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
-                        <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
-                        <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
-                        <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" t></i></a></li>
-                    </ul>
-                    </p>
+                    <div>
+                        <ul class="fh5co-social-icons">
+                            <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                            <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
+                            <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
+                            <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
+                            <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" ></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,7 +164,7 @@
                             </div>
                         </li>
 
-                        <br>
+
 
                         <li class="timeline-heading text-center animate-box">
                             <div><h3>Formation</h3></div>
@@ -311,7 +312,7 @@
             <div class="flex-langages ">
                 <div th:each="language : ${languages}" >
                     <div class="flex-element-langages ">
-                        <div> <img th:src="${language.logo}" th:title="${language.name}" th:alt="${language.name}" width="75" height="75" /> </div>
+                        <div> <img th:src="${language.logo}" th:title="${language.name}" th:alt="${language.name}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${language.name}"></label> </div>
                     </div>
                 </div>
@@ -320,7 +321,7 @@
             <div class="flex-langages ">
                 <div th:each="tool : ${tools}" >
                     <div class="flex-element-langages ">
-                        <div> <img th:src="${tool.getLogo()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" width="75" height="75" /> </div>
+                        <div> <img th:src="${tool.getLogo()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${tool.getName()}"></label> </div>
                     </div>
                 </div>
@@ -362,29 +363,35 @@
             <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
                 <div class="row form-group">
                     <div class="col-md-6">
+                        <label for="firstName" hidden></label>
                         <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-6">
+                        <label for="lastName" hidden></label>
                         <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-12">
+                        <label for="email" hidden></label>
                         <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-12">
+                        <label for="subject" hidden></label>
                         <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-12">
+                        <label for="message" hidden></label>
                         <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <input type="submit" value="Envoyer le message" class="btn btn-primary">
                 </div>

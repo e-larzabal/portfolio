@@ -112,6 +112,10 @@ section #fh5co-consult .choose {
     width: 100%;
 }
 
+/* projects : hover description's marge */
+a div.desc {
+    padding: 2rem;
+}
 
 /*
  links

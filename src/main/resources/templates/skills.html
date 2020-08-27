@@ -42,16 +42,19 @@
                         <th></th>
                     </tr>
                 </thead>
+
                 <tbody>
-                <tr th:each="skill : ${skills}">
-                    <td th:text="${skill.uuid}">Uuid</td>
-                    <td th:text="${skill.name}">Name</td>
-                    <td th:text="${skill.description}">Description</td>
-                    <td th:text="${skill.iconClass}">iconClass</td>
-                    <td th:text="${skill.order}">Order</td>
-                    <td><a th:href="@{/skill(uuid=${skill.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
-                </tr>
+                    <tr th:each="skill : ${skills}">
+                        <td th:text="${skill.uuid}">Uuid</td>
+                        <td th:text="${skill.name}">Name</td>
+                        <td th:text="${skill.description}">Description</td>
+                        <td th:text="${skill.iconClass}">iconClass</td>
+                        <td th:text="${skill.order}">Order</td>
+                        <td><a th:href="@{/skill(uuid=${skill.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
+                    </tr>
+                </tbody>
+
                 <tfoot>
                     <tr>
                         <th>Uuid</th>
@@ -62,7 +65,7 @@
                         <th></th>
                     </tr>
                 </tfoot>
-                </tbody>
+
             </table>
 
             <p>

@@ -38,21 +38,21 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="language-name">Name :</label>
                                 <input id="language-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="language-description">Description :</label>
                                 <textarea id="language-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" >Your description</textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="language-level">Level :</label>
                                 <select id="language-level" class="form-control" name="level" required th:field="*{level}" >
                                     <option th:value="DEBUTANT"      th:text="Débutant"     >level</option>
@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="language-logo">Logo :</label>
                                 <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
                                 <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="language-order">Ordre :</label>
                                 <input id="language-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                             </div>

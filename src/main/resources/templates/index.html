@@ -22,28 +22,25 @@
 <body>
     <header th:replace="fragments/header.html :: top">
     </header>
-
-    <body>
-        <main>
-            <div class="services-padding">
-                <div>
-                    <h2 class="h-orange">Menu</h2>
-                </div>
-                <div>
-                    <ul class="nav flex-column">
-                        <li class="col-lg-2"> <a href="/contacts">Browse all contacts</a></li>
-                        <li class="col-lg-2"> <a href="/languages">Browse all languages</a></li>
-                        <li class="col-lg-2"> <a href="/formations">Browse all formations</a></li>
-                        <li class="col-lg-2"> <a href="/experiences">Browse all experiences</a></li>
-                        <li class="col-lg-2"> <a href="/projects">Browse all projects</a></li>
-                        <li class="col-lg-2"> <a href="/tools">Browse all tools</a></li>
-                        <li class="col-lg-2"> <a href="/skills">Browse all skills</a></li>
-                    </ul>
-                </div>
+    
+    <main>
+        <div class="services-padding">
+            <div>
+                <h2 class="h-orange">Menu</h2>
             </div>
-        </main>
-
-    </body>
+            <div>
+                <ul class="nav flex-column">
+                    <li class="col-lg-2"> <a href="/contacts">Browse all contacts</a></li>
+                    <li class="col-lg-2"> <a href="/languages">Browse all languages</a></li>
+                    <li class="col-lg-2"> <a href="/formations">Browse all formations</a></li>
+                    <li class="col-lg-2"> <a href="/experiences">Browse all experiences</a></li>
+                    <li class="col-lg-2"> <a href="/projects">Browse all projects</a></li>
+                    <li class="col-lg-2"> <a href="/tools">Browse all tools</a></li>
+                    <li class="col-lg-2"> <a href="/skills">Browse all skills</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>

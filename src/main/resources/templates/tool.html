@@ -38,29 +38,29 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="tool-name">Name :</label>
                                 <input id="tool-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="tool-description">Description :</label>
-                                <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" type="text">Your description</textarea>
+                                <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" >Your description</textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="tool-logo">Logo :</label>
-                                <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" width="75" />
+                                <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
                                 <input id="tool-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="tool-order">Ordre :</label>
                                 <input id="tool-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                             </div>

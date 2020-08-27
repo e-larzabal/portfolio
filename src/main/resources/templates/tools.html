@@ -41,15 +41,18 @@
                         <th></th>
                     </tr>
                 </thead>
+
                 <tbody>
-                <tr th:each="tool : ${tools}">
-                    <td th:text="${tool.uuid}">Uuid</td>
-                    <td th:text="${tool.name}">Name</td>
-                    <td th:text="${tool.description}">Description</td>
-                    <td th:text="${tool.order}">Order</td>
-                    <td><a th:href="@{/tool(uuid=${tool.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
-                </tr>
+                    <tr th:each="tool : ${tools}">
+                        <td th:text="${tool.uuid}">Uuid</td>
+                        <td th:text="${tool.name}">Name</td>
+                        <td th:text="${tool.description}">Description</td>
+                        <td th:text="${tool.order}">Order</td>
+                        <td><a th:href="@{/tool(uuid=${tool.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
+                    </tr>
+                </tbody>
+
                 <tfoot>
                     <tr>
                         <th>Uuid</th>
@@ -60,7 +63,7 @@
                         <th></th>
                     </tr>
                 </tfoot>
-                </tbody>
+
             </table>
 
             <p>
