@@ -47,29 +47,26 @@
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                                 <label for="language-description">Description :</label>
-                                <textarea id="language-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" type="text">Your description</textarea>
+                                <textarea id="language-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" >Your description</textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                                 <label for="language-level">Level :</label>
-                                <!--<input id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">-->
-
-                                <select id="language-level" class="form-control" name="level" placeholder="level" required th:field="*{level}" type="text">
-                                    <option th:value="DEBUTANT"      th:text="Débutant"     >Débutant</option>
-                                    <option th:value="INTERMEDIAIRE" th:text="Intermédiaire">Intermédiaire</option>
-                                    <option th:value="AVANCE"        th:text="Avancé"       >Avancé</option>
-                                    <option th:value="EXPERT"        th:text="Expert"       >Expert</option>
+                                <select id="language-level" class="form-control" name="level" required th:field="*{level}" >
+                                    <option th:value="DEBUTANT"      th:text="Débutant"     >level</option>
+                                    <option th:value="INTERMEDIAIRE" th:text="Intermédiaire">level</option>
+                                    <option th:value="AVANCE"        th:text="Avancé"       >level</option>
+                                    <option th:value="EXPERT"        th:text="Expert"       >level</option>
                                 </select>
-
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
                                 <label for="language-logo">Logo :</label>
-                                <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" width="75" />
+                                <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
                                 <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
                             </div>
                         </div>
