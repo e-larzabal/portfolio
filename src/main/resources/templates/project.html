@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Portfolio/Formation</title>
+    <title>Portfolio/Project</title>
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
@@ -69,7 +69,14 @@
                             <div class="col-md-12 flex-form-div">
                             <label for="project-logo">Logo :</label>
                                 <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" th:alt="${project.getName()}" src="" alt="" width="75" />
-                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" type="file" alt="logo">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12 flex-form-div">
+                                <label for="project-document">Document (pdf) :</label>
+                                <input id="project-document" class="form-control" name="document" placeholder="document" th:field="*{document}" type="text">
                             </div>
                         </div>
 

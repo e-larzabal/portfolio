@@ -20,6 +20,7 @@ public class Project extends BaseLogoModel implements Comparable<Project> {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateEnd;
     private String link;
+    private String document;
 
     public Project() { }
 
@@ -29,6 +30,8 @@ public class Project extends BaseLogoModel implements Comparable<Project> {
     public void setDateEnd(Date dateEnd) { this.dateEnd = dateEnd; }
     public String getLink() { return link; }
     public void setLink(String link) { this.link = link; }
+    public String getDocument() { return document; }
+    public void setDocument(String document) { this.document = document; }
 
     @Override
     public int compareTo(Project project) {
