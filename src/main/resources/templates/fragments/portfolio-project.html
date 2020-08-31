@@ -1,0 +1,27 @@
+<div th:fragment="portfolio-project" xmlns:th="http://www.thymeleaf.org">
+
+    <div id="fh5co-work" class="fh5co-bg-dark">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Projets</h2>
+                </div>
+            </div>
+
+            <div class="flex-projects ">
+                <div th:each="project : ${projects}" >
+                    <div class="flex-element-projects ">
+                        <a th:href="|/download/${project.getDocument()}|" href="" class="work" th:style="|background-image: url(${project.logo}); |" target="_blank">
+                            <div class="desc">
+                                <h3 th:text="${project.name}">Project Name</h3>
+                                <span th:utext="${project.description}">Illustration</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div th:fragment="portfolio-hearder" xmlns:th="http://www.thymeleaf.org">
+
+    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" data-stellar-background-ratio="0.5">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t js-fullheight">
+                            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+
+                                <div class="profile-thumb" style="background: url(/img/lauburu01.jpg);"></div>
+                                <div th:if="${contact != null}">
+                                    <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
+                                    <h3><span th:text="${contact.profession}">profession</span></h3>
+                                </div>
+
+                                <div>
+                                    <ul class="fh5co-social-icons">
+                                        <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+                                        <!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
+                                        <li><a href="https://www.linkedin.com/in/emmanuelle-larzabal..." th:href="${contact.linkedInLink}" target="_blank" ><i class="icon-linkedin2" ></i></a></li>
+                                        <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li> -->
+                                        <li><a href="https://github.com/e-larzabal" th:href="${contact.githubLink}" target="_blank" ><i class="icon-github2" ></i></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</div>
