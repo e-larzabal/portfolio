@@ -70,11 +70,19 @@ section{
     align-items: flex-start;
 }
 
-.flex-element-langages {
+.flex-element-langage {
     align-self: center;
     text-align: center;
     margin: 1rem;
     width: 10rem;
+}
+
+.flex-element-tool {
+    align-self: center;
+    text-align: center;
+    margin: 1rem;
+    width: 10rem;
+    margin: 3.1rem;
 }
 
 .flex-projects {

@@ -10,7 +10,7 @@
 
             <div class="flex-langages ">
                 <div th:each="language : ${languages}" >
-                    <div class="flex-element-langages ">
+                    <div class="flex-element-langage ">
                         <div> <img th:src="${language.logo}" th:title="${language.name}" th:alt="${language.name}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${language.name}"></label> </div>
                     </div>
@@ -19,7 +19,7 @@
 
             <div class="flex-langages ">
                 <div th:each="tool : ${tools}" >
-                    <div class="flex-element-langages ">
+                    <div class="flex-element-tool ">
                         <div> <img th:src="${tool.getLogo()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${tool.getName()}"></label> </div>
                     </div>
