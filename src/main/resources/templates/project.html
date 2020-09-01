@@ -67,10 +67,10 @@
 
                         <div class="row form-group">
                             <div class="col-md-12 flex-form-div">
-                            <label for="project-logo">Logo :</label>
-                                <img th:if="${project.getLogo() != null}" th:src="${project.getLogo()}" th:title="${project.getLogo()}" th:alt="${project.getName()}" src="" alt="" width="75" />
-                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" type="file" alt="logo">
+                                <label for="project-logo">Logo :</label>
+                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" type="text" alt="logo">
                             </div>
+                            <img th:if="${project.getLogo() != null}" th:src="${project.getLogoPath()}" th:title="${project.getLogoPath()}" th:alt="${project.getName()}" src="" alt="" width="75" />
                         </div>
 
                         <div class="row form-group">

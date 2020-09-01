@@ -13,8 +13,11 @@ public class BaseLogoModel extends BaseModel{
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public String getLogo() { return "/img/"+logo; }
+    public String getLogo() { return logo; }
     public void setLogo(String logo) { this.logo = logo; }
     public Integer getOrder() { return order; }
     public void setOrder(Integer order) { this.order = order; }
+
+    public String getLogoPath() { return "/img/"+logo; }
+
 }

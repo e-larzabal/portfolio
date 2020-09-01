@@ -89,9 +89,9 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="formation-logo">Logo :</label>
-                                <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogo()}" th:title="${formation.getLogo()}" th:alt="${formation.getName()}" src="" alt="" width="75" />
-                                <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                                <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="text" >
                             </div>
+                            <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogoPath()}" th:title="${formation.getLogoPath()}" th:alt="${formation.getName()}" src="" alt="" width="75" />
                         </div>
 
                         <div class="row form-group">

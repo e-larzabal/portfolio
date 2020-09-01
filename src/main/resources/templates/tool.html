@@ -54,9 +54,9 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="tool-logo">Logo :</label>
-                                <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogo()}" th:title="${tool.getLogo()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
-                                <input id="tool-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
+                                <input id="tool-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="text" >
                             </div>
+                            <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogoPath()}" th:title="${tool.getLogoPath()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
                         </div>
 
                         <div class="row form-group">

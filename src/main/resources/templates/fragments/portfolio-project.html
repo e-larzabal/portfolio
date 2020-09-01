@@ -11,7 +11,7 @@
             <div class="flex-projects ">
                 <div th:each="project : ${projects}" >
                     <div class="flex-element-projects ">
-                        <a th:href="|/download/${project.getDocument()}|" href="" class="work" th:style="|background-image: url(${project.logo}); |" target="_blank">
+                        <a th:href="|/download/${project.getDocument()}|" href="" class="work" th:style="|background-image: url(${project.getLogoPath()}); |" target="_blank">
                             <div class="desc">
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <span th:utext="${project.description}">Illustration</span>

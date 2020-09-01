@@ -66,9 +66,9 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="language-logo">Logo :</label>
-                                <img th:if="${language.getLogo() != null}" th:src="${language.getLogo()}" th:title="${language.getLogo()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
-                                <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="file" >
+                                <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="text" >
                             </div>
+                            <img th:if="${language.getLogo() != null}" th:src="${language.getLogoPath()}" th:title="${language.getLogoPath()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
                         </div>
 
                         <div class="row form-group">
