@@ -18,11 +18,6 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @GetMapping("/index")
-    public String getIndex() {
-        return "index";
-    }
-
     @GetMapping("/contacts")
     public String getAll(Model model) {
         // find all contacts

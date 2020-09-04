@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
+/database/dump_portfolio_20200901/

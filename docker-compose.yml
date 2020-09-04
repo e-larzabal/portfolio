@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0.21
+    volumes:
+      - dbdata:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: portfolio_password
+      MYSQL_DATABASE: portfolio-docker
+      MYSQL_USER: portfolio_root
+      MYSQL_PASSWORD: portfolio_password
+    ports:
+      - "3306:3306"
+
+  tomcat:
+    image: tomcat:latest
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  dbdata:
