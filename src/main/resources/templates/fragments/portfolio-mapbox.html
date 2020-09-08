@@ -1,0 +1,31 @@
+<div th:fragment="portfolio-mapbox" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
+    </head>
+
+    <div id="map" class="fh5co-map"></div>
+
+    <script th:inline="javascript" type="text/javascript">
+
+        let lat = 43.3452;
+        let lng = -1.6213;
+        let zoom = 10;
+        let style = "mapbox://styles/mapbox/streets-v11";
+
+        mapboxgl.accessToken =
+            "pk.eyJ1IjoiemVzeXN5IiwiYSI6ImNrYzA4NXNrMDA1eWMydGxrdHdwZmp0d2YifQ.okRQB2su68E9g_BMJxDoZA";
+        let map = new mapboxgl.Map({
+            container: "map",
+            style: style,
+            center: [lng, lat],
+            zoom: zoom,
+        });
+
+        let originMarker = new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+
+    </script>
+</div>
