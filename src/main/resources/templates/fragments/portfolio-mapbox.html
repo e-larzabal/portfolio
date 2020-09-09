@@ -1,31 +1,141 @@
-<div th:fragment="portfolio-mapbox" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="portfolio-mapbox" xmlns:th="http://www.thymeleaf.org" class="mapbox-container">
 
     <head>
-
-        <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-
+        <!-- Import Mapbox GL JS  -->
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel='stylesheet' />
+        <!-- Import Assembly -->
+        <!-- <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel='stylesheet'>-->
+        <script src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"> </script>
+        <!-- Import jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
-    <div id="map" class="fh5co-map"></div>
+    <!-- Create a container for the map -->
+    <!--<div id="map" class="fh5co-map mapbox">-->
+    <div id="map" class="mapbox-box">
 
-    <script th:inline="javascript" type="text/javascript">
+    <!-- Create a sidebar with buttons for each option -->
+    <!--<div class='absolute fl my24 mx24 py24 px24 bg-gray-faint round'> -->
+    <div class="mapbox-box mapbox-sidebar ">
+        <form id="params">
 
-        let lat = 43.3452;
-        let lng = -1.6213;
-        let zoom = 10;
-        let style = "mapbox://styles/mapbox/streets-v11";
+            <h4 class="txt-m txt-bold mb6">Chose a travel mode:</h4>
+            <div>
 
-        mapboxgl.accessToken =
-            "pk.eyJ1IjoiemVzeXN5IiwiYSI6ImNrYzA4NXNrMDA1eWMydGxrdHdwZmp0d2YifQ.okRQB2su68E9g_BMJxDoZA";
+                    <input name="profile" type="radio" value="walking">
+                    <div class="radio-inline">Walking</div>
+
+                    <input name="profile" type="radio" value="cycling" >
+                    <div class="radio-inline">Cycling</div>
+
+                    <input name="profile" type="radio" value="driving" checked>
+                    <div class="radio-inline">Driving</div>
+
+            </div>
+
+            <h4 class="txt-m txt-bold mb6">Chose a maximum duration:</h4>
+            <div>
+
+                    <input name="duration" type="radio" value="10" >
+                    <div class="radio-inline">10 min</div>
+
+                    <input name="duration" type="radio" value="20">
+                    <div class="radio-inline">20 min</div>
+
+                    <input name="duration" type="radio" value="30" checked>
+                    <div class="radio-inline">30 min</div>
+
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <script>
+        // Add your Mapbox access token
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZS1sYXJ6YWJhbCIsImEiOiJja2NqNm9zeHMxaXZlMnJubmM4MmtlM3o2In0.Mxkr5YRk2JwMC8AAqdbNTw';
         let map = new mapboxgl.Map({
-            container: "map",
-            style: style,
-            center: [lng, lat],
-            zoom: zoom,
+            container: 'map', // Specify the container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // Specify which map style to use
+            center: [-1.6213, 43.3452], // Specify the starting position
+            zoom: 10.5, // Specify the starting zoom
         });
 
-        let originMarker = new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+        // Create variables to use in getIso()
+        let urlBase = 'https://api.mapbox.com/isochrone/v1/mapbox/';
+        let lon = -1.6213;
+        let lat = 43.3452;
+        let profile = 'driving';
+        let minutes = 30;
 
+        // Create a function that sets up the Isochrone API query then makes an Ajax call
+        function getIso() {
+            let query = urlBase + profile + '/' + lon + ',' + lat + '?contours_minutes=' + minutes + '&polygons=true&access_token=' + mapboxgl.accessToken;
+
+            $.ajax({
+                method: 'GET',
+                url: query
+            }).done(function(data) {
+                // Set the 'iso' source's data to what's returned by the API query
+                map.getSource('iso').setData(data);
+            })
+        };
+
+        let marker = new mapboxgl.Marker({
+            'color': '#314ccd'
+        });
+
+        // Create a LngLat object to use in the marker initialization
+        // https://docs.mapbox.com/mapbox-gl-js/api/#lnglat
+        let lngLat = {
+            lon: lon,
+            lat: lat
+        };
+
+        map.on('load', function() {
+            // When the map loads, add the source and layer
+            map.addSource('iso', {
+                type: 'geojson',
+                data: {
+                    "type": 'FeatureCollection',
+                    "features": []
+                }
+            });
+
+            map.addLayer({
+                'id': 'isoLayer',
+                'type': 'fill',
+                // Use "iso" as the data source for this layer
+                'source': 'iso',
+                'layout': {},
+                'paint': {
+                    // The fill color for the layer is set to a light purple
+                    'fill-color': '#5a3fc0',
+                    'fill-opacity': 0.3
+                }
+            }, "poi-label");
+
+            // Initialize the marker at the query coordinates
+            marker.setLngLat(lngLat).addTo(map);
+
+            // Make the API call
+            getIso();
+        });
+
+        // Target the "params" form in the HTML portion of your code
+        let params = document.getElementById('params');
+
+        // When a user changes the value of profile or duration by clicking a button, change the parameter's value and make the API query again
+        params.addEventListener('change', function(e) {
+            if (e.target.name === 'profile') {
+                profile = e.target.value;
+                getIso();
+            } else if (e.target.name === 'duration') {
+                minutes = e.target.value;
+                getIso();
+            }
+        });
     </script>
+
+
 </div>
