@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio/admin</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
+    <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
+</head>
+
+<body>
+    <header th:replace="fragments/header.html :: top">
+    </header>
+    
+    <main>
+        <aside class="services-padding">
+
+            <h2 class="h-orange">Menu</h2>
+
+            <ul class="nav flex-column">
+                <li class="col-lg-2"> <a href="/contacts">Browse all contacts</a></li>
+                <li class="col-lg-2"> <a href="/languages">Browse all languages</a></li>
+                <li class="col-lg-2"> <a href="/formations">Browse all formations</a></li>
+                <li class="col-lg-2"> <a href="/experiences">Browse all experiences</a></li>
+                <li class="col-lg-2"> <a href="/projects">Browse all projects</a></li>
+                <li class="col-lg-2"> <a href="/tools">Browse all tools</a></li>
+                <li class="col-lg-2"> <a href="/skills">Browse all skills</a></li>
+            </ul>
+
+        </aside>
+    </main>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
+
+
+</body>
+</html>

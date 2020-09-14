@@ -11,8 +11,8 @@ public class LoginController {
         return "index";
     }
 
-    @GetMapping("/admin")
-    public String getAdmin() { return "admin"; }
+    @GetMapping("/menu")
+    public String getAdmin() { return "menu"; }
 
     @GetMapping("/login")
     public String getLogin() { return "login"; }
