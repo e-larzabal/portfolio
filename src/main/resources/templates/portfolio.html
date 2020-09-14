@@ -60,77 +60,75 @@
 
 <body>
 
-<div id="page">
+    <main>
+        <!-- <id id="page"> -->
 
-    <div th:replace="fragments/portfolio-header.html">
-    </div>
+            <section th:replace="fragments/portfolio-header.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-about.html">
-    </div>
+            <section th:replace="fragments/portfolio-about.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-experience-formation.html">
-    </div>
+            <section th:replace="fragments/portfolio-experience-formation.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-skill.html">
-    </div>
+            <section th:replace="fragments/portfolio-skill.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-language-tool.html">
-    </div>
+            <section th:replace="fragments/portfolio-language-tool.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-project.html">
-    </div>
+            <section th:replace="fragments/portfolio-project.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-contact.html">
-    </div>
+            <section th:replace="fragments/portfolio-contact.html">
+            </section>
 
-    <div th:replace="fragments/portfolio-mapbox.html">
-    </div>
+            <section th:replace="fragments/portfolio-mapbox.html">
+            </section>
 
-</div>
+            <section class="gototop js-top">
+                <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+                <a href="/download/emmanuelleLarzabal082020.pdf" target="_blank" title="Download CV"><i class="icon-">CV</i></a>
+            </section>
 
+        <!-- </id>-->
+    </main>
 
-<footer th:replace="fragments/footer.html :: bottom">
-</footer>
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
 
+    <script type="text/javascript">
+        function sendMail(mailTo) {
+            let elms=document.forms[0].elements;
+            let mailFrom=elms.email.value;
+            let subject=elms.subject.value;
+            let body='Message : '+elms.message.value+'\n\r De :'+elms.firstName.value+' '+elms.lastName.value+'\n\r';
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-    <a href="/download/emmanuelleLarzabal082020.pdf" target="_blank" title="Download CV"><i class="icon-">CV</i></a>
-</div>
+            document.forms[0].action='mailto:'+mailTo+'?subject='+subject+'&cc='+mailFrom+'&body='+body+' ';
+            document.forms[0].submit();
+        }
+    </script>
 
-<script type="text/javascript">
-    function sendMail(mailTo) {
-        let elms=document.forms[0].elements;
-        let mailFrom=elms.email.value;
-        let subject=elms.subject.value;
-        let body='Message : '+elms.message.value+'\n\r De :'+elms.firstName.value+' '+elms.lastName.value+'\n\r';
+    <!-- jQuery -->
+    <script src="/vendor/bootstrap/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
+    <!-- Easy PieChart -->
+    <script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
+    <!-- Google Map -->
+    <!--
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+    <script src="/vendor/bootstrap/js/google_map.js"></script> -->
 
-        document.forms[0].action='mailto:'+mailTo+'?subject='+subject+'&cc='+mailFrom+'&body='+body+' ';
-        document.forms[0].submit();
-    }
-</script>
-
-<!-- jQuery -->
-<script src="/vendor/bootstrap/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="/vendor/bootstrap/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="/vendor/bootstrap/js/jquery.waypoints.min.js"></script>
-<!-- Stellar Parallax -->
-<script src="/vendor/bootstrap/js/jquery.stellar.min.js"></script>
-<!-- Easy PieChart -->
-<script src="/vendor/bootstrap/js/jquery.easypiechart.min.js"></script>
-<!-- Google Map -->
-<!--
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="/vendor/bootstrap/js/google_map.js"></script> -->
-
-<!-- Main -->
-<script src="/vendor/bootstrap/js/main.js"></script>
-
-
+    <!-- Main -->
+    <script src="/vendor/bootstrap/js/main.js"></script>
 
 
 </body>
