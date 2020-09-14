@@ -1,9 +1,10 @@
 <div th:fragment="portfolio-contact" xmlns:th="http://www.thymeleaf.org">
 
-    <div id="fh5co-consult">
+    <div id="fh5co-consult" >
         <div class="video fh5co-video" style="background-image: url(/img/SJDL_port.jpg);">
-            <div class="overlay "></div>
+          <div class="overlay "></div>
         </div>
+
         <div class="choose animate-box">
             <h2>Contact</h2>
             <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
