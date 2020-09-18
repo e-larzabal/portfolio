@@ -28,7 +28,7 @@
         <section>
             <h3 class="h-orange">Project</h3>
 
-            <a href="/project">Add a new project !</a>
+            <a href="/admin/project">Add a new project !</a>
 
             <br><br>
             <table class="table">
@@ -49,8 +49,8 @@
                     <td th:text="${project.name}">Name</td>
                     <td th:text="${project.description}">Description</td>
                     <td th:text="${project.order}">Ordre</td>
-                    <td><a th:href="@{/project(uuid=${project.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/project/delete(uuid=${project.uuid})}">Remove</a></td>
+                    <td><a th:href="@{/admin/project(uuid=${project.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/admin/project/delete(uuid=${project.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
                 <tfoot>

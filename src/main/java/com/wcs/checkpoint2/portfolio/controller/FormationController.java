@@ -16,14 +16,14 @@ public class FormationController {
     @Autowired
     private FormationService formationService;
 
-    @GetMapping("/formations")
+    @GetMapping("/admin/formations")
     public String getAll(Model model) {
         // find all formations
         model.addAttribute("formations", formationService.list());
         return "formations";
     }
 
-   @GetMapping("/formation")
+   @GetMapping("/admin/formation")
     public String getFormation(Model model, @RequestParam(required = false) UUID uuid) {
         // find one formation by uuid
         Formation formation = new Formation();
@@ -37,7 +37,7 @@ public class FormationController {
         return "formation";
     }
 
-    @PostMapping("/formation")
+    @PostMapping("/admin/formation")
     public String postFormation(@ModelAttribute Formation formation) {
 
         if (formation.getUuid() == null) {
@@ -48,13 +48,13 @@ public class FormationController {
             formationService.update(formation);
         }
 
-        return "redirect:/formations";
+        return "redirect:/admin/formations";
     }
 
-   @GetMapping("/formation/delete")
+   @GetMapping("/admin/formation/delete")
     public String deleteFormation(@RequestParam UUID uuid) {
         // delete a formation
        formationService.delete(uuid);
-        return "redirect:/formations";
+        return "redirect:/admin/formations";
     }
 }

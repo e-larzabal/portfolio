@@ -27,7 +27,7 @@
     <main>
         <section>
             <h3 class="h-orange">Experience</h3>
-            <a href="/experience">Add a new experience !</a>
+            <a href="/admin/experience">Add a new experience !</a>
             <br><br>
             <table class="table">
                 <caption>List of experiences</caption>
@@ -47,8 +47,8 @@
                     <td th:text="${experience.name}">Profession</td>
                     <td th:text="${experience.description}">Description</td>
                     <td th:text="${experience.society}">Society</td>
-                    <td><a th:href="@{/experience(uuid=${experience.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/experience/delete(uuid=${experience.uuid})}">Remove</a></td>
+                    <td><a th:href="@{/admin/experience(uuid=${experience.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/admin/experience/delete(uuid=${experience.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
                 <tfoot>

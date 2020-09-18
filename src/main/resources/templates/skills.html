@@ -27,7 +27,7 @@
     <main>
         <section>
             <h3 class="h-orange">Skill</h3>
-            <a href="/skill">Add a new skill !</a>
+            <a href="/admin/skill">Add a new skill !</a>
             <br><br>
             <table class="table">
                 <caption>List of skills</caption>
@@ -50,8 +50,8 @@
                         <td th:text="${skill.description}">Description</td>
                         <td th:text="${skill.iconClass}">iconClass</td>
                         <td th:text="${skill.order}">Order</td>
-                        <td><a th:href="@{/skill(uuid=${skill.uuid})}">Edit</a></td>
-                        <td><a th:href="@{/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
+                        <td><a th:href="@{/admin/skill(uuid=${skill.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/admin/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
                     </tr>
                 </tbody>
 

@@ -18,14 +18,14 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    @GetMapping("/projects")
+    @GetMapping("/admin/projects")
     public String getAll(Model model) {
         // find all projects
         model.addAttribute("projects", projectService.list());
         return "projects";
     }
 
-    @GetMapping("/project")
+    @GetMapping("/admin/project")
     public String getProject(Model model, @RequestParam(required = false) UUID uuid) {
         // find one project by uuid
         Project project = new Project();
@@ -39,7 +39,7 @@ public class ProjectController {
         return "project";
     }
 
-    @PostMapping("/project")
+    @PostMapping("/admin/project")
     public String postProject(@ModelAttribute Project project) {
 
         if (project.getUuid() == null) {
@@ -50,13 +50,13 @@ public class ProjectController {
             projectService.update(project);
         }
 
-        return "redirect:/projects";
+        return "redirect:/admin/projects";
     }
 
-    @GetMapping("/project/delete")
+    @GetMapping("/admin/project/delete")
     public String deleteProject(@RequestParam UUID uuid) {
         // delete a project
         projectService.delete(uuid);
-        return "redirect:/projects";
+        return "redirect:/admin/projects";
     }
 }

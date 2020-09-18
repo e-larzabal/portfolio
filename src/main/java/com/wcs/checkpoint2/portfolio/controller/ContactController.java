@@ -18,14 +18,14 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @GetMapping("/contacts")
+    @GetMapping("/admin/contacts")
     public String getAll(Model model) {
         // find all contacts
         model.addAttribute("contacts", contactService.list());
         return "contacts";
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/admin/contact")
     public String getContact(Model model, @RequestParam(required = false) UUID uuid) {
         // find one contact by uuid
         Contact contact = new Contact();
@@ -39,7 +39,7 @@ public class ContactController {
         return "contact";
     }
 
-    @PostMapping("/contact")
+    @PostMapping("/admin/contact")
     public String postContact(@ModelAttribute Contact contact) {
 
         if (contact.getAddress() == null) {
@@ -60,13 +60,13 @@ public class ContactController {
             contactService.update(contact);
         }
 
-        return "redirect:/contacts";
+        return "redirect:/admin/contacts";
     }
 
-    @GetMapping("/contact/delete")
+    @GetMapping("/admin/contact/delete")
     public String deleteContact(@RequestParam UUID uuid) {
         // delete a contact
         contactService.delete(uuid);
-        return "redirect:/contacts";
+        return "redirect:/admin/contacts";
     }
 }

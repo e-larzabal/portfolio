@@ -27,7 +27,7 @@
     <main>
         <section>
             <h3 class="h-orange">Tool</h3>
-            <a href="/tool">Add a new tool !</a>
+            <a href="/admin/tool">Add a new tool !</a>
             <br><br>
             <table class="table">
                 <caption>List of tools</caption>
@@ -48,8 +48,8 @@
                         <td th:text="${tool.name}">Name</td>
                         <td th:text="${tool.description}">Description</td>
                         <td th:text="${tool.order}">Order</td>
-                        <td><a th:href="@{/tool(uuid=${tool.uuid})}">Edit</a></td>
-                        <td><a th:href="@{/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
+                        <td><a th:href="@{/admin/tool(uuid=${tool.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/admin/tool/delete(uuid=${tool.uuid})}">Remove</a></td>
                     </tr>
                 </tbody>
 
