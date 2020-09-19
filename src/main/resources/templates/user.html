@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Portfolio/Skill</title>
+    <title>Portfolio/User</title>
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
@@ -25,43 +25,29 @@
     </header>
 
     <main>
-        <section id="portfolio">
-            <h3 class="h-orange" th:text="${skill.uuid} ? 'Edit Skill' : 'Create Skill'">Tool</h3>
+        <section>
+            <h3 class="h-orange" th:text="${user.uuid} ? 'Edit User' : 'Create User'">User</h3>
 
             <div id="fh5co-consult">
                 <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/skill}" th:object="${skill}">
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/user}" th:object="${user}">
 
                         <div>
-                            <input name="uid" th:field="*{uuid}" type="hidden">
+                            <input name="uuid" th:field="*{uuid}" type="hidden">
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="skill-name">Name :</label>
-                                <input id="skill-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
+                                <label for="user-username">Username :</label>
+                                <input id="user-username" class="form-control" name="username" placeholder="username" required th:field="*{username}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="skill-description">Description :</label>
-                                <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" >Your description</textarea>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-iconClass">Icone class :</label>
-                                <input id="skill-iconClass" class="form-control" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-order">Ordre :</label>
-                                <input id="skill-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
+                                <label for="user-password">Password :</label>
+                                <input id="user-password" class="form-control" name="password" placeholder="password" required th:field="*{password}" type="password">
                             </div>
                         </div>
 
@@ -77,7 +63,7 @@
 
             <div>
                 <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/skills">Return to the skills list</a>
+                <a href="/admin/users">Return to the users list</a>
             </div>
 
         </section>

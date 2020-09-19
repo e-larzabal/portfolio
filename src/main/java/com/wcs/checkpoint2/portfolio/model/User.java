@@ -9,20 +9,11 @@ import java.util.Collection;
 
 
 @Entity
-//@Table(name = "USER")
-public class User implements Serializable, UserDetails {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userId;
+public class User extends BaseModel implements Serializable, UserDetails {
+
     private String username;
     private String password;
 
-    public Integer getUserId() {
-        return userId;
-    }
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
     public String getUsername() {
         return username;
     }

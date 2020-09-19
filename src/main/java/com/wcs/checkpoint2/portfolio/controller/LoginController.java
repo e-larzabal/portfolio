@@ -17,8 +17,8 @@ public class LoginController {
     @GetMapping("/menu")
     public String getAdmin() { return "menu"; }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    //@GetMapping("/login")
+    //@RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("errorMsg", "Your username and password are invalid.");
@@ -26,10 +26,10 @@ public class LoginController {
         if (logout != null)
             model.addAttribute("msg", "You have been logged out successfully.");
 
-        return "login";
+        return "menu";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    //@GetMapping("/logout")
+    //@RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @GetMapping("/logout")
     public String logout(Model model) { return "logout"; }
 }
