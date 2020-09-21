@@ -1,7 +1,7 @@
 package com.wcs.checkpoint2.portfolio.controller;
 
-import com.wcs.checkpoint2.portfolio.model.PortfolioUser;
-import com.wcs.checkpoint2.portfolio.service.PortfolioUserService;
+import com.wcs.checkpoint2.portfolio.model.User;
+import com.wcs.checkpoint2.portfolio.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Controller
 public class UserController {
     @Autowired
-    private PortfolioUserService userService;
+    private UserService userService;
 
     @GetMapping("/admin/users")
     public String getAll(Model model) {
@@ -28,9 +28,9 @@ public class UserController {
     @GetMapping("/admin/user")
     public String getUser(Model model, @RequestParam(required = false) UUID uuid) {
         // find one user by uuid
-        PortfolioUser user = new PortfolioUser();
+        User user = new User();
         if (uuid != null) {
-            Optional<PortfolioUser> optionalUser = userService.find(uuid);
+            Optional<User> optionalUser = userService.find(uuid);
             if (optionalUser.isPresent()) {
                 user = optionalUser.get();
             }
@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @PostMapping("/admin/user")
-    public String postUser(@ModelAttribute PortfolioUser user) {
+    public String postUser(@ModelAttribute User user) {
 
         if (user.getUuid() == null) {
             // create a user

@@ -1,6 +1,7 @@
 package com.wcs.checkpoint2.portfolio.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -8,20 +9,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
-import javax.annotation.Resource;
 
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
- /*
-    @Resource
+
+    @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Bean
     public DaoAuthenticationProvider authProvider() {
@@ -31,16 +33,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authProvider;
     }
 
+    /*
+    Define the Password Encoder
+    */
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+        if(passwordEncoder == null) {
+            passwordEncoder = new BCryptPasswordEncoder();
+        }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authProvider());
+        return passwordEncoder;
     }
-*/
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -64,36 +67,53 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/css/**", "/js/**", "/img/**","/download/**","/vendor/bootstrap/**","/portfolio","/index")
+                .antMatchers("/css/**", "/js/**", "/img/**","/download/**","/vendor/bootstrap/**","/portfolio","/menu")
                 .permitAll()
-                .antMatchers("/api/**").hasRole("ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                //.antMatchers("/api/**").hasRole("ADMIN")
+                //.antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin() //  default log in page
                 //.loginPage("/login")
                 .permitAll()
                 .and()
+                //.and()
                 .logout()
+                //.logoutSuccessUrl("/logout")
                 .permitAll()
                 .and()
                 .httpBasic();
 
     }
 
+//    @Override
+//    public void configure(WebSecurity web) {
+//        web.ignoring()
+//                .antMatchers("/resources/**", "/static/**");
+//    }
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//
+//        auth.inMemoryAuthentication()
+//                .withUser("user")
+//                .password(encoder.encode("user"))
+//                .roles("USER")
+//                .and()
+//                .withUser("admin")
+//                .password(encoder.encode("admin"))
+//                .roles("ADMIN");
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        auth.userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
+   }
 
-        auth.inMemoryAuthentication()
-                .withUser("user")
-                .password(encoder.encode("user"))
-                .roles("USER")
-                .and()
-                .withUser("admin")
-                .password(encoder.encode("admin"))
-                .roles("ADMIN");
-    }
+
+
+
 
 }
