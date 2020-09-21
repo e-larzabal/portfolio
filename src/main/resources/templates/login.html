@@ -32,12 +32,14 @@
         <div id="fh5co-consult">
             <div class="choose animate-box">
 
-                <div th:if="${param.error}">
-                    Invalid username and password.</div>
-                <div th:if="${param.logout}">
-                    You have been logged out.</div>
+                <div class="alert alert-error" th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div class="alert alert-success" th:if="${param.logout}">
+                    You have been logged out.
+                </div>
 
-                <form class="pure-form pure-form-aligned" th:action="@{/login}" method="post" action="login">
+                <form class="pure-form pure-form-aligned" name="f" th:action="@{/login}" method="post" action="/login">
 
                     <div class="row form-group">
                         <div class="col-md-7 flex-form-div">
@@ -53,7 +55,9 @@
                         </div>
                     </div>
 
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="submit" />
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Log in</button>
+                    </div>
                 </form>
             </div>
         </div>

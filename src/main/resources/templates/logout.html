@@ -27,8 +27,11 @@
 <main>
 
     <section>
-        <h2 class="h-orange">you are log out</h2>
+        <h2 class="h-orange">Log out?</h2>
 
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
     </section>
 
 
