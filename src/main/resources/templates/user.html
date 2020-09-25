@@ -74,6 +74,17 @@
                         </div>
 
                         <div class="row form-group">
+                            <div class="col-md-8 flex-form-div">
+                                <label for="user-roles">Roles :</label>
+                                <div th:each="role : ${roles}" class="form-check form-check-inline" id="user-roles">
+                                    <input class="form-check-input" id="roleCheckbox" type="checkbox" th:value="${role.uuid}" name="uuid_roles" >
+                                    <label class="form-check-label" for="roleCheckbox" th:text="${role.description}">Role </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
                             <div class="col-md-6">
                                 <input class="btn-primary" type="submit" value="Send">
                             </div>

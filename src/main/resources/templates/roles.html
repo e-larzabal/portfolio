@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Portfolio/Skills List</title>
+    <title>Portfolio/Roles List</title>
     <meta name="author" content="Emmanuelle LARZABAL">
     <meta name="description" content="My portfolio">
     <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
@@ -26,32 +26,28 @@
 
     <main>
         <section>
-            <h3 class="h-orange">Skill</h3>
-            <a href="/admin/skill">Add a new skill !</a>
+            <h3 class="h-orange">Roles</h3>
+            <a href="/admin/role">Add a new role !</a>
             <br><br>
             <table class="table">
-                <caption>List of skills</caption>
+                <caption>List of roles</caption>
                 <thead>
                     <tr>
                         <th>Uuid</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Icon</th>
-                        <th>Order</th>
+                        <th>Label</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr th:each="skill : ${skills}">
-                        <td th:text="${skill.uuid}">Uuid</td>
-                        <td th:text="${skill.name}">Name</td>
-                        <td th:text="${skill.description}">Description</td>
-                        <td th:text="${skill.iconClass}">iconClass</td>
-                        <td th:text="${skill.order}">Order</td>
-                        <td><a th:href="@{/admin/skill(uuid=${skill.uuid})}">Edit</a></td>
-                        <td><a th:href="@{/admin/skill/delete(uuid=${skill.uuid})}">Remove</a></td>
+                    <tr th:each="role : ${roles}">
+                        <td th:text="${role.uuid}">Uuid</td>
+                        <td th:text="${role.name}">Name</td>
+                        <td th:text="${role.description}">Label</td>
+                        <td><a th:href="@{/admin/role(uuid=${role.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/admin/role/delete(uuid=${role.uuid})}">Remove</a></td>
                     </tr>
                 </tbody>
 
@@ -59,9 +55,7 @@
                     <tr>
                         <th>Uuid</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Icon</th>
-                        <th>Order</th>
+                        <th>Label</th>
                         <th></th>
                         <th></th>
                     </tr>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio/Role</title>
+    <meta name="author" content="Emmanuelle LARZABAL">
+    <meta name="description" content="My portfolio">
+    <link href="/img/lauburu01.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
+</head>
+
+<body>
+
+    <header th:replace="fragments/header.html :: top">
+    </header>
+
+    <main>
+        <section>
+            <h3 class="h-orange" th:text="${role.uuid} ? 'Edit Role' : 'Create Role'">Role</h3>
+
+            <div id="fh5co-consult">
+                <div class="choose animate-box">
+
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/role}" th:object="${role}">
+
+                        <div>
+                            <input name="uid" th:field="*{uuid}" type="hidden">
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-8 flex-form-div">
+                                <label for="role-name">Name :</label>
+                                <input id="role-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-8 flex-form-div">
+                                <label for="role-description">Label :</label>
+                                <input id="role-description" class="form-control" name="description" placeholder="description" required th:field="*{description}" type="text">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <input class="btn-primary" type="submit" value="Send">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a href="/menu">Return to the menu</a> <br>
+                <a href="/admin/roles">Return to the roles list</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer th:replace="fragments/footer.html :: bottom">
+    </footer>
+
+</body>
+</html>

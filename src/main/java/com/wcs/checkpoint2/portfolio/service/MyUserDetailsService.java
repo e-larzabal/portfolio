@@ -2,7 +2,7 @@ package com.wcs.checkpoint2.portfolio.service;
 
 import com.wcs.checkpoint2.portfolio.model.MyUserDetails;
 import com.wcs.checkpoint2.portfolio.model.User;
-import com.wcs.checkpoint2.portfolio.model.UserRole;
+import com.wcs.checkpoint2.portfolio.model.Role;
 import com.wcs.checkpoint2.portfolio.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Service("userDetailsService")
 public class MyUserDetailsService implements UserDetailsService {
@@ -39,13 +37,13 @@ public class MyUserDetailsService implements UserDetailsService {
         return myUserDetails;
     }
 
-    private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
+    private List<GrantedAuthority> buildUserAuthority(List<Role> userRoles) {
 
-        Set<GrantedAuthority> setAuths = new HashSet<>();
+        List<GrantedAuthority> setAuths = new ArrayList<>();
 
         // Build user's authorities
-        for (UserRole userRole : userRoles) {
-            setAuths.add(new SimpleGrantedAuthority(userRole.getRole()));
+        for (Role userRole : userRoles) {
+            setAuths.add(new SimpleGrantedAuthority(userRole.getName()));
         }
 
         List<GrantedAuthority> Result = new ArrayList<>(setAuths);

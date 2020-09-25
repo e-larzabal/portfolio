@@ -34,6 +34,9 @@ public class PortfolioController {
     @Autowired
     private SkillService skillService;
 
+    @Autowired
+    private RoleEnumService roleEnumService;
+
     @GetMapping("/portfolio")
     public String getPortfolio(Model model) {
 
@@ -72,6 +75,7 @@ public class PortfolioController {
         List<Skill> skills = skillService.list();
         Collections.sort(skills);
         model.addAttribute("skills",skills);
+
 
         return "portfolio";
     }
