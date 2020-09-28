@@ -1,24 +1,41 @@
 package com.wcs.checkpoint2.portfolio.config;
 
 
+import com.wcs.checkpoint2.portfolio.service.AppAuthProvider;
+import com.wcs.checkpoint2.portfolio.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+    @Qualifier("userService")
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -29,48 +46,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public DaoAuthenticationProvider authProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService);
-        authProvider.setPasswordEncoder(passwordEncoder());
+        authProvider.setPasswordEncoder(passwordEncoder);
         return authProvider;
     }
 
-    /*
-    Define the Password Encoder
-    */
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        if(passwordEncoder == null) {
-            passwordEncoder = new BCryptPasswordEncoder();
-        }
-
-        return passwordEncoder;
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(authProvider());
     }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-      /*http
-            .authorizeRequests()
-                .antMatchers("/css/**", "/js/**", "/img/**","/download/**","/vendor/bootstrap/**","/portfolio","/index")
-                .permitAll()
-                .antMatchers("/api/**").hasRole("ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
-                .and()
-            .formLogin() //  default log in page
-                //.loginPage("/login")
-                .permitAll()
-                .and()
-            .logout()
-                .permitAll()
-                .and()
-            .httpBasic();*/
-
-        http
+       http
                 .authorizeRequests()
-                .antMatchers("/css/**", "/js/**", "/img/**","/download/**","/vendor/bootstrap/**","/portfolio","/menu","/index","/admin/**")
-                .permitAll()
+                .antMatchers("/css/**", "/js/**", "/img/**","/download/**","/vendor/bootstrap/**","/portfolio","/menu","/index").permitAll()
                 //.antMatchers("/api/**").hasRole("ADMIN")
                 //.antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/api/**").authenticated()
+                .antMatchers("/admin/**").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin() //  default log in page
@@ -83,37 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .httpBasic();
-
     }
-
-//    @Override
-//    public void configure(WebSecurity web) {
-//        web.ignoring()
-//                .antMatchers("/resources/**", "/static/**");
-//    }
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-//
-//        auth.inMemoryAuthentication()
-//                .withUser("user")
-//                .password(encoder.encode("user"))
-//                .roles("USER")
-//                .and()
-//                .withUser("admin")
-//                .password(encoder.encode("admin"))
-//                .roles("ADMIN");
-//    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
-   }
-
-
-
 
 
 }

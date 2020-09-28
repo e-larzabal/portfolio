@@ -15,7 +15,7 @@ public class Token extends BaseLogoModel{
     private String token;
     private Date expiryDate;
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "userUuid")
+    @JoinColumn(nullable = false, name = "user_uuid")
     private User user;
 
     public Token() { }
