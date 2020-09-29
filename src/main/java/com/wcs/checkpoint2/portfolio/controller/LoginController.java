@@ -28,7 +28,7 @@ public class LoginController {
             return "menu";
         }
 
-        return "menu";
+        return "login";
     }
 
     @GetMapping("/logout")

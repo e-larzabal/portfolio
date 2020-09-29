@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class PasswordCrypto {
 
-    @Autowired
+ /*   @Autowired
     private PasswordEncoder passwordEncoder;
 
     private static PasswordCrypto instance;
@@ -20,5 +20,5 @@ public class PasswordCrypto {
 
     public String encrypt(String str) {
         return passwordEncoder.encode(str);
-    }
+    }*/
 }

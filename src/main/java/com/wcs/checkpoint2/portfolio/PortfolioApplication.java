@@ -19,21 +19,6 @@ public class PortfolioApplication {
 
 		SpringApplication.run(PortfolioApplication.class, args);
 
-
-	/*	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String password = "wcs2020*";
-		String encodedPassword = passwordEncoder.encode(password);
-		System.out.println();
-		System.out.println("Password is         : " + password);
-		System.out.println("Encoded Password is : " + encodedPassword);
-
-		boolean isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
-		System.out.println("Password : " + password + "   isPasswordMatch    : " + isPasswordMatch);
-
-		password = "wcs2020";
-		isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
-		System.out.println("Password : " + password + "           isPasswordMatch    : " + isPasswordMatch);*/
-
 	}
 
 }
