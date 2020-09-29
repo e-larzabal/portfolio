@@ -1,26 +1,27 @@
+GNU nano 4.8                                                              portfolio-language-tool.html
 <div th:fragment="portfolio-language-tool" xmlns:th="http://www.thymeleaf.org">
 
     <div id="fh5co-skills" class="animate-box">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Langages & outils</h2>
+                    <h2>Langages, outils & librairies </h2>
                 </div>
             </div>
 
-            <div class="flex-langages ">
+            <div class="flex-langages content-galerie">
                 <div th:each="language : ${languages}" >
-                    <div class="flex-element-langage ">
-                        <div> <img th:src="${language.getLogoPath()}" th:title="${language.name}" th:alt="${language.name}" src="" alt="" width="75" height="75" /> </div>
+                    <div class="flex-element-langage galerie">
+                        <div> <a href="#"> <img th:src="${language.getLogoPath()}" th:title="${language.name}" th:alt="${language.name}" src="" alt="" width="75" height="75" /> </a> </div>
                         <div> <label th:text="${language.name}"></label> </div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex-langages ">
+            <div class="flex-langages content-galerie">
                 <div th:each="tool : ${tools}" >
-                    <div class="flex-element-tool ">
-                        <div> <img th:src="${tool.getLogoPath()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </div>
+                    <div class="flex-element-tool galerie">
+                        <div> <a href="#"> <img th:src="${tool.getLogoPath()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </a> </div>
                         <div> <label th:text="${tool.getName()}"></label> </div>
                     </div>
                 </div>

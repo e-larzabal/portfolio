@@ -204,3 +204,46 @@ a div.desc {
     margin-left: 2rem;
 }
 
+
+/*
+Images animated
+ */
+
+
+#content-galerie{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-bottom:200px;
+}
+
+img{
+    border:none;
+}
+
+div.galerie li{
+    float: left;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    list-style: none;
+}
+
+div.galerie div a img{
+    float: left;
+    width: 100px;
+}
+
+div.galerie div a:hover img{
+    -moz-transform: scale(1.2) rotate(-7deg);
+    -webkit-transform: scale(1.2) rotate(-7deg);
+    -o-transform: scale(1.2) rotate(-7deg);
+
+    -moz-transform-origin: bottom left;
+    -webkit-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+
+    -moz-box-shadow: 4px 4px 10px #777;
+    -webkit-box-shadow: 4px 4px 10px #777;
+    -o-box-shadow: 4px 4px 10px #777;
+}
