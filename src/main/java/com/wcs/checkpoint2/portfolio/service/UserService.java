@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.UUID;
 
 
 @Service
@@ -41,10 +41,6 @@ public class UserService extends AbstractBaseService<User> implements UserDetail
             throw new UsernameNotFoundException("Username not found");
         }
 
-      /*  GrantedAuthority authority = new SimpleGrantedAuthority(user.getAuthority());
-        UserDetails userDetails = (UserDetails) new User(user.getUsername(),
-                user.getPassword(), Arrays.asList(authority));
-        return userDetails;*/
         return user;
     }
 
@@ -85,5 +81,9 @@ public class UserService extends AbstractBaseService<User> implements UserDetail
     }
 
 
+    private boolean deleteAllRolesOfTheUser(UUID user_uuid){
+
+        return true;
+    }
 }
 

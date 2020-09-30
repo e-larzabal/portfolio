@@ -1,15 +1,13 @@
 package com.wcs.checkpoint2.portfolio.repository;
 
-import com.wcs.checkpoint2.portfolio.model.User;
+import com.wcs.checkpoint2.portfolio.model.Privilege;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID> {
+public interface PrivilegeRepository extends JpaRepository<Privilege, UUID> {
 
-        User findByUsername(String username);
-
-
+    Privilege findByName(String name);
 }

@@ -41,27 +41,21 @@
 
                 <form class="pure-form pure-form-aligned" name="f" th:action="@{/login}" method="post" action="/login">
 
-                    <div th:if="${param.error}">
-                        <div class="alert alert-danger">
-                            Invalid username or password.
-                        </div>
-                    </div>
-
                     <div class="row form-group">
-                        <div class="col-md-6 flex-form-div">
+                        <div class="col-md-5 flex-form-div">
                             <label for="aligned-name">Username</label>
                             <input class="form-control" type="text" id="aligned-name" name="username" placeholder="Username" value="" />
                         </div>
                     </div>
 
                     <div class="row form-group">
-                        <div class="col-md-6 flex-form-div">
+                        <div class="col-md-5 flex-form-div">
                             <label for="aligned-password">Password</label>
                             <input class="form-control" type="password" id="aligned-password" name="password" placeholder="Password" />
                         </div>
                     </div>
 
-                    <div class="col-md-1 form-group">
+                    <div class="col-md-5 form-group ul-align-right">
                         <input type="submit" class="btn btn-primary"value="Log in"/>
                     </div>
                 </form>

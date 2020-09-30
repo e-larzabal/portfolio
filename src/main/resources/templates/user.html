@@ -73,17 +73,25 @@
                                 <input id="user-email" class="form-control" name="email" placeholder="email" required th:field="*{email}" type="email">
                             </div>
                         </div>
+                        -->
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="user-roles">Roles :</label>
-                                <div th:each="role : ${roles}" class="form-check form-check-inline" id="user-roles">
-                                    <input class="form-check-input" id="roleCheckbox" type="checkbox" th:value="${role.uuid}" name="uuid_roles" >
-                                    <label class="form-check-label" for="roleCheckbox" th:text="${role.description}">Role </label>
+                                <label for="user_roles">Roles :</label>
+                                <div class="form-check form-check-inline" id="user_roles"
+                                     th:each="itemrole : ${allroles}"
+                                     th:name="uuid_roles" >
+                                    <!--<input class="form-check-input" id="roleCheckbox" type="checkbox" th:value="${role.uuid}" th:checked="${#sets.contains(roles,role.uuid)}" th:field="*{roles}" name="uuid_roles" >-->
+                                    <input class="form-check-input" id="roleCheckbox" name="roleCheckbox" type="checkbox"
+                                           th:name="uuid_roles"
+                                           th:value="${itemrole.uuid}"
+                                           th:field="*{roles}" >
+                                    <label class="form-check-label" for="roleCheckbox"
+                                           th:text="${itemrole.description}">Role </label>
                                 </div>
                             </div>
                         </div>
-                        -->
+
 
                         <div class="row form-group">
                             <div class="col-md-6">

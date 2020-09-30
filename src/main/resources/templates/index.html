@@ -20,18 +20,17 @@
 </head>
 
 <body>
-    <!--<header th:replace="fragments/header.html :: top">
-    </header>-->
+    <header th:replace="fragments/header.html :: top">
+    </header>
 
     <main>
-        <h2>Welcome to my portfolio!</h2>
-
-        <ul>
-            <li> Click <a th:href="@{/login}">  here</a> to login. </li>
-            <li> Click <a th:href="@{/logout}"> here</a> to logout. </li>
-            <li> Click <a th:href="@{/menu}">   here</a> to go to administration. </li>
-        </ul>
-
+        <section>
+            <ul>
+                <li> Click <a th:href="@{/login}">  here</a> to login. </li>
+                <li> Click <a th:href="@{/logout}"> here</a> to logout. </li>
+                <li> Click <a th:href="@{/menu}">   here</a> to go to administration. </li>
+            </ul>
+        </section>
     </main>
 
     <footer th:replace="fragments/footer.html :: bottom">

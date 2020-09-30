@@ -30,7 +30,9 @@
         <h2 class="h-orange">Log out?</h2>
 
         <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+            <div class="col-md-1 form-group ul-align-right">
+                <input type="submit" class="btn btn-primary" value="Sign Out"/>
+            </div>
         </form>
     </section>
 
