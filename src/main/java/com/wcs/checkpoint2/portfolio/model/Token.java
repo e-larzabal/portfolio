@@ -10,16 +10,19 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-public class Token extends BaseLogoModel{
+public class Token extends BaseModel {
     private static final int EXPIRATION = 60 * 24;
     private String token;
     private Date expiryDate;
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "user_uuid")
+    @JoinColumn(nullable = false, name = "user_uuid", referencedColumnName = "uuid")
     private User user;
 
     public Token() { }
-    public Token(String token, User user) { }
+    public Token(String token, User user) {
+        this.token = token;
+        this.user = user;
+    }
 
     public static int getEXPIRATION() { return EXPIRATION; }
     public String getToken() { return token; }

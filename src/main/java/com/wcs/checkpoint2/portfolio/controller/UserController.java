@@ -53,7 +53,6 @@ public class UserController {
     }
 
     @PostMapping("/admin/user")
-    //public String postUser(Model model, @ModelAttribute User user, @RequestParam List<UUID> uuid_roles) {
     public String postUser(Model model, @ModelAttribute User user) {
 
         if (user.getUuid() == null) {

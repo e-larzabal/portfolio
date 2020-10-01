@@ -52,28 +52,26 @@
                             </div>
                         </div>
 
-                        <!--
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="user-firstname">Username :</label>
+                                <label for="user-firstname">Firstname :</label>
                                 <input id="user-firstname" class="form-control" name="firstname" placeholder="firstname" required th:field="*{firstName}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="user-lastname">Username :</label>
+                                <label for="user-lastname">Lastname :</label>
                                 <input id="user-lastname" class="form-control" name="lastname" placeholder="lastname" required th:field="*{lastName}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
-                                <label for="user-email">Username :</label>
+                                <label for="user-email">Email :</label>
                                 <input id="user-email" class="form-control" name="email" placeholder="email" required th:field="*{email}" type="email">
                             </div>
                         </div>
-                        -->
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
@@ -81,7 +79,6 @@
                                 <div class="form-check form-check-inline" id="user_roles"
                                      th:each="itemrole : ${allroles}"
                                      th:name="uuid_roles" >
-                                    <!--<input class="form-check-input" id="roleCheckbox" type="checkbox" th:value="${role.uuid}" th:checked="${#sets.contains(roles,role.uuid)}" th:field="*{roles}" name="uuid_roles" >-->
                                     <input class="form-check-input" id="roleCheckbox" name="roleCheckbox" type="checkbox"
                                            th:name="uuid_roles"
                                            th:value="${itemrole.uuid}"
