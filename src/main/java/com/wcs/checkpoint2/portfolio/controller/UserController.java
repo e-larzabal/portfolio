@@ -69,11 +69,10 @@ public class UserController {
 
     @GetMapping("/admin/user/delete")
     public String deleteUser(@RequestParam UUID uuid) {
-        // delete roles
-        // TO DO?
 
         // delete a user
         userService.delete(uuid);
+
         return "redirect:/admin/users";
     }
 }
