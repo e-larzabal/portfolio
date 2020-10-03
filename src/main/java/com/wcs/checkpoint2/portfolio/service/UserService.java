@@ -81,9 +81,9 @@ public class UserService extends AbstractBaseService<User> implements UserDetail
     }
 
 
-    private boolean deleteAllRolesOfTheUser(UUID user_uuid){
+  /*  private boolean deleteAllRolesOfTheUser(UUID user_uuid){
 
         return true;
-    }
+    }*/
 }
 

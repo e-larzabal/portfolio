@@ -22,6 +22,7 @@ public class RoleController {
     public String getAll(Model model) {
         // find all roles
         model.addAttribute("roles", roleService.list());
+
         return "roles";
     }
 
@@ -36,6 +37,7 @@ public class RoleController {
             }
         }
         model.addAttribute("role", role);
+
         return "role";
     }
 
@@ -57,6 +59,7 @@ public class RoleController {
     public String deleteRole(@RequestParam UUID uuid) {
         // delete a role
         roleService.delete(uuid);
+
         return "redirect:/admin/roles";
     }
 }

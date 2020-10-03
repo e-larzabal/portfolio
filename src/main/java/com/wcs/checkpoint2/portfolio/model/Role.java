@@ -1,9 +1,6 @@
 package com.wcs.checkpoint2.portfolio.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,13 +8,13 @@ import java.util.List;
 public class Role extends BaseModel {
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REFRESH , fetch = FetchType.LAZY)
     @JoinTable(
             name = "role_privilege",
-            joinColumns = @JoinColumn(name = "role_uuid", referencedColumnName = "uuid"),
+            joinColumns        = @JoinColumn(name = "role_uuid", referencedColumnName = "uuid"),
             inverseJoinColumns = @JoinColumn(name = "privilege_uuid", referencedColumnName = "uuid"))
     private List<Privilege> privileges;
 

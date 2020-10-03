@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -70,7 +69,9 @@ public class UserController {
     public String deleteUser(@RequestParam UUID uuid) {
 
         // delete a user
-        userService.delete(uuid);
+        if (!uuid.equals(null)) {
+            userService.delete(uuid);
+        }
 
         return "redirect:/admin/users";
     }

@@ -80,11 +80,11 @@
                                      th:each="itemrole : ${allroles}"
                                      th:name="uuid_roles" >
                                     <input class="form-check-input" id="roleCheckbox" name="roleCheckbox" type="checkbox"
-                                           th:name="uuid_roles"
+                                           th:name ="uuid_roles"
                                            th:value="${itemrole.uuid}"
                                            th:field="*{roles}" >
                                     <label class="form-check-label" for="roleCheckbox"
-                                           th:text="${itemrole.description}">Role </label>
+                                           th:text="${itemrole.description}">Role</label>
                                 </div>
                             </div>
                         </div>
