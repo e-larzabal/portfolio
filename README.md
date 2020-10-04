@@ -8,7 +8,7 @@
 # Languages
 
 - Java 11
-- HTML 5 + CSS3
+- HTML 5 + CSS 3
 - JavaScript
 - SQL
 
@@ -30,3 +30,4 @@
 - IntelliJ
 - DBeaver
 - Bracket to test
+- Spring documentations and Google's researches
