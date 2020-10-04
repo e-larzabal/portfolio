@@ -153,7 +153,6 @@ a div.desc {
     top: 0;
     left: 0;
     opacity: 0.8;
-    border: 0.15rem #4d4d4d solid;
 }
 
 .mapbox-sidebar{
@@ -233,7 +232,7 @@ div.galerie li{
 
 div.galerie div a img{
     float: left;
-    width: 100px;
+    /*width: 100px;*/
 }
 
 div.galerie div a:hover img{

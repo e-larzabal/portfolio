@@ -12,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
-import java.util.UUID;
 
 
 @Service
@@ -81,9 +80,5 @@ public class UserService extends AbstractBaseService<User> implements UserDetail
     }
 
 
-  /*  private boolean deleteAllRolesOfTheUser(UUID user_uuid){
-
-        return true;
-    }*/
 }
 
