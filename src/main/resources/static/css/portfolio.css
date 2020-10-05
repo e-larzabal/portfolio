@@ -65,28 +65,30 @@ section{
     align-items: stretch;
 }
 
-.flex-langages {
+.flex-content-langage {
+    /*flex*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
     justify-content: space-around;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .flex-element-langage {
+    /*flex*/
     align-self: center;
     text-align: center;
-    margin: 1rem;
+
+    margin: 3.1rem;
     width: 10rem;
 }
 
 .flex-element-tool {
     align-self: center;
     text-align: center;
-    margin: 1rem;
-    width: 10rem;
     margin: 3.1rem;
+    width: 10rem;
 }
 
 .flex-projects {
