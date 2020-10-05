@@ -21,70 +21,154 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section id="portfolio">
-            <h3 class="h-orange" th:text="${skill.uuid} ? 'Edit Skill' : 'Create Skill'">Tool</h3>
+<main>
+    <section id="portfolio">
+        <h3 class="h-orange" th:text="${skill.uuid} ? 'Edit Skill' : 'Create Skill'">Tool</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/skill}" th:object="${skill}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/skill}" th:object="${skill}">
 
-                        <div>
-                            <input name="uid" th:field="*{uuid}" type="hidden">
+                    <div>
+                        <input name="uid" th:field="*{uuid}" type="hidden">
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="skill-name">Name :</label>
+                            <input id="skill-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-name">Name :</label>
-                                <input id="skill-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="skill-description">Description :</label>
+                            <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" >Your description</textarea>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-description">Description :</label>
-                                <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" >Your description</textarea>
-                            </div>
+                    <!--<div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="skill-iconClass">Icone class :</label>
+                            <input id="skill-iconClass" class="form-control" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
                         </div>
+                    </div>-->
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-iconClass">Icone class :</label>
-                                <input id="skill-iconClass" class="form-control" name="iconClass" placeholder="iconClass" th:field="*{iconClass}" type="text" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="skill-iconClass">Icone class :</label>
+                            <select id="skill-iconClass"  th:field="*{iconClass}">
+                                <option th:value= "icon-paintbrush"         th:text="icon-paintbrush"></option>
+                                <option th:value= "icon-upload-to-cloud"    th:text="icon-upload-to-cloud"></option>
+                                <option th:value= "icon-cloud"              th:text="icon-cloud"></option>
+                                <option th:value= "icon-earth"              th:text="icon-earth"></option>
+                                <option th:value= "icon-share"              th:text="icon-share"></option>
+                                <option th:value= "icon-film"               th:text="icon-film"></option>
+                                <option th:value= "icon-briefcase"          th:text="icon-briefcase"></option>
+                                <option th:value= "icon-support"            th:text="icon-support"></option>
+                                <option th:value= "icon-cloud2"             th:text="icon-cloud2"></option>
+                                <option th:value= "icon-map-pin"            th:text="icon-map-pin"></option>
+                                <option th:value= "icon-genius"             th:text="icon-genius"></option>
+                                <option th:value= "icon-globe"              th:text="icon-globe"></option>
+                                <option th:value= "icon-search"             th:text="icon-search"></option>
+                                <option th:value= "icon-network"            th:text="icon-network"></option>
+                                <option th:value= "icon-command"            th:text="icon-command"></option>
+                                <option th:value= "icon-classic-computer"   th:text="icon-classic-computer"></option>
+                                <option th:value= "icon-paintbrush"         th:text="icon-paintbrush"></option>
+                                <option th:value= "icon-tools-2"            th:text="icon-tools-2"></option>
+                                <option th:value= "icon-tools"              th:text="icon-tools"></option>
+                                <option th:value= "icon-toolbox"            th:text="icon-toolbox"></option>
+                                <option th:value= "icon-tools2"             th:text="icon-tools2"></option>
+                                <option th:value= "icon-bargraph"           th:text="icon-bargraph"></option>
+                                <option th:value= "icon-pricetags"          th:text="icon-pricetags"></option>
+                                <option th:value= "icon-puzzle"             th:text="icon-puzzle"></option>
+                                <option th:value= "streetsign"              th:text="streetsign"></option>
+                                <option th:value= "icon-tools"              th:text="icon-tools"></option>
+                                <option th:value= "icon-pencil"             th:text="icon-pencil"></option>
+                                <option th:value= "icon-genius"             th:text="icon-genius"></option>
+                                <option th:value= "icon-layers"             th:text="icon-layers"></option>
+                                <option th:value= "icon-lightbulb"          th:text="icon-lightbulb"></option>
+                                <option th:value= "icon-profile-female"     th:text="icon-profile-female"></option>
+                                <option th:value= "icon-strategy"           th:text="icon-strategy"></option>
+                                <option th:value= "icon-magnifying-glass"   th:text="icon-magnifying-glass"></option>
+                                <option th:value= "icon-chat"               th:text="icon-chat"></option>
+                                <option th:value= "icon-scope"              th:text="icon-scope"></option>
+                                <option th:value= "icon-shield"             th:text="icon-shield"></option>
+                                <option th:value= "icon-shrink"             th:text="icon-shrink"></option>
+                                <option th:value= "icon-signal"             th:text="icon-signal"></option>
+                                <option th:value= "icon-sound"              th:text="icon-sound"></option>
+                                <option th:value= "icon-flickr"             th:text="icon-flickr"></option>
+                                <option th:value= "icon-flickr2"            th:text="icon-flickr2"></option>
+                                <option th:value= "icon-flickr-with-circle" th:text="icon-flickr-with-circle"></option>
+                                <option th:value= "icon-flattr"             th:text="icon-flattr"</option>
+                                <option th:value= "icon-flattr2"            th:text="icon-flattr2"></option>
+                                <option th:value= "icon-circle-compass"     th:text="icon-circle-compass"></option>
+                                <option th:value= "icon-circle-up"          th:text="icon-circle-up"></option>
+                                <option th:value= "icon-circular-graph"     th:text="icon-circular-graph"></option>
+                                <option th:value= "icon-arrow-with-circle-down" th:text="icon-arrow-with-circle-down"></option>
+                                <option th:value= "icon-arrow-with-circle-left" th:text="icon-arrow-with-circle-left"></option>
+                                <option th:value= "icon-arrow-with-circle-right"    th:text="icon-arrow-with-circle-right"></option>
+                                <option th:value= "icon-arrow-with-circle-up"   th:text="icon-arrow-with-circle-up"></option>
+                                <option th:value= "icon-circle-compass"         th:text="icon-circle-compass"></option>
+                                <option th:value= "icon-circle-with-cross"      th:text="icon-circle-with-cross"></option>
+                                <option th:value= "icon-circle-right"           th:text="icon-circle-right"></option>
+                                <option th:value= "icon-dribbble-with-circle"   th:text="icon-dribbble-with-circle"></option>
+                                <option th:value= "icon-meter"              th:text="icon-meter"></option>
+                                <option th:value= "icon-meter2"             th:text="icon-meter2"></option>
+                                <option th:value= "icon-leaf"               th:text="icon-leaf"></option>
+                                <option th:value= "icon-book-open"          th:text="icon-book-open"></option>
+                                <option th:value= "icon-books"              th:text="icon-books"></option>
+                                <option th:value= "icon-reply-all"          th:text="icon-reply-all"></option>
+                                <option th:value= "icon-reply-all2"         th:text="icon-reply-all2"></option>
+                                <option th:value= "icon-hangouts"           th:text="icon-hangouts"></option>
+                                <option th:value= "icon-spell-check"        th:text="icon-spell-check"></option>
+                                <option th:value= "icon-scope"              th:text="icon-scope"></option>
+                                <option th:value= "icon-scribd"             th:text="icon-scribd"></option>
+                                <option th:value= "icon-resize-full-screen" th:text="icon-resize-full-screen"></option>
+                                <option th:value= "icon-office"             th:text="icon-office"></option>
+                                <option th:value= "icon-dial"               th:text="icon-dial"></option>
+                                <option th:value= "icon-graduation-cap"     th:text="icon-graduation-cap"></option>
+                                <option th:value= "icon-adjustments"        th:text="icon-paintbrush"></option>
+                                <option th:value= "icon-quill"              th:text="icon-quill"></option>
+                                <option th:value= "icon-plus"               th:text="icon-plus"></option>
+                                <option th:value= "icon-plus2"              th:text="icon-plus2"></option>
+                                <option th:value= "icon-plus3"              th:text="icon-plus3"></option>
+                                <option th:value= "icon-eye-plus"           th:text="icon-eye-plus"></option>
+                            </select>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="skill-order">Ordre :</label>
-                                <input id="skill-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="skill-order">Ordre :</label>
+                            <input id="skill-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary" type="submit" value="Send">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary" type="submit" value="Send">
                         </div>
+                    </div>
 
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/skills">Return to the skills list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/skills">Return to the skills list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
 </body>
 </html>
