@@ -101,9 +101,9 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="experience-logo">Logo :</label>
-                                <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
-                                <input id="experience-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
+                                <input id="experience-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="text" >
                             </div>
+                            <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogoPath()}" th:title="${experience.getLogoPath()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
                         </div>
 
                         <div class="row form-group">
