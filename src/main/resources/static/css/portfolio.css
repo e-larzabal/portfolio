@@ -42,12 +42,14 @@ section{
 .flex-column {
     display: flex;
     flex-direction: column;
+
     justify-content: space-around;
 }
 
 .flex-row {
     display: flex;
     flex-direction: row;
+
     align-content: flex-start;
     align-items: center;
     padding-top: 2px;
@@ -57,38 +59,43 @@ section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     justify-content: space-between;
     align-content: center;
     align-items: stretch;
 }
 
-.flex-langages {
+.flex-content-langage {
+    /*flex*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .flex-element-langage {
+    /*flex*/
     align-self: center;
     text-align: center;
-    margin: 1rem;
+
+    margin: 3.1rem;
     width: 10rem;
 }
 
 .flex-element-tool {
     align-self: center;
     text-align: center;
-    margin: 1rem;
-    width: 10rem;
     margin: 3.1rem;
+    width: 10rem;
 }
 
 .flex-projects {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
     justify-content: center;
 }
 
@@ -109,9 +116,14 @@ section{
    /* list-style-position: inside;*/
 }
 
+.ul-align-center {
+    margin: auto;
+    width: 200px;
+}
 
 .flex-form-div .form-control{
     display: flex;
+
     justify-content: center;
     width: 70%;
 }
@@ -181,7 +193,6 @@ a div.desc {
 .a-header-admin {
     background-color: #f9f9f9;
     margin-left: 1rem;
-    /*border : 0.08em solid #FFA939;*/
     border : 0.08em solid #C67000;
 }
 
@@ -232,7 +243,6 @@ div.galerie li{
 
 div.galerie div a img{
     float: left;
-    /*width: 100px;*/
 }
 
 div.galerie div a:hover img{
