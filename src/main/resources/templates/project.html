@@ -31,42 +31,42 @@
             <div id="fh5co-consult">
                 <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/project}" th:object="${project}">
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/project}" th:object="${project}">
 
                         <div>
                             <input name="uuid" th:field="*{uuid}" type="hidden">
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-name">Name :</label>
                                 <input id="project-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-description">Description :</label>
                                 <textarea id="project-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" >Your description </textarea>
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-dateBegin">Date start :</label>
                                 <input id="project-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-dateEnd">Date end :</label>
                                 <input id="project-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date" placeholder="yyyy-MM-dd">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-logo">Logo :</label>
                                 <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" type="text" alt="logo">
                             </div>
@@ -74,21 +74,21 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-document">Document (pdf) :</label>
                                 <input id="project-document" class="form-control" name="document" placeholder="document" th:field="*{document}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-link">Link :</label>
                                 <input id="project-link" class="form-control" name="link" placeholder="link" required th:field="*{link}" type="text">
                             </div>
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-12 flex-form-div">
+                            <div class="col-md-8 flex-form-div">
                                 <label for="project-order">Ordre :</label>
                                 <input id="project-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                             </div>
@@ -106,7 +106,7 @@
 
             <div>
                 <a href="/menu">Return to the menu</a> <br>
-                <a href="/projects">Return to the projects list</a>
+                <a href="/admin/projects">Return to the projects list</a>
             </div>
 
         </section>
@@ -114,8 +114,6 @@
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
-
-    <link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>

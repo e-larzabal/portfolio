@@ -27,48 +27,37 @@
 <main>
 
     <section>
-        <h2 class="h-orange">Login</h2>
+        <h2 class="h-orange">Please Log In</h2>
 
         <div id="fh5co-consult">
             <div class="choose animate-box">
-                <form class="pure-form pure-form-aligned">
-                    <!-- <fieldset> -->
-                        <div class="row form-group">
-                            <div class="col-md-5 flex-form-div">
-                                <label for="aligned-name">Username</label>
-                                <input class="form-control" type="text" id="aligned-name" placeholder="Username" />
-                            </div>
-                        </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-5 flex-form-div">
-                                <label for="aligned-password">Password</label>
-                                <input class="form-control" type="password" id="aligned-password" placeholder="Password" />
-                            </div>
-                        </div>
+                <div class="alert alert-error" th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div class="alert alert-success" th:if="${param.logout}">
+                    You have been logged out.
+                </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-5 flex-form-div">
-                                <label for="aligned-email">Email Address</label>
-                                <input class="form-control" type="email" id="aligned-email" placeholder="Email Address" />
-                            </div>
+                <form class="pure-form pure-form-aligned" name="f" th:action="@{/login}" method="post" action="/login">
+
+                    <div class="row form-group">
+                        <div class="col-md-5 flex-form-div">
+                            <label for="aligned-name">Username</label>
+                            <input class="form-control" type="text" id="aligned-name" name="username" placeholder="Username" value="" />
                         </div>
-                        <!--
-                        <div class="row form-group">
-                                <div class="col-md-6 flex-form-div">
-                                <label for="aligned-foo">Supercalifragilistic Label</label>
-                                <input type="text" id="aligned-foo" placeholder="Enter something here..." />
-                            </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-5 flex-form-div">
+                            <label for="aligned-password">Password</label>
+                            <input class="form-control" type="password" id="aligned-password" name="password" placeholder="Password" />
                         </div>
-                        <div class="row form-group">
-                                <div class="col-md-6 flex-form-div">
-                                <label for="aligned-cb" class="pure-checkbox">
-                                    <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions</label>
-                                <button type="submit" class="pure-button pure-button-primary">Submit</button>
-                            </div>
-                        </div>
-                        -->
-                    <!-- </fieldset>-->
+                    </div>
+
+                    <div class="col-md-5 form-group ul-align-right">
+                        <input type="submit" class="btn btn-primary"value="Log in"/>
+                    </div>
                 </form>
             </div>
         </div>
@@ -80,8 +69,6 @@
 
 <footer th:replace="fragments/footer.html :: bottom">
 </footer>
-
-<link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>

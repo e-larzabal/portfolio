@@ -16,14 +16,14 @@ public class LanguageController {
     @Autowired
     private LanguageService languageService;
 
-    @GetMapping("/languages")
+    @GetMapping("/admin/languages")
     public String getAll(Model model) {
         // find all languages
         model.addAttribute("languages", languageService.list());
         return "languages";
     }
 
-    @GetMapping("/language")
+    @GetMapping("/admin/language")
     public String getLanguage(Model model, @RequestParam(required = false) UUID uuid) {
         // find one language by uuid
         Language language = new Language();
@@ -38,7 +38,7 @@ public class LanguageController {
         return "language";
     }
 
-    @PostMapping("/language")
+    @PostMapping("/admin/language")
     public String postLanguage(@ModelAttribute Language language) {
 
         if (language.getUuid() == null) {
@@ -49,14 +49,14 @@ public class LanguageController {
             languageService.update(language);
         }
 
-        return "redirect:/languages";
+        return "redirect:/admin/languages";
     }
 
-    @GetMapping("/language/delete")
+    @GetMapping("/admin/language/delete")
     public String deleteLanguage(@RequestParam UUID uuid) {
         // delete a language
         languageService.delete(uuid);
-        return "redirect:/languages";
+        return "redirect:/admin/languages";
     }
 
 }

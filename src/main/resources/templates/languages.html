@@ -27,7 +27,7 @@
     <main>
         <section>
             <h3 class="h-orange">Language</h3>
-            <a href="/language">Add a new language !</a>
+            <a href="/admin/language">Add a new language !</a>
             <br><br>
             <table class="table">
                 <caption>List of languages</caption>
@@ -49,8 +49,8 @@
                     <td th:text="${language.description}">Description</td>
                     <td th:text="${language.order}">Ordre</td>
                     <td th:text="${language.level}">Level</td>
-                    <td><a th:href="@{/language(uuid=${language.uuid})}">Edit</a></td>
-                    <td><a th:href="@{/language/delete(uuid=${language.uuid})}">Remove</a></td>
+                    <td><a th:href="@{/admin/language(uuid=${language.uuid})}">Edit</a></td>
+                    <td><a th:href="@{/admin/language/delete(uuid=${language.uuid})}">Remove</a></td>
                 </tr>
                 </tbody>
                 <tfoot>

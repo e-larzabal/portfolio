@@ -20,14 +20,14 @@ public class ExperienceController {
     @Autowired
     private ExperienceService experienceService;
 
-    @GetMapping("/experiences")
+    @GetMapping("/admin/experiences")
     public String getAll(Model model) {
         // find all experiences
         model.addAttribute("experiences", experienceService.list());
         return "experiences";
     }
 
-    @GetMapping("/experience")
+    @GetMapping("/admin/experience")
     public String getContact(Model model, @RequestParam(required = false) UUID uuid) {
         // find one experience by uuid
         Experience experience = new Experience();
@@ -41,7 +41,7 @@ public class ExperienceController {
         return "experience";
     }
 
-    @PostMapping("/experience")
+    @PostMapping("/admin/experience")
     public String postContact(@ModelAttribute Experience experience) {
 
         if (experience.getAddress() == null) {
@@ -62,13 +62,13 @@ public class ExperienceController {
             experienceService.update(experience);
         }
 
-        return "redirect:/experiences";
+        return "redirect:/admin/experiences";
     }
 
-    @GetMapping("/experience/delete")
+    @GetMapping("/admin/experience/delete")
     public String deleteExperience(@RequestParam UUID uuid) {
         // delete a experience
         experienceService.delete(uuid);
-        return "redirect:/experiences";
+        return "redirect:/admin/experiences";
     }
 }

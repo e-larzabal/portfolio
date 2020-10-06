@@ -22,15 +22,19 @@
 <body>
     <header th:replace="fragments/header.html :: top">
     </header>
-    
-    <main>
 
+    <main>
+        <section>
+            <ul>
+                <li> Click <a th:href="@{/login}">  here</a> to login. </li>
+                <li> Click <a th:href="@{/logout}"> here</a> to logout. </li>
+                <li> Click <a th:href="@{/menu}">   here</a> to go to administration. </li>
+            </ul>
+        </section>
     </main>
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
-
-    <link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>

@@ -31,7 +31,7 @@
             <div id="fh5co-consult">
                 <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/experience}" th:object="${experience}">
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/experience}" th:object="${experience}">
 
                         <input name="uuid" th:field="*{uuid}" type="hidden">
 
@@ -101,9 +101,9 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="experience-logo">Logo :</label>
-                                <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogo()}" th:title="${experience.getLogo()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
-                                <input id="experience-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="file" >
+                                <input id="experience-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="text" >
                             </div>
+                            <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogoPath()}" th:title="${experience.getLogoPath()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
                         </div>
 
                         <div class="row form-group">
@@ -118,7 +118,7 @@
 
             <div>
                 <a href="/menu">Return to the menu</a> <br>
-                <a href="/experiences">Return to the experiences list</a>
+                <a href="/admin/experiences">Return to the experiences list</a>
             </div>
 
         </section>
@@ -126,8 +126,6 @@
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
-
-    <link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>

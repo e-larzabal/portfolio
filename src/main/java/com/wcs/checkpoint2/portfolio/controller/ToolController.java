@@ -18,14 +18,14 @@ public class ToolController {
     @Autowired
     private ToolService toolService;
 
-    @GetMapping("/tools")
+    @GetMapping("/admin/tools")
     public String getAll(Model model) {
         // find all tools
         model.addAttribute("tools", toolService.list());
         return "tools";
     }
 
-    @GetMapping("/tool")
+    @GetMapping("/admin/tool")
     public String getTool(Model model, @RequestParam(required = false) UUID uuid) {
         // find one tool by uuid
         Tool tool = new Tool();
@@ -39,7 +39,7 @@ public class ToolController {
         return "tool";
     }
 
-    @PostMapping("/tool")
+    @PostMapping("/admin/tool")
     public String postTool(@ModelAttribute Tool tool) {
 
         if (tool.getUuid() == null) {
@@ -50,13 +50,13 @@ public class ToolController {
             toolService.update(tool);
         }
 
-        return "redirect:/tools";
+        return "redirect:/admin/tools";
     }
 
-    @GetMapping("/tool/delete")
+    @GetMapping("/admin/tool/delete")
     public String deleteTool(@RequestParam UUID uuid) {
         // delete a tool
         toolService.delete(uuid);
-        return "redirect:/tools";
+        return "redirect:/admin/tools";
     }
 }

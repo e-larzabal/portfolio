@@ -18,14 +18,14 @@ public class SkillController {
     @Autowired
     private SkillService skillService;
 
-    @GetMapping("/skills")
+    @GetMapping("/admin/skills")
     public String getAll(Model model) {
         // find all skills
         model.addAttribute("skills", skillService.list());
         return "skills";
     }
 
-    @GetMapping("/skill")
+    @GetMapping("/admin/skill")
     public String getSkill(Model model, @RequestParam(required = false) UUID uuid) {
         // find one skill by uuid
         Skill skill = new Skill();
@@ -39,7 +39,7 @@ public class SkillController {
         return "skill";
     }
 
-    @PostMapping("/skill")
+    @PostMapping("/admin/skill")
     public String postSkill(@ModelAttribute Skill skill) {
 
         if (skill.getUuid() == null) {
@@ -50,13 +50,13 @@ public class SkillController {
             skillService.update(skill);
         }
 
-        return "redirect:/skills";
+        return "redirect:/admin/skills";
     }
 
-    @GetMapping("/skill/delete")
+    @GetMapping("/admin/skill/delete")
     public String deleteSkill(@RequestParam UUID uuid) {
         // delete a skill
         skillService.delete(uuid);
-        return "redirect:/skills";
+        return "redirect:/admin/skills";
     }
 }

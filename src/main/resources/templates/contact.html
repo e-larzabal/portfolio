@@ -31,7 +31,7 @@
             <div id="fh5co-consult">
                 <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/contact}" th:object="${contact}">
+                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/contact}" th:object="${contact}">
                         <input name="uuid" th:field="*{uuid}" type="hidden">
 
                         <div class="row form-group">
@@ -137,7 +137,7 @@
 
             <div>
                 <a href="/menu">Return to the menu</a> <br>
-                <a href="/contacts">Return to the contacts list</a>
+                <a href="/admin/contacts">Return to the contacts list</a>
             </div>
 
         </section>
@@ -145,8 +145,6 @@
 
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
-
-    <link rel="stylesheet" href="/javascript/portfolio.js">
 
 </body>
 </html>

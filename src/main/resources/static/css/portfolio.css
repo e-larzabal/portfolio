@@ -42,12 +42,14 @@ section{
 .flex-column {
     display: flex;
     flex-direction: column;
+
     justify-content: space-around;
 }
 
 .flex-row {
     display: flex;
     flex-direction: row;
+
     align-content: flex-start;
     align-items: center;
     padding-top: 2px;
@@ -57,38 +59,43 @@ section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     justify-content: space-between;
     align-content: center;
     align-items: stretch;
 }
 
-.flex-langages {
+.flex-content-langage {
+    /*flex*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .flex-element-langage {
+    /*flex*/
     align-self: center;
     text-align: center;
-    margin: 1rem;
+
+    margin: 3.1rem;
     width: 10rem;
 }
 
 .flex-element-tool {
     align-self: center;
     text-align: center;
-    margin: 1rem;
-    width: 10rem;
     margin: 3.1rem;
+    width: 10rem;
 }
 
 .flex-projects {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
     justify-content: center;
 }
 
@@ -109,9 +116,14 @@ section{
    /* list-style-position: inside;*/
 }
 
+.ul-align-center {
+    margin: auto;
+    width: 200px;
+}
 
 .flex-form-div .form-control{
     display: flex;
+
     justify-content: center;
     width: 70%;
 }
@@ -153,7 +165,6 @@ a div.desc {
     top: 0;
     left: 0;
     opacity: 0.8;
-    border: 0.15rem #4d4d4d solid;
 }
 
 .mapbox-sidebar{
@@ -182,7 +193,6 @@ a div.desc {
 .a-header-admin {
     background-color: #f9f9f9;
     margin-left: 1rem;
-    /*border : 0.08em solid #FFA939;*/
     border : 0.08em solid #C67000;
 }
 
@@ -201,6 +211,50 @@ a div.desc {
 
  */
 .welcome{
-    margin-left: 2rem;
+   padding-left: 2rem;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
 }
 
+
+/*
+Images animated
+ */
+
+
+#content-galerie{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-bottom:200px;
+}
+
+img{
+    border:none;
+}
+
+div.galerie li{
+    float: left;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    list-style: none;
+}
+
+div.galerie div a img{
+    float: left;
+}
+
+div.galerie div a:hover img{
+    -moz-transform: scale(1.2) rotate(-7deg);
+    -webkit-transform: scale(1.2) rotate(-7deg);
+    -o-transform: scale(1.2) rotate(-7deg);
+
+    -moz-transform-origin: bottom left;
+    -webkit-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+
+    -moz-box-shadow: 4px 4px 10px #777;
+    -webkit-box-shadow: 4px 4px 10px #777;
+    -o-box-shadow: 4px 4px 10px #777;
+}

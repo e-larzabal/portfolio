@@ -29,7 +29,7 @@
             <h3 class="h-orange">Contact</h3>
 
             <div th:if="${contacts.isEmpty()}">
-                <a href="/contact">Add a new contact !</a>
+                <a href="/admin/contact">Add a new contact !</a>
             </div>
 
             <br><br>
@@ -54,8 +54,8 @@
                         <td th:text="${contact.githubLink}">Github link </td>
                         <td th:text="${contact.linkedInLink}">linkedInLink </td>
 
-                        <td><a th:href="@{/contact(uuid=${contact.uuid})}">Edit</a></td>
-                        <td><a th:href="@{/contact/delete(uuid=${contact.uuid})}">Remove</a></td>
+                        <td><a th:href="@{/admin/contact(uuid=${contact.uuid})}">Edit</a></td>
+                        <td><a th:href="@{/admin/contact/delete(uuid=${contact.uuid})}">Remove</a></td>
                     </tr>
                 </tbody>
             </table>
