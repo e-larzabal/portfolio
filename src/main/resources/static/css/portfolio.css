@@ -150,6 +150,39 @@ a div.desc {
     padding: 2.8rem;
 }
 
+/* contact */
+
+.flex-contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.flex-element-contact-form{
+    align-self: flex-start;
+    flex: 0.75 0 auto;
+
+    padding-left: 50px;
+}
+
+.flex-element-contact-image{
+    align-self: stretch;
+    margin: 0px;
+    flex-basis: auto;
+}
+
+#img-contact{
+    margin: 0px;
+}
+
+#h2-contact {
+    margin: 70px 0px 0px 0px;
+}
+
 /*
  mapbox
 */

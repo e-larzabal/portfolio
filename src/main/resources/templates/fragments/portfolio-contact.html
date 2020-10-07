@@ -1,12 +1,17 @@
 <div th:fragment="portfolio-contact" xmlns:th="http://www.thymeleaf.org">
 
-    <div id="fh5co-consult" >
-        <div class="video fh5co-video" style="background-image: url(/img/SJDL_port.jpg);">
-          <div class="overlay "></div>
+    <div class="flex-contact">
+        <div class="flex-element-contact-image">
+            <img id="img-contact" src="/img/SJDL_port.jpg" alt="Image of the port of Saint-Jean de luz (64) with the Rhune mountain" width="700rem"/>
         </div>
 
-        <div class="choose animate-box">
-            <h2>Contact</h2>
+        <div class="flex-element-contact-form">
+            <div class="row animate-box">
+                <div class="col-md-8 fh5co-heading">
+                    <h2 id="h2-contact">Contact</h2>
+                </div>
+            </div>
+
             <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
                 <div class="row form-group">
                     <div class="col-md-8">
@@ -21,19 +26,19 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <label for="email" hidden></label>
                         <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <label for="subject" hidden></label>
                         <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <label for="message" hidden></label>
                         <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
                     </div>
@@ -44,6 +49,6 @@
                 </div>
             </form>
         </div>
-    </div>
 
+    </div>
 </div>
