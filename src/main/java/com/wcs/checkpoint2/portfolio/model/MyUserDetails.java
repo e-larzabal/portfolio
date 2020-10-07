@@ -3,11 +3,13 @@ package com.wcs.checkpoint2.portfolio.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Transactional
 public class MyUserDetails implements UserDetails {
     private User user;
 

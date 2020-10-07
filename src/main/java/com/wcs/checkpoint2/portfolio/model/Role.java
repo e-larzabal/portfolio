@@ -11,7 +11,7 @@ public class Role extends BaseModel {
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.REFRESH , fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.REFRESH)
     @JoinTable(
             name = "role_privilege",
             joinColumns        = @JoinColumn(name = "role_uuid", referencedColumnName = "uuid"),
