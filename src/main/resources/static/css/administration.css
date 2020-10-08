@@ -1,0 +1,15 @@
+/*
+fragments administration
+ */
+
+.h-orange {
+    color : #FF9000;
+    text-decoration: underline;
+    text-shadow: 1px 1px 0px #FF9000;;
+    padding: 0.75em 0.75em 0.75em 0.75em;
+}
+
+/* language.html */
+.btn-admin {
+    margin: 30px 15px 15px 5px;
+}

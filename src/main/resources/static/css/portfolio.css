@@ -2,24 +2,18 @@
     portfolio.css
  */
 
-.img-lauburu {
-    border : 0.08em solid #666666;
-}
+/*
+ fragments administration
+ */
+@import url('header.css');
+@import url('administration.css');
 
-.btn-admin {
-    margin: 30px 15px 15px 5px;
-}
-
+/*
+ portfolio-skill.html : liste
+ */
 .text-color-white {
     color : rgba(255, 255, 255, 0.7);
     text-align: left;
-}
-
-.h-orange {
-    color : #FF9000;
-    text-decoration: underline;
-    text-shadow: 1px 1px 0px #FF9000;;
-    padding: 0.75em 0.75em 0.75em 0.75em;
 }
 
 div img {
@@ -55,6 +49,11 @@ section{
     padding-top: 2px;
 }
 
+.flex-element{
+    align-self: flex-start;
+    flex: 1 0 auto;
+}
+
 .flex-form-div {
     display: flex;
     flex-direction: row;
@@ -66,7 +65,6 @@ section{
 }
 
 .flex-content-langage {
-    /*flex*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -76,7 +74,6 @@ section{
 }
 
 .flex-element-langage {
-    /*flex*/
     align-self: center;
     text-align: center;
 
@@ -118,7 +115,7 @@ section{
 
 .ul-align-center {
     margin: auto;
-    width: 200px;
+    width: 250px;
 }
 
 .flex-form-div .form-control{
@@ -219,35 +216,8 @@ a div.desc {
     margin: 10px 0 10px 0;
 }
 
-/*
- links
-*/
-
-.a-header-admin {
-    background-color: #f9f9f9;
-    margin-left: 1rem;
-    border : 0.08em solid #C67000;
-}
-
-.a-header-admin:hover {
-    background-color: #f9f9f9;
-    color : darkgrey;
-}
-
-.a-header-admin:visited {
-    background-color: #f9f9f9;
-    color : #666666;
-}
 
 
-/*
-
- */
-.welcome{
-   padding-left: 2rem;
-   padding-top: 2rem;
-   padding-bottom: 2rem;
-}
 
 
 /*
