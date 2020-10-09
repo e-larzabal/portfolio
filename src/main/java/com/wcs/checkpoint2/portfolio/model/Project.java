@@ -21,6 +21,7 @@ public class Project extends BaseLogoModel implements Comparable<Project> {
     private Date dateEnd;
     private String link;
     private String document;
+    private String github;
 
     public Project() { }
 
@@ -32,6 +33,8 @@ public class Project extends BaseLogoModel implements Comparable<Project> {
     public void setLink(String link) { this.link = link; }
     public String getDocument() { return document; }
     public void setDocument(String document) { this.document = document; }
+    public String getGithub() { return github; }
+    public void setGithub(String github) { this.github = github; }
 
     @Override
     public int compareTo(Project project) {
