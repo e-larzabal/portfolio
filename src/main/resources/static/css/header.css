@@ -1,32 +1,34 @@
 /* Style pour la navigation à un seul niveau : header de la partie administration */
-@media screen and (min-width: 30em){
 
-    .img-lauburu {
-        border : 0.08em solid #666666;
-        margin: 2rem;
-    }
+.img-lauburu {
+    border : 0.08em solid #666666;
+    margin: 2rem;
+}
 
-    .menu-list-container{
-        display: flex;
-        flex-wrap: wrap;
+.header-nav{
+    width: 75%;
+}
 
-        padding-bottom:2rem;
-        width: 100rem;
-        list-style-type: none;
-    }
-    .menu-list-element {
-        flex: 1 0 auto;
-        text-align: center;
-    }
+.menu-li{
+    background-color: #444444;
+    border : 0.08em solid #666666;
+}
+.menu-li:hover {
+    background-color: #e7e7e7;
+}
+.menu-li:visited {
+    background-color: #761c19;
+}
 
-    .menu-li{
-        background-color: #444444;
-        border : 0.08em solid #666666;
-    }
-    .menu-li:hover {
-        background-color: #e7e7e7;
-    }
-    .menu-li:visited {
-        background-color: #761c19;
-    }
+.menu-list-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-bottom: 2rem;
+    list-style-type: none;
+}
+
+.menu-list-element {
+    flex: 1 0 auto;
+    text-align: center;
 }
