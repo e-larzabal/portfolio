@@ -12,19 +12,10 @@
 @import url('portfolio-contact.css');
 @import url('portfolio-language-tool.css');
 @import url('portfolio-mapbox.css');
+@import url('portfolio-skill.css');
 
 
 
-
-
-
-/*
- portfolio-skill.html : liste
- */
-.text-color-white {
-    color : rgba(255, 255, 255, 0.7);
-    text-align: left;
-}
 
 div img {
     margin: 5px;
