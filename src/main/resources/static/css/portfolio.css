@@ -1,15 +1,22 @@
-/*
-    portfolio.css
- */
+/* portfolio.css */
 
 /*
- fragments administration
+ fragments administration part
  */
 @import url('header.css');
 @import url('administration.css');
+
+/*
+ fragments portfolio part
+ */
 @import url('portfolio-contact.css');
 @import url('portfolio-language-tool.css');
 @import url('portfolio-mapbox.css');
+
+
+
+
+
 
 /*
  portfolio-skill.html : liste
