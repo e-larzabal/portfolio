@@ -10,11 +10,11 @@
 }
 
 .menu-li{
-    background-color: #444444;
-    border : 0.08em solid #666666;
+    background-color: #101010;
+    border: 1px solid #FF9000;
 }
 .menu-li:hover {
-    background-color: #e7e7e7;
+    background-color: #8a6d3b;
 }
 .menu-li:visited {
     background-color: #761c19;
@@ -26,6 +26,7 @@
 
     padding-bottom: 2rem;
     list-style-type: none;
+
 }
 
 .menu-list-element {

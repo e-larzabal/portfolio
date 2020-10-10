@@ -1,0 +1,58 @@
+/* menu.css */
+
+.nav-advanced{
+    margin-left: 30px;
+}
+
+.nav-advanced-ul{
+    list-style-type: none;
+    background-color: #101010;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-advanced-ul li{
+    border: 1px solid #FF9000;
+}
+
+.nav-advanced-ul li:hover {
+    background-color: #8a6d3b;
+}
+
+/* a : flex container */
+.nav-advanced li a{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* div : flex element */
+.nav-advanced-icon{
+    font-size: 1.8em;
+    flex: 0 0 1.5em; /* <div> : flex element of a flex container */
+    margin: 0.6rem;
+}
+
+.nav-advanced-text{
+    font-size: 1.2em;
+    margin: 0.6rem;
+}
+
+.nav-advanced-text span{
+    display: block; /* description détaillée */
+    font-size: .5em; /* 50% de la taille de l'élément parent */
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@media screen and (min-width: 30em){
+    /* ul : flex container => liste sur plusieurs lignes sur des écrans plus petits */
+    .nav-advanced-ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nav-advanced-ul li{
+        flex: 1 0 12em;
+        display: flex;
+    }
+}
