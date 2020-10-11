@@ -14,8 +14,17 @@
 @import url('portfolio-language-tool.css');
 @import url('portfolio-mapbox.css');
 @import url('portfolio-skill.css');
+@import url('portfolio-header.css');
 
 
+.gototop a {
+    margin: 0.3em;
+}
+/*
+.gototop a i:hover {
+    background: #FF9000;
+    border: 0.01em white solid;
+}*/
 
 
 

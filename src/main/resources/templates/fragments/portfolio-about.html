@@ -31,9 +31,19 @@
                         <ul class="fh5co-social-icons">
                             <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
                             <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
-                            <li><a href="#" th:href="${contact.linkedInLink}" target="_blank"><i class="icon-linkedin2" ></i></a></li>
+                            <li>
+                                <a href="#" th:href="${contact.linkedInLink}" target="_blank">
+                                    <i class="icon-linkedin2" ></i>
+                                    <span class="screen-reader-text">LinkedIn link</span>
+                                </a>
+                            </li>
                             <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
-                            <li><a href="#" th:href="${contact.githubLink}" target="_blank"><i class="icon-github2" ></i></a></li>
+                            <li>
+                                <a href="#" th:href="${contact.githubLink}" target="_blank">
+                                    <i class="icon-github2" ></i>
+                                    <span class="screen-reader-text">Github link</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
