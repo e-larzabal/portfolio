@@ -1,0 +1,33 @@
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    flex: 0 1 calc(50% - 1em);
+}
+
+.card div:hover {
+    box-shadow: 3px 3px 8px hsl(0, 0%, 100%);
+}
+
+.card-content{
+    font-family: "Space Mono", Arial, serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    font-size: 80%;
+    line-height: 1.7;
+    color: #4d4d4d;
+    background: #fff;
+    /*padding: 1.4em;*/
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content p{
+    flex-grow: 1;
+}
