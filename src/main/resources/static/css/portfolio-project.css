@@ -1,14 +1,5 @@
 
-.cards{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
-.card{
-    flex: 0 1 calc(50% - 1em);
-}
 
 .card div:hover {
     box-shadow: 3px 3px 8px hsl(0, 0%, 100%);
@@ -22,12 +13,37 @@
     line-height: 1.7;
     color: #4d4d4d;
     background: #fff;
-    /*padding: 1.4em;*/
+    padding: 0.5em;
 
     display: flex;
     flex-direction: column;
 }
 
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 .card-content p{
     flex-grow: 1;
+}
+
+@media screen and (min-width: 30em){
+    .card{
+        flex: 1 0 100%; /* 1 project in a line */
+        margin-top: 1em;
+        align-self: stretch;
+    }
+}
+
+@media screen and (min-width: 70em) {
+    .card{
+        flex: 0 1 calc(50% - 0.5em); /* 2 projects in a line */
+        margin-top: 1em;
+        align-self: stretch;
+    }
 }

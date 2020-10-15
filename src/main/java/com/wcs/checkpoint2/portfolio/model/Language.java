@@ -1,7 +1,6 @@
 package com.wcs.checkpoint2.portfolio.model;
 
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
