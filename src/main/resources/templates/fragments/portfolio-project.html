@@ -11,21 +11,19 @@
 
                 <div class="cards">
                     <div class="card" th:each="project : ${projects}">
-                        <div>
+                        <div class="card-content">
 
-                            <label for="document" hidden="hidden">document:</label>
+                            <!--<label for="document" hidden="hidden">document:</label>-->
                             <a id="document" href="" class="work" target="_blank" title="Download project's document"
                                th:href="|/download/${project.getDocument()}|"
                                th:style="|background-image: url(${project.getLogoPath()}); |" >
                             </a>
 
-                            <label for="github" hidden="hidden">github:</label>
-                            <a id="github" href="" class="work card-github" target="_blank" title="Go to Github project"
+                            <!--<label for="github" hidden="hidden">github:</label>-->
+                            <a id="github" href="" class="work" target="_blank" title="Go to Github project"
                                th:href="${project.getGithub()}" >
-                                <div class="card-content">
-                                    <h3 th:text="${project.name}">Project Name</h3>
-                                    <p th:utext="${project.description}">Description</p>
-                                </div>
+                                <h3 th:text="${project.name}">Project Name</h3>
+                                <div th:utext="${project.description}">Description</div>
                             </a>
 
                         </div>

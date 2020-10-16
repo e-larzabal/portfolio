@@ -33,7 +33,12 @@ public class ContactAPIController {
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     public Optional<Contact> get(@PathVariable UUID uuid){
-       return contactService.find(uuid);
+       //TODO update test
+       if (uuid.equals(null) || uuid.toString().length()<10){
+           throw new ResponseStatusException(HttpStatus.NOT_FOUND,"uuid is null or invalid");
+       }
+
+        return contactService.find(uuid);
     }
 
     // CRUD : R
@@ -56,6 +61,11 @@ public class ContactAPIController {
     @ResponseBody
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> delete(@PathVariable UUID uuid){
+        //TODO update test
+        if (uuid.equals(null) || uuid.toString().length()<10){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"uuid is null or invalid");
+        }
+
         boolean isDeleted = contactService.delete(uuid);
         if (isDeleted) {
             return null;
