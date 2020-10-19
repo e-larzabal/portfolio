@@ -10,9 +10,8 @@
                 </div>
 
                 <div class="cards">
-                    <div class="card" th:each="project : ${projects}">
-                        <div class="card-content">
-
+                    <article class="card" th:each="project : ${projects}">
+                        <div class="card-content" >
                             <!--<label for="document" hidden="hidden">document:</label>-->
                             <a id="document" href="" class="work" target="_blank" title="Download project's document"
                                th:href="|/download/${project.getDocument()}|"
@@ -25,9 +24,8 @@
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <div class="" th:utext="${project.description}">Description</div>
                             </a>
-
                         </div>
-                    </div>
+                    </article>
                 </div>
 
             </section>

@@ -1,17 +1,4 @@
 
-.cards{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.card{
-    flex : 1 0 auto;
-    display: flex;
-
-    margin-top: 1em;
-}
 
 .card div:hover {
     box-shadow: 3px 3px 8px hsl(0, 0%, 100%);
@@ -28,18 +15,35 @@
 
 .card-content div{
     color: #4d4d4d;
-    flex : 1 0 100%;
+    /*flex : 1 0 100%;*/
 }
 
+a#document{
+    background-position: right top; /* image of project */
+}
+
+a#github.work{
+    padding: .75em .75em .75em .75em; /* description of project */
+}
 
 @media screen and (min-width: 30em){
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     .card{
         flex: 1 0 100%; /* 1 project in a line */
+        display : flex;
+        margin-top: 1em;
     }
 }
 
 @media screen and (min-width: 70em) {
     .card{
         flex: 0 1 calc(50% - 0.5em); /* 2 projects in a line */
+        display : flex;
     }
 }
