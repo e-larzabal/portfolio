@@ -11,25 +11,20 @@
 
                 <div class="cards">
                     <article class="card" th:each="project : ${projects}">
-                        <div class="card-content" >
-                            <div>
-                                <!--<label for="document" hidden="hidden">document:</label>-->
-                                <a id="document" href="" class="work" target="_blank" title="Download project's document"
-                                   th:href="|/download/${project.getDocument()}|"
-                                   th:style="|background-image: url(${project.getLogoPath()}); |" >
-                                </a>
-                            </div>
 
-                            <div>
-                                <!--<label for="github" hidden="hidden">github:</label>-->
-                                <a id="github" href="" class="work" target="_blank" title="Go to Github project"
-                                   th:href="${project.getGithub()}" >
-                                    <h3 th:text="${project.name}">Project Name</h3>
-                                    <div class="" th:utext="${project.description}">Description</div>
-                                </a>
-                            </div>
+                            <!--<label for="document" hidden="hidden">document:</label>-->
+                            <a id="document" href="" class="work" target="_blank" title="Download project's document"
+                               th:href="|/download/${project.getDocument()}|"
+                               th:style="|background-image: url(${project.getLogoPath()}); |" >
+                            </a>
 
-                        </div>
+                            <!--<label for="github" hidden="hidden">github:</label>-->
+                            <a id="github" href=""                target="_blank" title="Go to Github project"
+                               th:href="${project.getGithub()}" >
+                                <h3 th:text="${project.name}">Project Name</h3>
+                                <div class="" th:utext="${project.description}">Description</div>
+                            </a>
+
                     </article>
                 </div>
 
