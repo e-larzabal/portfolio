@@ -3,25 +3,24 @@
 /*
  fragments administration part
  */
-@import url('header.css');
 @import url('administration.css');
+@import url('header.css');
 @import url('menu.css');
 
 /*
  fragments portfolio part
  */
 @import url('portfolio-contact.css');
+@import url('portfolio-header.css');
 @import url('portfolio-language-tool.css');
 @import url('portfolio-mapbox.css');
-@import url('portfolio-skill.css');
-@import url('portfolio-header.css');
 @import url('portfolio-project.css');
+@import url('portfolio-skill.css');
 
 
 .gototop a {
     margin: 0.3em;
 }
-
 
 div img {
     margin: 5px;
@@ -54,11 +53,6 @@ section{
     align-content: flex-start;
     align-items: center;
     padding-top: 2px;
-}
-
-.flex-element{
-    align-self: flex-start;
-    flex: 1 0 auto;
 }
 
 .flex-form-div {
