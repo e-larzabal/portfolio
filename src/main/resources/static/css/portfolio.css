@@ -21,12 +21,6 @@
 .gototop a {
     margin: 0.3em;
 }
-/*
-.gototop a i:hover {
-    background: #FF9000;
-    border: 0.01em white solid;
-}*/
-
 
 
 div img {
@@ -75,30 +69,6 @@ section{
     justify-content: space-between;
     align-content: center;
     align-items: stretch;
-}
-
-.flex-content-langage {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    align-content: flex-start;
-}
-
-.flex-element-langage {
-    align-self: center;
-    text-align: center;
-
-    margin: 3.1rem;
-    width: 10rem;
-}
-
-.flex-element-tool {
-    align-self: center;
-    text-align: center;
-    margin: 3.1rem;
-    width: 10rem;
 }
 
 .ul-align-right {

@@ -28,7 +28,7 @@ div.galerie div a img{
     float: left;
 }
 
-div.galerie div a:hover img{
+.grid-container div a:hover img{
     -moz-transform: scale(1.2) rotate(-7deg);
     -webkit-transform: scale(1.2) rotate(-7deg);
     -o-transform: scale(1.2) rotate(-7deg);
@@ -40,4 +40,25 @@ div.galerie div a:hover img{
     -moz-box-shadow: 4px 4px 10px #777;
     -webkit-box-shadow: 4px 4px 10px #777;
     -o-box-shadow: 4px 4px 10px #777;
+}
+
+.grid-container div{
+    align-self: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 40em){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        grid-gap: 2em;
+    }
+}
+
+@media screen and (min-width: 70em) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(5 , 1fr);
+        grid-gap: 2em;
+    }
 }
