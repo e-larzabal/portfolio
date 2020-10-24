@@ -1,5 +1,11 @@
 # Welcome to my portfolio!
 
+# Why this project?
+
+There are two reasons.
+- It is an ideal exercise to take stock of techniques and skills seen and acquired.
+- It is an essential element for a web developer in addition to a resume-CV.
+
 # Informations
 
 - Repository name :  biarritz-202007-java-poec-checkpoint2
@@ -10,7 +16,7 @@
 - Java 11
 - HTML 5 + CSS 3
 - JavaScript
-- SQL
+- no SQL because Spring data JPA+Hibernate are used
 
 # Libraries
 
@@ -30,4 +36,5 @@
 - IntelliJ
 - DBeaver
 - Bracket to test
+- Postman to test APIs
 - Spring documentations and Google's researches

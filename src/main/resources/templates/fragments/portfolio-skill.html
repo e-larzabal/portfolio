@@ -9,12 +9,12 @@
                     </div>
                 </div>
 
-                <div class="row flex-skill">
+                <div class="row">
                     <div th:each="skill : ${skills}" >
-                        <div class="col-md-4 text-center flex-element-skill">
+                        <div class="col-md-4 text-center">
                             <div class="feature-left">
                                 <span class="icon"> <i th:class="${skill.iconClass}" class="icon-paintbrush"></i> </span>
-                                <div class="feature-copy">
+                                <div>
                                     <h3 th:text="${skill.name}">Name of skill</h3>
                                     <p th:utext="${skill.description}">Description</p>
                                 </div>

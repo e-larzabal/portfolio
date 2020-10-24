@@ -17,30 +17,35 @@
         <div class="mapbox-box mapbox-sidebar ">
             <form id="params">
 
-                <h4 class="txt-m txt-bold mb6">Chose a travel mode:</h4>
+                <h4 class="txt-m txt-bold mb6">Mode de déplacement:</h4>
                 <div>
+                    <label for="walking" hidden></label>
+                    <input id="walking" name="profile" type="radio" value="walking">
+                    <div class="radio-inline">Marche</div>
 
-                    <input name="profile" type="radio" value="walking">
-                    <div class="radio-inline">Walking</div>
+                    <label for="cycling" hidden></label>
+                    <input id="cycling" name="profile" type="radio" value="cycling" >
+                    <div class="radio-inline">Vélo</div>
 
-                    <input name="profile" type="radio" value="cycling" >
-                    <div class="radio-inline">Cycling</div>
-
-                    <input name="profile" type="radio" value="driving" checked>
-                    <div class="radio-inline">Driving</div>
+                    <label for="driving" hidden></label>
+                    <input id="driving" name="profile" type="radio" value="driving" checked>
+                    <div class="radio-inline">Voiture</div>
 
                 </div>
 
-                <h4 class="txt-m txt-bold mb6">Chose a maximum duration:</h4>
+                <h4 class="txt-m txt-bold mb6">Durée maximum:</h4>
                 <div>
 
-                    <input name="duration" type="radio" value="10" >
+                    <label for="10min" hidden></label>
+                    <input id="10min" name="duration" type="radio" value="10" >
                     <div class="radio-inline">10 min</div>
 
-                    <input name="duration" type="radio" value="20">
+                    <label for="20min" hidden></label>
+                    <input id="20min" name="duration" type="radio" value="20">
                     <div class="radio-inline">20 min</div>
 
-                    <input name="duration" type="radio" value="30" checked>
+                    <label for="30min" hidden></label>
+                    <input id="30min" name="duration" type="radio" value="30" checked>
                     <div class="radio-inline">30 min</div>
 
                 </div>

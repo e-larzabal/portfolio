@@ -19,8 +19,8 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h3 class="timeline-title" th:text="${experience.name}">Experience</h3>
-                                    <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
-                                    <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} - ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
+                                    <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} * ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
+                                    <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} * ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
                                 <div class="timeline-body">
                                     <p th:utext="${experience.description}">description</p>

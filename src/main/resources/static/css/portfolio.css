@@ -1,25 +1,25 @@
+/* portfolio.css */
+
 /*
-    portfolio.css
+ fragments administration part
  */
+@import url('administration.css');
+@import url('header.css');
+@import url('menu.css');
 
-.img-lauburu {
-    border : 0.08em solid #666666;
-}
+/*
+ fragments portfolio part
+ */
+@import url('portfolio-contact.css');
+@import url('portfolio-header.css');
+@import url('portfolio-language-tool.css');
+@import url('portfolio-mapbox.css');
+@import url('portfolio-project.css');
+@import url('portfolio-skill.css');
 
-.btn-admin {
-    margin: 30px 15px 15px 5px;
-}
 
-.text-color-white {
-    color : rgba(255, 255, 255, 0.7);
-    text-align: left;
-}
-
-.h-orange {
-    color : #FF9000;
-    text-decoration: underline;
-    text-shadow: 1px 1px 0px #FF9000;;
-    padding: 0.75em 0.75em 0.75em 0.75em;
+.gototop a {
+    margin: 0.3em;
 }
 
 div img {
@@ -65,47 +65,6 @@ section{
     align-items: stretch;
 }
 
-.flex-content-langage {
-    /*flex*/
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    align-content: flex-start;
-}
-
-.flex-element-langage {
-    /*flex*/
-    align-self: center;
-    text-align: center;
-
-    margin: 3.1rem;
-    width: 10rem;
-}
-
-.flex-element-tool {
-    align-self: center;
-    text-align: center;
-    margin: 3.1rem;
-    width: 10rem;
-}
-
-.flex-projects {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    justify-content: center;
-}
-
-.flex-element-projects {
-    align-self: center;
-    margin: 4px;
-    width: 100%;
-    flex: 0 1 auto;
-}
-
 .ul-align-right {
     text-align: right;
     list-style-position: inside;
@@ -118,7 +77,7 @@ section{
 
 .ul-align-center {
     margin: auto;
-    width: 200px;
+    width: 250px;
 }
 
 .flex-form-div .form-control{
@@ -132,129 +91,17 @@ section #fh5co-consult .choose {
     width: 100%;
 }
 
-/* projects : hover description's marge */
-a div.desc {
-    padding: 2rem;
-}
-
+/* portfolio-about.html + portfolio-header.html */
 .fh5co-social-icons {
     margin: 3rem;
     padding: 0;
 }
 
+/* portfolio-experience-formation.html */
 #h3-formation {
     margin: 30px 0px 20px 0;
 }
 
-.feature-copy{
-    padding: 2.8rem;
-}
-
-/*
- mapbox
-*/
-
-.mapbox-container{
-    position: relative;
-}
-
-.mapbox-box{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-}
-
-.mapbox-sidebar{
-    z-index: 9;
-    padding: 0.5rem;
-    margin: 2rem;
-    width: 30rem;
-    height: 15rem;
-    background-color: #f9f9f9;
-    border-radius : 6px 5px 6px 5px;
-}
-
-.radio-inline{
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#params h4{
-    margin: 10px 0 10px 0;
-}
-
-/*
- links
-*/
-
-.a-header-admin {
-    background-color: #f9f9f9;
-    margin-left: 1rem;
-    border : 0.08em solid #C67000;
-}
-
-.a-header-admin:hover {
-    background-color: #f9f9f9;
-    color : darkgrey;
-}
-
-.a-header-admin:visited {
-    background-color: #f9f9f9;
-    color : #666666;
-}
 
 
-/*
 
- */
-.welcome{
-   padding-left: 2rem;
-   padding-top: 2rem;
-   padding-bottom: 2rem;
-}
-
-
-/*
-Images animated
- */
-
-
-#content-galerie{
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    margin-bottom:200px;
-}
-
-img{
-    border:none;
-}
-
-div.galerie li{
-    float: left;
-    margin: 0 10px;
-    padding: 10px;
-    border: 1px solid #dddddd;
-    list-style: none;
-}
-
-div.galerie div a img{
-    float: left;
-}
-
-div.galerie div a:hover img{
-    -moz-transform: scale(1.2) rotate(-7deg);
-    -webkit-transform: scale(1.2) rotate(-7deg);
-    -o-transform: scale(1.2) rotate(-7deg);
-
-    -moz-transform-origin: bottom left;
-    -webkit-transform-origin: bottom left;
-    -o-transform-origin: bottom left;
-
-    -moz-box-shadow: 4px 4px 10px #777;
-    -webkit-box-shadow: 4px 4px 10px #777;
-    -o-box-shadow: 4px 4px 10px #777;
-}

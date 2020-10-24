@@ -2,26 +2,35 @@
 
     <div id="fh5co-work" class="fh5co-bg-dark">
         <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Projets</h2>
-                </div>
-            </div>
-
-            <div class="flex-projects ">
-                <div th:each="project : ${projects}" >
-                    <div class="flex-element-projects ">
-                        <a th:href="|/download/${project.getDocument()}|" href="" class="work" th:style="|background-image: url(${project.getLogoPath()}); |" target="_blank">
-                            <div class="desc">
-                                <h3 th:text="${project.name}">Project Name</h3>
-                                <span th:utext="${project.description}">Illustration</span>
-                            </div>
-                        </a>
+            <section>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>Mes projets</h2>
                     </div>
                 </div>
-            </div>
 
+                <div class="cards">
+                    <article class="card" th:each="project : ${projects}">
+
+                            <!--<label for="document" hidden="hidden">document:</label>-->
+                            <a id="document" href="" class="work" target="_blank" title="Download project's document"
+                               th:href="|/download/${project.getDocument()}|"
+                               th:style="|background-image: url(${project.getLogoPath()}); |" >
+                            </a>
+
+                            <!--<label for="github" hidden="hidden">github:</label>-->
+                            <a id="github" href=""                target="_blank" title="Go to Github project"
+                               th:href="${project.getGithub()}" >
+                                <h3 th:text="${project.name}">Project Name</h3>
+                                <div class="" th:utext="${project.description}">Description</div>
+                            </a>
+
+                    </article>
+                </div>
+
+            </section>
         </div>
     </div>
+
 
 </div>

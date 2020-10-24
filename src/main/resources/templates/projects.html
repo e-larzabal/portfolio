@@ -37,7 +37,7 @@
                 <tr>
                     <th>Uuid</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Github's link</th>
                     <th>Order</th>
                     <th></th>
                     <th></th>
@@ -47,7 +47,7 @@
                 <tr th:each="project : ${projects}">
                     <td th:text="${project.uuid}">UUID</td>
                     <td th:text="${project.name}">Name</td>
-                    <td th:text="${project.description}">Description</td>
+                    <td th:text="${project.github}">Github's link</td>
                     <td th:text="${project.order}">Ordre</td>
                     <td><a th:href="@{/admin/project(uuid=${project.uuid})}">Edit</a></td>
                     <td><a th:href="@{/admin/project/delete(uuid=${project.uuid})}">Remove</a></td>
@@ -57,7 +57,7 @@
                     <tr>
                         <th>Uuid</th>
                         <th>Name</th>
-                        <th>Description</th>
+                        <th>Github's link</th>
                         <th>Order</th>
                         <th></th>
                         <th></th>

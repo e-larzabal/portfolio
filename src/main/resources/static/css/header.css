@@ -1,0 +1,35 @@
+/* Style pour la navigation à un seul niveau : header de la partie administration */
+
+.img-lauburu {
+    border : 0.08em solid #666666;
+    margin: 2rem;
+}
+
+.header-nav{
+    width: 75%;
+}
+
+.menu-li{
+    background-color: #101010;
+    border: 1px solid #FF9000;
+}
+.menu-li:hover {
+    background-color: #f7e1b5;;
+}
+.menu-li:visited {
+    background-color: #761c19;
+}
+
+.menu-list-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-bottom: 2rem;
+    list-style-type: none;
+
+}
+
+.menu-list-element {
+    flex: 1 0 auto;
+    text-align: center;
+}

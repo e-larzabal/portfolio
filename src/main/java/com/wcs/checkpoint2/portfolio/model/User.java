@@ -23,7 +23,7 @@ public class User extends BaseModel implements Serializable, UserDetails {
     private boolean credentialsNonExpired = true;
     private boolean accountNonLocked = true;
 
-    @ManyToMany()
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="user_role",
             joinColumns        = @JoinColumn(name="user_uuid", referencedColumnName = "uuid"),
             inverseJoinColumns = @JoinColumn(name="role_uuid", referencedColumnName = "uuid"))

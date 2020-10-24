@@ -1,0 +1,56 @@
+
+
+article:hover {
+    box-shadow: 3px 3px 8px hsl(0, 0%, 100%);
+}
+
+.cards article{
+    font-family: "Space Mono", Arial, serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    font-size: 80%;
+    line-height: 1.7;
+}
+
+a#document{
+    background-position: 50% 50%; /* image of project */
+}
+
+a#github{
+    padding: .75em .75em .75em .75em; /* description of project */
+    color: #4d4d4d;
+    /*background-color: #fff ;*/
+}
+
+.cards{
+    display: flex;
+    /*flex-direction: row; /* axe principal : row-ligne */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 40em){
+    .card{
+        flex: 1 0 100%; /* 1 project in a line */
+
+        background-color: #fff ;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (min-width: 70em) {
+    .card{
+        flex: 0 1 calc(50% - 0.5em); /* 2 projects in a line */
+        display: flex;
+        flex-direction: column;
+
+        background-color: #fff ;
+        margin-top: 1em;
+    }
+
+    a#github {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

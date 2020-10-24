@@ -1,0 +1,50 @@
+/* menu.css */
+
+
+.nav-advanced-ul{
+    list-style-type: none;
+    background-color: white;
+    margin: 2em;
+    width: 75%;
+
+    display: grid;
+    grid-gap: .5em;
+}
+
+.nav-advanced-ul li{
+    background-color: #101010;
+}
+
+.nav-advanced-ul li:hover {
+    background-color: #f7e1b5;
+}
+
+.nav-advanced-icon{
+    font-size: 1.8em;
+    flex: 0 0 1.5em; /* <div> : flex element of a flex container */
+    margin: 0.6rem;
+}
+
+.nav-advanced-text{
+    font-size: 1.2em;
+    margin: 0.6rem;
+}
+
+.nav-advanced-text span{
+    display: block; /* description détaillée */
+    font-size: .5em; /* 50% de la taille de l'élément parent */
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@media screen and (min-width: 40em){
+    .nav-advanced-ul{
+        grid-template-columns: repeat(3 , 1fr);
+    }
+}
+
+@media screen and (min-width: 70em) {
+    .nav-advanced-ul{
+        grid-template-columns: repeat(4 , 1fr);
+    }
+}

@@ -1,0 +1,37 @@
+/* portfolio-mapbox.css */
+
+/*
+ mapbox
+*/
+
+.mapbox-container{
+    position: relative;
+}
+
+.mapbox-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.mapbox-sidebar{
+    z-index: 9;
+    padding: 0.5rem;
+    margin: 2rem;
+    width: 30rem;
+    height: 15rem;
+    background-color: #f9f9f9;
+    border-radius : 6px 5px 6px 5px;
+}
+
+.radio-inline{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#params h4{
+    margin: 10px 0 10px 0;
+}
