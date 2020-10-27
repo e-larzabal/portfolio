@@ -16,9 +16,8 @@
 
 .grid-container-header{
     display: grid;
+    grid-template-columns: 100px 1fr;
     grid-gap: 2px;
-    grid-template-columns: auto 1fr ;
-    grid-template-rows: auto 1fr;
     grid-template-areas:
         "lauburu welcome "
         "menu    menu ";
@@ -43,22 +42,16 @@
     margin: 2rem;
 }
 
-.grid-item-header-ul{
-    display: grid;
+.grid-container-header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
     width: 75%;
     list-style-type: none;
 }
 
-@media screen and (min-width: 40em){
-    .grid-item-header-ul{
-        grid-template-columns: repeat(3 , 1fr);
-        grid-template-rows: 1fr 1fr;
-    }
-}
-
-@media screen and (min-width: 70em) {
-    .grid-item-header-ul{
-        grid-template-columns: repeat(5 , 1fr);
-        grid-template-rows: 1fr;
-    }
+.grid-container-header nav ul li{
+    padding: 0.5rem 2rem;
+    flex : 1 0 20%; /* 20% x 5 li = 100% */
 }
