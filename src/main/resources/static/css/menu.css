@@ -37,6 +37,8 @@
     font-style: italic;
 }
 
+
+
 @media screen and (min-width: 40em){
     .nav-advanced-ul{
         grid-template-columns: repeat(3 , 1fr);

@@ -4,3 +4,15 @@
     color : rgba(255, 255, 255, 0.7);
     text-align: left;
 }
+
+
+/* List into description : center into the cell */
+
+.skill-grid-ul{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* add a left and right marge */
+}
+
+.skill-grid-ul li{
+   grid-column: 2 / 3; /* place <li> into the center column of the grid */
+}

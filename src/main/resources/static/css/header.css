@@ -1,35 +1,57 @@
 /* Style pour la navigation à un seul niveau : header de la partie administration */
 
-.img-lauburu {
-    border : 0.08em solid #666666;
-    margin: 2rem;
-}
-
-.header-nav{
-    width: 75%;
-}
-
 .menu-li{
     background-color: #101010;
     border: 1px solid #FF9000;
+    text-align: center;
 }
+
 .menu-li:hover {
     background-color: #f7e1b5;;
 }
+
 .menu-li:visited {
     background-color: #761c19;
 }
 
-.menu-list-container {
-    display: flex;
-    flex-wrap: wrap;
-
-    padding-bottom: 2rem;
-    list-style-type: none;
-
+.grid-container-header{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-gap: 2px;
+    grid-template-areas:
+        "lauburu welcome "
+        "menu    menu ";
 }
 
-.menu-list-element {
-    flex: 1 0 auto;
-    text-align: center;
+.grid-container-header figure{
+    grid-area: lauburu;
+}
+
+.grid-container-header h1{
+    grid-area: welcome;
+    text-align: left;
+    padding: 40px 0;
+}
+
+.grid-container-header nav{
+    grid-area: menu;
+}
+
+.grid-container-header figure img{
+    border : 0.08em solid #666666;
+    margin: 2rem;
+}
+
+.grid-container-header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    width: 75%;
+    list-style-type: none;
+}
+
+.grid-container-header nav ul li{
+    padding: 0.5rem 2rem;
+    flex : 1 0 20%; /* 20% x 5 li = 100% */
 }

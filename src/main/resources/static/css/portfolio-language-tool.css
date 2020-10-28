@@ -47,18 +47,9 @@ div.galerie div a img{
     text-align: center;
 }
 
-@media screen and (min-width: 40em){
-    .grid-container{
-        display: grid;
-        grid-template-columns: repeat(3 , 1fr);
-        grid-gap: 2em;
-    }
+.grid-container{
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill,180px);
 }
 
-@media screen and (min-width: 70em) {
-    .grid-container{
-        display: grid;
-        grid-template-columns: repeat(5 , 1fr);
-        grid-gap: 2em;
-    }
-}
