@@ -8,7 +8,13 @@
     overflow: hidden;
 }
 
+div.profile-thumb[style]{
+    transition: border 0.2s, transform 0.2s 0.2s;
+}
+
 div.profile-thumb[style]:hover {
     transform: scale(1.1);
     border: 1px solid #4d4d4d;
+
+    transition: transform 0.2s,  border 0.2s 0.2s;
 }
