@@ -9,13 +9,25 @@
 }
 
 div.profile-thumb[style]{
-    /*border: 1px solid #4d4d4d;*/
+    /* Transition to normal state */
     transition: border 0.2s, transform 0.2s 0.2s;
+
+    /* Animation on loading page */
+    animation-name: logoAnimation;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: none;
 }
 
 div.profile-thumb[style]:hover {
     transform: scale(1.1);
     border: 3px outset #4d4d4d;
 
+    /* Transition to hover state */
     transition: transform 0.2s,  border 0.2s 0.2s;
+}
+
+@keyframes logoAnimation {
+    from {transform: rotate(0);}
+    to {transform: rotate(1turn)}
 }
