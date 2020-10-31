@@ -13,10 +13,13 @@ div.profile-thumb[style]{
     transition: border 0.2s, transform 0.2s 0.2s;
 
     /* Animation on loading page */
-    animation-name: logoAnimation;
+    animation-name: animationTurnLogo;
     animation-duration: 3s;
     animation-delay: 1s;
-    animation-fill-mode: none;
+    animation-fill-mode: backwards;
+    /*animation-iteration-count: 2;*/
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
 }
 
 div.profile-thumb[style]:hover {
@@ -25,9 +28,18 @@ div.profile-thumb[style]:hover {
 
     /* Transition to hover state */
     transition: transform 0.2s,  border 0.2s 0.2s;
+
+    /* Animation on loading page */
+    animation-play-state: paused;
 }
 
-@keyframes logoAnimation {
-    from {transform: rotate(0);}
-    to {transform: rotate(1turn)}
+@keyframes animationTurnLogo {
+    from {
+        transform: rotate(0);
+        opacity: 0;
+    }
+    to   {
+        transform: rotate(1turn);
+        opacity: 1;
+    }
 }
