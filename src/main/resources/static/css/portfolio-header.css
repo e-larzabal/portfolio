@@ -1,9 +1,45 @@
 /* portfolio-header.css */
 
 .screen-reader-text{
-    clip: rect(1px, 1px, 1px);
+    clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
     height: 1px;
     width: 1px;
     overflow: hidden;
+}
+
+div.profile-thumb[style]{
+    /* Transition to normal state */
+    transition: border 0.2s, transform 0.2s 0.2s;
+
+    /* Animation on loading page */
+    animation-name: animationTurnLogo;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    /*animation-iteration-count: 2;*/
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+}
+
+div.profile-thumb[style]:hover {
+    transform: scale(1.1);
+    border: 3px outset #4d4d4d;
+
+    /* Transition to hover state */
+    transition: transform 0.2s,  border 0.2s 0.2s;
+
+    /* Animation on loading page */
+    animation-play-state: paused;
+}
+
+@keyframes animationTurnLogo {
+    from {
+        transform: rotate(0);
+        opacity: 0;
+    }
+    to   {
+        transform: rotate(1turn);
+        opacity: 1;
+    }
 }
