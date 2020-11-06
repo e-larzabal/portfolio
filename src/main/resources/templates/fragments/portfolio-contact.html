@@ -34,7 +34,12 @@
                 <div class="row form-group">
                     <div class="col-md-12">
                         <label for="subject" hidden></label>
-                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message">
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message" list="subject-list">
+                        <datalist id="subject-list">
+                            <option value="Demande d'informations" />
+                            <option value="Demande de contact" />
+                            <option value="Retour(s) sur le site" />
+                        </datalist>
                     </div>
                 </div>
                 <div class="row form-group">
