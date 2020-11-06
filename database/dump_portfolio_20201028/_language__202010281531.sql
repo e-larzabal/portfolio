@@ -1,3 +1,16 @@
+-- portfolio.`language` definition
+
+CREATE TABLE `language` (
+  `uuid` varchar(255) NOT NULL,
+  `description` varchar(1500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.`language` (uuid,description,`level`,name,logo,order_view) VALUES
 	 ('15c27250-1c63-4566-91d1-177132866edf','AGL DevOps N°1 en France','EXPERT','Windev & Webdev','language_WLangage.jpeg',2),
 	 ('593a6d8a-d204-459b-a6d1-7b00a4388cbb','CSS est un langage qui décrit le style d''un document HTML. CSS décrit comment les éléments HTML doivent être affichés.','DEBUTANT','CSS3','language_CSS3.jpeg',4),

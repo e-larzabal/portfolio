@@ -1,3 +1,15 @@
+-- portfolio.tool definition
+
+CREATE TABLE `tool` (
+  `uuid` varchar(255) NOT NULL,
+  `description` varchar(3000) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.tool (uuid,description,logo,name,order_view) VALUES
 	 ('08976ca8-d947-4fc2-99bd-2c92b6564667','Thymeleaf ','logo-thymeleaf.jpeg','Thymeleaf ',12),
 	 ('0c9c7f47-9871-43ae-87af-e0b7a95501d5','Ubuntu','logo_Ubuntu.jpeg','Ubuntu',3),

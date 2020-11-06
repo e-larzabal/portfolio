@@ -1,3 +1,20 @@
+-- portfolio.formation definition
+
+CREATE TABLE `formation` (
+  `uuid` varchar(255) NOT NULL,
+  `description` varchar(1500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `diploma` varchar(1500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `number_years_after_bac` int DEFAULT NULL,
+  `school_name` varchar(255) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `date_begin` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.formation (uuid,description,diploma,name,number_years_after_bac,school_name,logo,date_begin,date_end,order_view) VALUES
 	 ('830dd07f-9049-4cfe-a3d5-6bf13ceaf58f','<p>
  <ul>
