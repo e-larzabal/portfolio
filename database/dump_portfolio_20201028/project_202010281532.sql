@@ -1,3 +1,20 @@
+-- portfolio.project definition
+
+CREATE TABLE `project` (
+  `uuid` varchar(255) NOT NULL,
+  `description` varchar(3000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `date_begin` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  `document` varchar(255) DEFAULT NULL,
+  `github` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.project (uuid,description,date_begin,date_end,logo,name,link,order_view,document,github) VALUES
 	 ('1bf29ffc-5c4e-4179-a167-f47b8f8b2eb0','<p>
 <div>

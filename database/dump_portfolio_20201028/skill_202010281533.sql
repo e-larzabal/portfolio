@@ -1,3 +1,16 @@
+-- portfolio.skill definition
+
+CREATE TABLE `skill` (
+  `uuid` varchar(255) NOT NULL,
+  `description` varchar(3000) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  `icon_class` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.skill (uuid,description,logo,name,order_view,icon_class) VALUES
 	 ('007150f5-7580-4351-85c1-5198411fa7ea','Rédaction CDCs,<br>rapports de réunion, documentation technique.',NULL,'Analyse',3,'icon-search'),
 	 ('8ab7cbc2-89ef-4169-988c-2a4d9d71d004','<ul class="skill-grid-ul">
@@ -16,4 +29,5 @@ INSERT INTO portfolio.skill (uuid,description,logo,name,order_view,icon_class) V
  <li class="text-color-white">Persévérante.</li> 
 </ul>',NULL,'Qualités',6,'icon-pricetags'),
 	 ('c8f184b0-b37d-490c-b6a5-e97a677f2997','Conception & développement<br> en <strong>Java</strong>, <strong>HTML5</strong>, <br><strong>CSS3</strong> & <strong>Javascript</strong>.',NULL,'Développement Web',2,'icon-code'),
-	 ('ee2d90fe-a0f1-40a0-8960-e3e610c9d556','Gestion de projet<br>itérative<br>& collaborative.',NULL,'Méthode Agile',1,'icon-puzzle');
+	 ('ee2d90fe-a0f1-40a0-8960-e3e610c9d556','Gestion de projet<br>itérative<br>& collaborative.
+',NULL,'Méthode Agile',1,'icon-puzzle');

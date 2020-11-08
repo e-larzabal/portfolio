@@ -1,3 +1,23 @@
+-- portfolio.experience definition
+
+CREATE TABLE `experience` (
+  `uuid` varchar(255) NOT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `line1` varchar(255) DEFAULT NULL,
+  `line2` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `zip_code` int DEFAULT NULL,
+  `date_begin` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `description` varchar(1500) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `society` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `order_view` int DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 INSERT INTO portfolio.experience (uuid,city,line1,line2,phone,zip_code,date_begin,date_end,description,logo,society,name,order_view) VALUES
 	 ('9ca7457e-cb37-4841-98fd-d5f6ad272ddf','Saint-Jean de luz','Centre d''affaire','ZI de Jalday',NULL,64500,'2000-03-27','2000-10-31','<p>
  <ul>
