@@ -20,6 +20,7 @@ There are two reasons.
 
 # Libraries
 
+ - maven
  - spring-boot-starter-data-jpa
  - spring-boot-starter-web
  - spring-boot-devtools
