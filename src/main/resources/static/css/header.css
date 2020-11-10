@@ -57,3 +57,11 @@
     padding: 0.5rem 2rem;
     flex : 1 0 20%; /* 20% x 5 li = 100% */
 }
+
+.menu-li label{
+    display: flex;
+}
+
+.menu-li label a{
+    flex : 1 0 auto;
+}
