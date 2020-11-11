@@ -40,7 +40,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="formation-name">Name :</label>
-                                <input id="formation-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
+                                <input id="formation-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -54,14 +55,16 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="formation-schoolName">School name :</label>
-                                <input id="formation-schoolName" class="form-control" name="schoolName" placeholder="schoolName" required th:field="*{schoolName}" type="text">
+                                <input id="formation-schoolName" class="form-control" name="schoolName" placeholder="schoolName" th:field="*{schoolName}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="formation-diploma">Diploma :</label>
-                                <input id="formation-diploma" class="form-control" name="diploma" placeholder="diploma" required th:field="*{diploma}" type="text">
+                                <input id="formation-diploma" class="form-control" name="diploma" placeholder="diploma" th:field="*{diploma}"
+                                       type="text" maxlength="1500" required >
                             </div>
                         </div>
 
@@ -89,7 +92,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="formation-logo">Logo :</label>
-                                <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}" type="text" >
+                                <input id="formation-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
+                                       type="text" maxlength="255" >
                             </div>
                             <img th:if="${formation.getLogo() != null}" th:src="${formation.getLogoPath()}" th:title="${formation.getLogoPath()}" th:alt="${formation.getName()}" src="" alt="" width="75" />
                         </div>

@@ -40,7 +40,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="tool-name">Name :</label>
-                                <input id="tool-name" class="form-control" name="name" placeholder="name" required th:field="*{name}" type="text">
+                                <input id="tool-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -54,7 +55,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="tool-logo">Logo :</label>
-                                <input id="tool-logo" class="form-control" name="logo" placeholder="logo" required th:field="*{logo}" type="text" >
+                                <input id="tool-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
+                                       type="text" maxlength="255" required >
                             </div>
                             <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogoPath()}" th:title="${tool.getLogoPath()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
                         </div>

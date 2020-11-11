@@ -37,14 +37,16 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="contact-name">Firstname :</label>
-                                <input id="contact-name" class="form-control" name="firstName" placeholder="firstName" required th:field="*{firstName}" type="text">
+                                <input id="contact-name" class="form-control" name="firstName" placeholder="firstName" th:field="*{firstName}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="school-lastName">Lastname :</label>
-                                <input id="school-lastName" class="form-control" name="lastName" placeholder="lastName" required th:field="*{lastName}" type="text">
+                                <input id="school-lastName" class="form-control" name="lastName" placeholder="lastName" th:field="*{lastName}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -72,21 +74,24 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="contact-profession">Profession :</label>
-                                <input id="contact-profession" class="form-control" name="profession" placeholder="profession" required th:field="*{profession}" type="text">
+                                <input id="contact-profession" class="form-control" name="profession" placeholder="profession" th:field="*{profession}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-line1">Address line 1 :</label>
-                                <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" required th:field="*{address.line1}" type="text">
+                                <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" th:field="*{address.line1}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-line2">Address line 2 :</label>
-                                <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" required th:field="*{address.line2}" type="text">
+                                <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" th:field="*{address.line2}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -100,7 +105,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-city">Address city :</label>
-                                <input id="address-city" class="form-control" name="address-city" placeholder="address-city" required th:field="*{address.city}" type="text">
+                                <input id="address-city" class="form-control" name="address-city" placeholder="address-city" th:field="*{address.city}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
