@@ -40,7 +40,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="project-name">Name :</label>
-                                <input id="project-name" name="name" class="form-control" placeholder="name" required th:field="*{name}" type="text">
+                                <input id="project-name" name="name" class="form-control" placeholder="name" th:field="*{name}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -68,7 +69,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="project-logo">Logo :</label>
-                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" type="text" alt="logo">
+                                <input id="project-logo" class="form-control" name="logo" placeholder="logo" th:value="${project.logo}" th:field="*{logo}" alt="logo"
+                                       type="text" maxlength="255" >
                             </div>
                             <img th:if="${project.getLogo() != null}" th:src="${project.getLogoPath()}" th:title="${project.getLogoPath()}" th:alt="${project.getName()}" src="" alt="" width="75" />
                         </div>
@@ -76,21 +78,24 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="project-document">Document (pdf) :</label>
-                                <input id="project-document" class="form-control" name="document" placeholder="document" th:field="*{document}" type="text">
+                                <input id="project-document" class="form-control" name="document" placeholder="document" th:field="*{document}"
+                                       type="text" maxlength="255" >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="project-link">Link :</label>
-                                <input id="project-link" class="form-control" name="link" placeholder="link" required th:field="*{link}" type="text">
+                                <input id="project-link" class="form-control" name="link" placeholder="link" th:field="*{link}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="project-github">Github's link :</label>
-                                <input id="project-github" class="form-control" name="github" placeholder="github" required th:field="*{github}" type="text">
+                                <input id="project-github" class="form-control" name="github" placeholder="github" th:field="*{github}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 

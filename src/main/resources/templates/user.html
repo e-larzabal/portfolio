@@ -40,7 +40,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="user-username">Username :</label>
-                                <input id="user-username" class="form-control" name="username" placeholder="username" required th:field="*{username}" type="text" >
+                                <input id="user-username" class="form-control" name="username" placeholder="username" th:field="*{username}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
@@ -48,28 +49,32 @@
                             <div class="col-md-8 flex-form-div">
                                 <label for="user-password">Password :</label>
                                 <input class="checkbox-inline" type="checkbox" onclick="showThePassword()">Show password
-                                <input id="user-password" class="form-control" name="password" placeholder="password" required th:field="*{password}" type="password" >
+                                <input id="user-password" class="form-control" name="password" placeholder="password" required th:field="*{password}"
+                                       type="password" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="user-firstname">Firstname :</label>
-                                <input id="user-firstname" class="form-control" name="firstname" placeholder="firstname" required th:field="*{firstName}" type="text">
+                                <input id="user-firstname" class="form-control" name="firstname" placeholder="firstname" th:field="*{firstName}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="user-lastname">Lastname :</label>
-                                <input id="user-lastname" class="form-control" name="lastname" placeholder="lastname" required th:field="*{lastName}" type="text">
+                                <input id="user-lastname" class="form-control" name="lastname" placeholder="lastname" th:field="*{lastName}"
+                                       type="text" maxlength="255" required >
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="user-email">Email :</label>
-                                <input id="user-email" class="form-control" name="email" placeholder="email" required th:field="*{email}" type="email">
+                                <input id="user-email" class="form-control" name="email" placeholder="email" th:field="*{email}"
+                                       type="email" maxlength="255" required >
                             </div>
                         </div>
 
