@@ -1,32 +1,47 @@
 /* portfolio-contact.css */
 
-.flex-contact{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+#h2-contact{
+    margin-top: 70px;
+}
 
+.contact-grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas:
+            "margetop photo margebottom"
+            "margetop form  margebottom";
+    margin-bottom: 70px;
+}
+
+.contact-grid-item-marge-top{
+    grid-area: margetop;
+}
+
+.contact-grid-item-image{
+    grid-area: photo;
+    display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    align-content: flex-start;
 }
 
-.flex-element-contact-form{
-    align-self: flex-start;
-    flex: 0.75 0 auto;
-
-    padding-left: 50px;
+.contact-grid-item-image img{
+    flex : 1 0 250px;
+}
+.contact-grid-item-form{
+    grid-area: form;
 }
 
-.flex-element-contact-image{
-    align-self: stretch;
-    margin: 0px;
-    flex-basis: auto;
+.contact-grid-item-marge-bottom{
+    grid-area: margebottom;
 }
 
-#img-contact{
-    margin: 0px;
-}
-
-#h2-contact {
-    margin: 70px 0px 0px 0px;
+@media screen and (min-width: 1024px) {
+    .contact-grid-container{
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 150px 1fr 2fr 150px;
+        grid-template-areas:
+        "margetop photo form margebottom";
+    }
 }
