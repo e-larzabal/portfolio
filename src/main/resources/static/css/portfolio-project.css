@@ -17,13 +17,13 @@ a#document{
 }
 
 a#github{
-    padding: .75em .75em .75em .75em; /* description of project */
+    padding: 3px 3px; /* description of project */
     color: #4d4d4d;
     /*background-color: #fff ;*/
 }
 
 a#github div, a#github h3{
-    padding: 3px 3px;
+    padding: 3px 5px 3px 5px;
 }
 
 .cards{
