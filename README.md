@@ -8,7 +8,7 @@ There are two reasons.
 
 # Informations
 
-- Repository name :  biarritz-202007-java-poec-checkpoint2
+- Repository name : 'biarritz-202007-java-poec-checkpoint2' then 'portfolio'
 - Duration : 1 day for the checkpoint2 and open to finish
 
 # Languages
