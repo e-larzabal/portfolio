@@ -1,59 +1,61 @@
 <div th:fragment="portfolio-contact" xmlns:th="http://www.thymeleaf.org">
 
-    <div class="flex-element-contact-image">
-        <img id="img-contact" src="/img/SJDL_port.jpg" alt="Image of the port of Saint-Jean de luz (64) with the Rhune mountain" width="700rem"/>
-    </div>
+    <div class="row animate-box">
+        <div class="contact-grid-container">
+            <div class="contact-grid-item-marge-top"></div>
 
-    <div class="flex-contact">
+            <div class="contact-grid-item-image">
+                <img src="/img/SJDL_port.jpg" alt="Image of the port of Saint-Jean de luz (64) with the Rhune mountain" width="250px"/>
+            </div>
 
-        <div class="flex-element-contact-form">
-            <div class="row animate-box">
+            <div class="contact-grid-item-form">
                 <div class="col-md-8 fh5co-heading">
                     <h2 id="h2-contact">Contact</h2>
                 </div>
+                <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
+                    <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="firstName" hidden></label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom" required >
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="lastName" hidden></label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom" required >
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="email" hidden></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail" required >
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="subject" hidden></label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message" list="subject-list">
+                            <datalist id="subject-list">
+                                <option value="Demande d'informations" />
+                                <option value="Demande de contact" />
+                                <option value="Retour(s) sur le site" />
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="message" hidden></label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Envoyer le message" class="btn btn-primary">
+                    </div>
+                </form>
             </div>
 
-            <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
-                <div class="row form-group">
-                    <div class="col-md-8">
-                        <label for="firstName" hidden></label>
-                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom" required >
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-8">
-                        <label for="lastName" hidden></label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom" required >
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label for="email" hidden></label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail" required >
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label for="subject" hidden></label>
-                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Votre sujet du message" list="subject-list">
-                        <datalist id="subject-list">
-                            <option value="Demande d'informations" />
-                            <option value="Demande de contact" />
-                            <option value="Retour(s) sur le site" />
-                        </datalist>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label for="message" hidden></label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Envoyer le message" class="btn btn-primary">
-                </div>
-            </form>
+            <div class="contact-grid-item-marge-bottom"></div>
         </div>
 
     </div>
