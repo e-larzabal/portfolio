@@ -22,6 +22,10 @@ a#github{
     /*background-color: #fff ;*/
 }
 
+a#github div, a#github h3{
+    padding: 3px 3px;
+}
+
 .cards{
     display: flex;
     /*flex-direction: row; /* axe principal : row-ligne */
