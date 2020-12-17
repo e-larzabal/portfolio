@@ -1,34 +1,41 @@
 <div th:fragment="portfolio-contact" xmlns:th="https://www.thymeleaf.org">
 
     <div class="row animate-box">
+
+
+
         <div class="contact-grid-container">
+
             <div class="contact-grid-item-marge-top"></div>
+            <div class="contact-grid-item-marge-left"></div>
+            <div class="contact-grid-item-marge-right"></div>
+
+            <div class="col-md-8 fh5co-heading contact-grid-item-title">
+                <h2 id="h2-contact">Contact</h2>
+            </div>
 
             <div class="contact-grid-item-image">
                 <img src="/img/SJDL_port.jpg" alt="Image of the port of Saint-Jean de luz (64) with the Rhune mountain" width="250px"/>
             </div>
 
             <div class="contact-grid-item-form">
-                <div class="col-md-8 fh5co-heading">
-                    <h2 id="h2-contact">Contact</h2>
-                </div>
                 <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
                     <div class="row form-group">
                         <div class="col-md-8">
                             <label for="firstName" hidden></label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom" required >
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Votre prénom&ast;" required >
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-8">
                             <label for="lastName" hidden></label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom" required >
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Votre nom&ast;" required >
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label for="email" hidden></label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail" required >
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse mail&ast;" required >
                         </div>
                     </div>
                     <div class="row form-group">
@@ -45,7 +52,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label for="message" hidden></label>
-                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Votre message&ast;" required></textarea>
                         </div>
                     </div>
 
