@@ -24,5 +24,11 @@ public class BaseModel {
         this.uuid = uuid;
     }
     public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        if (description.length() > 3000){
+            this.description = description.substring(0,3000);
+        } else {
+          this.description = description;
+        }
+    }
 }

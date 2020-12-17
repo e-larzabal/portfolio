@@ -48,7 +48,8 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="role-description">Label :</label>
-                                <input id="role-description" class="form-control" name="description" placeholder="description" required th:field="*{description}" type="text">
+                                <input id="role-description" class="form-control" name="description" placeholder="description" th:field="*{description}"
+                                       type="text" maxlength="3000" required >
                             </div>
                         </div>
 

@@ -48,7 +48,10 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="tool-description">Description :</label>
-                                <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" th:field="*{description}" >Your description</textarea>
+                                <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10" maxlength="3000"
+                                          placeholder="description" th:field="*{description}" >
+                                    Your description
+                                </textarea>
                             </div>
                         </div>
 
