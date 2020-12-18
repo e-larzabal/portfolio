@@ -21,76 +21,79 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section>
-            <h3 class="h-orange" th:text="${tool.uuid} ? 'Edit Tool' : 'Create Tool'">Tool</h3>
+<main>
+    <section>
+        <h3 class="h-orange" th:text="${tool.uuid} ? 'Edit Tool' : 'Create Tool'">Tool</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/tool}" th:object="${tool}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/tool}" th:object="${tool}">
 
-                        <div>
-                            <input name="uid" th:field="*{uuid}" type="hidden">
+                    <div>
+                        <input name="uid" th:field="*{uuid}" type="hidden">
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="tool-name">Name :</label>
+                            <input id="tool-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="tool-name">Name :</label>
-                                <input id="tool-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="tool-logo">Logo :</label>
+                            <input id="tool-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
+                                   type="text" maxlength="255" required >
                         </div>
+                        <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogoPath()}" th:title="${tool.getLogoPath()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="tool-description">Description :</label>
-                                <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10" maxlength="3000"
-                                          placeholder="description" th:field="*{description}" >
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="tool-order">Ordre :</label>
+                            <input id="tool-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 ">
+                            <label for="tool-description">Description :</label>
+                            <textarea id="tool-description" class="form-control" name="description" cols="30" rows="10"
+                                      placeholder="description" required th:field="*{description}"
+                                      maxlength="3000" onkeyup="countChars(this);">
                                     Your description
-                                </textarea>
-                            </div>
+                            </textarea>
+                            <div id="charNumber"></div>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="tool-logo">Logo :</label>
-                                <input id="tool-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
-                                       type="text" maxlength="255" required >
-                            </div>
-                            <img th:if="${tool.getLogo() != null}" th:src="${tool.getLogoPath()}" th:title="${tool.getLogoPath()}" th:alt="${tool.getName()}" src="" alt="" width="75" />
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary" type="submit" value="Send">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="tool-order">Ordre :</label>
-                                <input id="tool-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary" type="submit" value="Send">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/tools">Return to the tools list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/tools">Return to the tools list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>

@@ -47,16 +47,6 @@
 
                     <div class="row form-group">
                         <div class="col-md-8 flex-form-div">
-                            <label for="skill-description">Description :</label>
-                            <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10" maxlength="3000"
-                                      placeholder="description" th:field="*{description}" >
-                                Your description
-                            </textarea>
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-md-8 flex-form-div">
                             <label for="skill-iconClass">Icone class :</label>
                             <select id="skill-iconClass"  th:field="*{iconClass}" class="form-control">
                                 <option th:value= "icon-paintbrush"         th:text="icon-paintbrush"></option>
@@ -149,6 +139,18 @@
                     </div>
 
                     <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="skill-description">Description :</label>
+                            <textarea id="skill-description" class="form-control" name="description" cols="30" rows="10"
+                                          placeholder="description" required th:field="*{description}"
+                                          maxlength="3000" onkeyup="countChars(this);">
+                                Your description
+                            </textarea>
+                            <div id="charNumber"></div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
                         <div class="col-md-6">
                             <input class="btn-primary" type="submit" value="Send">
                         </div>
@@ -169,5 +171,6 @@
 <footer th:replace="fragments/footer.html :: bottom">
 </footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>

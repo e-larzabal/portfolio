@@ -125,9 +125,14 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
+                            <div class="col-md-8 ">
                                 <label for="contact-description">Presentation :</label>
-                                <textarea id="contact-description" class="form-control" name="contact-description" cols="30" rows="10"  placeholder="contact-description" required th:field="*{description}" maxlength="3000">Your message </textarea>
+                                <textarea id="contact-description" class="form-control" name="contact-description" cols="30" rows="10"
+                                          placeholder="contact-description" required th:field="*{description}"
+                                          maxlength="3000" onkeyup="countChars(this);">
+                                    Your message
+                                </textarea>
+                                <div id="charNumber"></div>
                             </div>
                         </div>
 
@@ -152,5 +157,6 @@
     <footer th:replace="fragments/footer.html :: bottom">
     </footer>
 
+    <script src="/javascript/portfolio.js"></script>
 </body>
 </html>

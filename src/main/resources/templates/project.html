@@ -21,124 +21,126 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section>
-            <h3 class="h-orange" th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
+<main>
+    <section>
+        <h3 class="h-orange" th:text="${project.uuid} ? 'Edit Project' : 'Create Project'">Formation</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/project}" th:object="${project}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/project}" th:object="${project}">
 
-                        <div>
-                            <input name="uuid" th:field="*{uuid}" type="hidden">
+                    <div>
+                        <input name="uuid" th:field="*{uuid}" type="hidden">
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-name">Name :</label>
+                            <input id="project-name" name="name" class="form-control"
+                                   placeholder="name" th:field="*{name}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-name">Name :</label>
-                                <input id="project-name" name="name" class="form-control"
-                                       placeholder="name" th:field="*{name}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-dateBegin">Date start :</label>
+                            <input id="project-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date"
+                                   placeholder="yyyy-MM-dd">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-description">Description :</label>
-                                <textarea id="project-description" class="form-control" name="description"
-                                          cols="30" rows="10" maxlength="3000"
-                                          placeholder="description" required th:field="*{description}" >
-                                    Your description
-                                </textarea>
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-dateEnd">Date end :</label>
+                            <input id="project-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date"
+                                   placeholder="yyyy-MM-dd">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-dateBegin">Date start :</label>
-                                <input id="project-dateBegin" class="form-control" name="startdate" required th:field="*{dateBegin}" type="date"
-                                       placeholder="yyyy-MM-dd">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-logo">Logo :</label>
+                            <input id="project-logo" class="form-control" name="logo"
+                                   placeholder="logo" th:value="${project.logo}" th:field="*{logo}" alt="logo"
+                                   type="text" maxlength="255" >
                         </div>
+                        <img th:if="${project.getLogo() != null}" th:src="${project.getLogoPath()}" th:title="${project.getLogoPath()}" th:alt="${project.getName()}" src="" alt="" width="75" />
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-dateEnd">Date end :</label>
-                                <input id="project-dateEnd" class="form-control" name="dateEnd" required th:field="*{dateEnd}" type="date"
-                                       placeholder="yyyy-MM-dd">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-document">Document (pdf) :</label>
+                            <input id="project-document" class="form-control" name="document"
+                                   placeholder="document" th:field="*{document}"
+                                   type="text" maxlength="255" >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-logo">Logo :</label>
-                                <input id="project-logo" class="form-control" name="logo"
-                                       placeholder="logo" th:value="${project.logo}" th:field="*{logo}" alt="logo"
-                                       type="text" maxlength="255" >
-                            </div>
-                            <img th:if="${project.getLogo() != null}" th:src="${project.getLogoPath()}" th:title="${project.getLogoPath()}" th:alt="${project.getName()}" src="" alt="" width="75" />
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-link">Link :</label>
+                            <input id="project-link" class="form-control" name="link"
+                                   placeholder="link" th:field="*{link}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-document">Document (pdf) :</label>
-                                <input id="project-document" class="form-control" name="document"
-                                       placeholder="document" th:field="*{document}"
-                                       type="text" maxlength="255" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-github">Github's link :</label>
+                            <input id="project-github" class="form-control" name="github"
+                                   placeholder="github" th:field="*{github}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-link">Link :</label>
-                                <input id="project-link" class="form-control" name="link"
-                                       placeholder="link" th:field="*{link}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="project-order">Ordre :</label>
+                            <input id="project-order" class="form-control" name="order"
+                                   placeholder="order" th:field="*{order}"
+                                   type="number" >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-github">Github's link :</label>
-                                <input id="project-github" class="form-control" name="github"
-                                       placeholder="github" th:field="*{github}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="project-description">Description :</label>
+                            <textarea id="project-description" class="form-control" name="description" cols="30" rows="10"
+                                      placeholder="description" required th:field="*{description}"
+                                      maxlength="3000" onkeyup="countChars(this);">
+                                Your description
+                            </textarea>
+                            <div id="charNumber"></div>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="project-order">Ordre :</label>
-                                <input id="project-order" class="form-control" name="order"
-                                       placeholder="order" th:field="*{order}"
-                                       type="number" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary" type="submit" value="Send">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary" type="submit" value="Send">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/projects">Return to the projects list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/projects">Return to the projects list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>

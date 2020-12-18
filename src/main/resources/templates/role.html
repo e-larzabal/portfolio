@@ -21,58 +21,63 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section>
-            <h3 class="h-orange" th:text="${role.uuid} ? 'Edit Role' : 'Create Role'">Role</h3>
+<main>
+    <section>
+        <h3 class="h-orange" th:text="${role.uuid} ? 'Edit Role' : 'Create Role'">Role</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/role}" th:object="${role}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/role}" th:object="${role}">
 
-                        <div>
-                            <input name="uid" th:field="*{uuid}" type="hidden">
+                    <div>
+                        <input name="uid" th:field="*{uuid}" type="hidden">
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="role-name">Name :</label>
+                            <input id="role-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="role-name">Name :</label>
-                                <input id="role-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="role-description">Label :</label>
+                            <textarea id="role-description" class="form-control" name="description" cols="30" rows="10"
+                                      placeholder="description" required th:field="*{description}"
+                                      maxlength="3000" onkeyup="countChars(this);">
+                                Your description
+                            </textarea>
+                            <div id="charNumber"></div>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="role-description">Label :</label>
-                                <input id="role-description" class="form-control" name="description" placeholder="description" th:field="*{description}"
-                                       type="text" maxlength="3000" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary" type="submit" value="Send">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary" type="submit" value="Send">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/roles">Return to the roles list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/roles">Return to the roles list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>

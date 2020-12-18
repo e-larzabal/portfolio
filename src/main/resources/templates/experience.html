@@ -21,117 +21,122 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section>
-            <h3 class="h-orange" th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
+<main>
+    <section>
+        <h3 class="h-orange" th:text="${experience.uuid} ? 'Edit experience' : 'Create experience'">Contact</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/experience}" th:object="${experience}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/experience}" th:object="${experience}">
 
-                        <input name="uuid" th:field="*{uuid}" type="hidden">
+                    <input name="uuid" th:field="*{uuid}" type="hidden">
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-profession">Profession :</label>
-                                <input id="experience-profession" class="form-control" name="profession" placeholder="profession" th:field="*{name}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="experience-profession">Profession :</label>
+                            <input id="experience-profession" class="form-control" name="profession" placeholder="profession" th:field="*{name}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-description">Description :</label>
-                                <textarea id="experience-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" >Your description </textarea>
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="experience-society">Society :</label>
+                            <input id="experience-society" class="form-control" name="society" placeholder="society" th:field="*{society}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-society">Society :</label>
-                                <input id="experience-society" class="form-control" name="society" placeholder="society" th:field="*{society}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="experience-dateBegin">Date start :</label>
+                            <input id="experience-dateBegin" class="form-control" name="startdate" placeholder="startdate" required th:field="*{dateBegin}" type="date">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-dateBegin">Date start :</label>
-                                <input id="experience-dateBegin" class="form-control" name="startdate" placeholder="startdate" required th:field="*{dateBegin}" type="date">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="experience-dateEnd">Date end :</label>
+                            <input id="experience-dateEnd" class="form-control" name="dateEnd" placeholder="dateEnd" required th:field="*{dateEnd}" type="date" >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-dateEnd">Date end :</label>
-                                <input id="experience-dateEnd" class="form-control" name="dateEnd" placeholder="dateEnd" required th:field="*{dateEnd}" type="date" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="address-line1">Address line 1 :</label>
+                            <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" th:field="*{address.line1}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="address-line1">Address line 1 :</label>
-                                <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" th:field="*{address.line1}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="address-line2">Address line 2 :</label>
+                            <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" th:field="*{address.line2}"
+                                   type="text" maxlength="255">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="address-line2">Address line 2 :</label>
-                                <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" th:field="*{address.line2}"
-                                       type="text" maxlength="255">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="address-zipcode">Address zip code :</label>
+                            <input id="address-zipcode" class="form-control" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="address-zipcode">Address zip code :</label>
-                                <input id="address-zipcode" class="form-control" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="address-city">Address city :</label>
+                            <input id="address-city" class="form-control" name="address-city" placeholder="address-city" th:field="*{address.city}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="address-city">Address city :</label>
-                                <input id="address-city" class="form-control" name="address-city" placeholder="address-city" th:field="*{address.city}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="experience-logo">Logo :</label>
+                            <input id="experience-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
+                                   type="text" maxlength="255" >
                         </div>
+                        <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogoPath()}" th:title="${experience.getLogoPath()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="experience-logo">Logo :</label>
-                                <input id="experience-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
-                                       type="text" maxlength="255" >
-                            </div>
-                            <img th:if="${experience.getLogo() != null}" th:src="${experience.getLogoPath()}" th:title="${experience.getLogoPath()}" th:alt="${experience.getName()}" src="" alt="" width="75" />
+                    <div class="row form-group">
+                        <div class="col-md-8 ">
+                            <label for="experience-description">Description :</label>
+                            <textarea id="experience-description" class="form-control" name="description" cols="30" rows="10"
+                                      placeholder="description" required th:field="*{description}" onkeyup="countChars(this);">
+                                    Your description
+                                </textarea>
+                            <div id="charNumber"></div>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary" type="submit" value="Send">
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary" type="submit" value="Send">
                         </div>
+                    </div>
 
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/experiences">Return to the experiences list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/experiences">Return to the experiences list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>

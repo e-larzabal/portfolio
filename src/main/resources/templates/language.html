@@ -21,85 +21,91 @@
 
 <body>
 
-    <header th:replace="fragments/header.html :: top">
-    </header>
+<header th:replace="fragments/header.html :: top">
+</header>
 
-    <main>
-        <section>
-            <h3 class="h-orange" th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
+<main>
+    <section>
+        <h3 class="h-orange" th:text="${language.uuid} ? 'Edit Language' : 'Create Language'">Formation</h3>
 
-            <div id="fh5co-consult">
-                <div class="choose animate-box">
+        <div id="fh5co-consult">
+            <div class="choose animate-box">
 
-                    <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/language}" th:object="${language}">
+                <form class="pure-form pure-form-aligned" method="post" th:action="@{/admin/language}" th:object="${language}">
 
-                        <div>
-                            <input name="uid" th:field="*{uuid}" type="hidden">
+                    <div>
+                        <input name="uid" th:field="*{uuid}" type="hidden">
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="language-name">Name :</label>
+                            <input id="language-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
+                                   type="text" maxlength="255" required >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="language-name">Name :</label>
-                                <input id="language-name" class="form-control" name="name" placeholder="name" th:field="*{name}"
-                                       type="text" maxlength="255" required >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="language-level">Level :</label>
+                            <select id="language-level" class="form-control" name="level" required th:field="*{level}" >
+                                <option th:value="DEBUTANT"      th:text="Débutant"     >level</option>
+                                <option th:value="INTERMEDIAIRE" th:text="Intermédiaire">level</option>
+                                <option th:value="AVANCE"        th:text="Avancé"       >level</option>
+                                <option th:value="EXPERT"        th:text="Expert"       >level</option>
+                            </select>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="language-description">Description :</label>
-                                <textarea id="language-description" class="form-control" name="description" cols="30" rows="10" placeholder="description" required th:field="*{description}" maxlength="3000">Your description</textarea>
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="language-logo">Logo :</label>
+                            <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
+                                   type="text" maxlength="255" >
                         </div>
+                        <img th:if="${language.getLogo() != null}" th:src="${language.getLogoPath()}" th:title="${language.getLogoPath()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="language-level">Level :</label>
-                                <select id="language-level" class="form-control" name="level" required th:field="*{level}" >
-                                    <option th:value="DEBUTANT"      th:text="Débutant"     >level</option>
-                                    <option th:value="INTERMEDIAIRE" th:text="Intermédiaire">level</option>
-                                    <option th:value="AVANCE"        th:text="Avancé"       >level</option>
-                                    <option th:value="EXPERT"        th:text="Expert"       >level</option>
-                                </select>
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-8 flex-form-div">
+                            <label for="language-order">Ordre :</label>
+                            <input id="language-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="language-logo">Logo :</label>
-                                <input id="language-logo" class="form-control" name="logo" placeholder="logo" th:field="*{logo}"
-                                       type="text" maxlength="255" >
-                            </div>
-                            <img th:if="${language.getLogo() != null}" th:src="${language.getLogoPath()}" th:title="${language.getLogoPath()}" th:alt="${language.getName()}" src="" alt="Logo du langage" width="75" />
+                    <div class="row form-group">
+                        <div class="col-md-8">
+                            <label for="language-description">Description :</label>
+                            <textarea id="language-description" class="form-control" name="description" cols="30" rows="10"
+                                      placeholder="description" required th:field="*{description}"
+                                      maxlength="3000" onkeyup="countChars(this);">
+                                Your description
+                            </textarea>
+                            <div id="charNumber"></div>
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-8 flex-form-div">
-                                <label for="language-order">Ordre :</label>
-                                <input id="language-order" class="form-control" name="order" placeholder="order" th:field="*{order}" type="number" >
-                            </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input class="btn-primary btn-admin" type="submit" value="Send">
                         </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <input class="btn-primary btn-admin" type="submit" value="Send">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div>
-                <a href="/menu">Return to the menu</a> <br>
-                <a href="/admin/languages">Return to the languages list</a>
-            </div>
+        <div>
+            <a href="/menu">Return to the menu</a> <br>
+            <a href="/admin/languages">Return to the languages list</a>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer th:replace="fragments/footer.html :: bottom">
-    </footer>
+<footer th:replace="fragments/footer.html :: bottom">
+</footer>
 
+<script src="/javascript/portfolio.js"></script>
 </body>
 </html>
