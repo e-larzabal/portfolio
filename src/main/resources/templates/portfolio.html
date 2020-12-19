@@ -109,12 +109,16 @@
 
     <script type="text/javascript">
         function sendMail(mailTo) {
-            let elms=document.forms[0].elements;
-            let mailFrom=elms.email.value;
-            let subject=elms.subject.value;
-            let body='Message : '+elms.message.value+'\n\r De :'+elms.firstName.value+' '+elms.lastName.value+'\n\r';
+            let elms     = document.forms[0].elements;
+            let mailFrom = elms.email.value;
+            let subject  = elms.subject.value;
+           /* let message  = elms.message.value;
+            let firstName = elms.firstName.value;
+            let lastName  = elms.lastName.value;
+            let body      = 'from '+firstName+' '+lastName+' message : '+message+' ';
+            document.forms[0].action='mailto:'+mailTo+'?subject='+subject+'&cc='+mailFrom+'&body=';*/
 
-            document.forms[0].action='mailto:'+mailTo+'?subject='+subject+'&cc='+mailFrom+'&body='+body+' ';
+            document.forms[0].action=`mailto:${mailTo}?subject=${subject}&cc=${mailFrom}`;
             document.forms[0].submit();
         }
     </script>
