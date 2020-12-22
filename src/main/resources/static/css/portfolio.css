@@ -39,13 +39,6 @@ section{
  flexbox
  */
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-around;
-}
-
 .flex-row {
     display: flex;
     flex-direction: row;
