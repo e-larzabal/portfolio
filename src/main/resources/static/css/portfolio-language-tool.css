@@ -4,31 +4,11 @@
 Images animated
  */
 
-
-#content-galerie{
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    margin-bottom:200px;
-}
-
 img{
     border:none;
 }
 
-div.galerie li{
-    float: left;
-    margin: 0 10px;
-    padding: 10px;
-    border: 1px solid #dddddd;
-    list-style: none;
-}
-
-div.galerie div a img{
-    float: left;
-}
-
-.grid-container div a:hover img{
+.grid-container div img:hover{
     -moz-transform: scale(1.2) rotate(-7deg);
     -webkit-transform: scale(1.2) rotate(-7deg);
     -o-transform: scale(1.2) rotate(-7deg);

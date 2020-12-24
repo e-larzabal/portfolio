@@ -11,14 +11,14 @@
             <div class="grid-container">
                 <div th:each="language : ${languages}" >
                     <div>
-                        <div> <a href="#"> <img th:src="${language.getLogoPath()}" th:title="${language.getName()}" th:alt="${language.getName()}" src="" alt="" width="75" height="75" /> </a> </div>
+                        <div> <img th:src="${language.getLogoPath()}" th:title="${language.getName()}" th:alt="${language.getName()}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${language.getName()}"></label> </div>
                     </div>
                 </div>
 
                 <div th:each="tool : ${tools}" >
                     <div>
-                        <div> <a href="#"> <img th:src="${tool.getLogoPath()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </a> </div>
+                        <div> <img th:src="${tool.getLogoPath()}" th:title="${tool.getName()}" th:alt="${tool.getName()}" src="" alt="" width="75" height="75" /> </div>
                         <div> <label th:text="${tool.getName()}"></label> </div>
                     </div>
                 </div>
