@@ -18,7 +18,7 @@
                             <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3 class="timeline-title" th:text="${experience.name}">Experience</h3>
+                                    <h4 class="timeline-title" th:text="${experience.name}">Experience</h4>
                                     <span class="company" th:if="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} * ${#dates.year(experience.dateBegin)} |">School - 2007 - 2009</span>
                                     <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} * ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
@@ -36,7 +36,7 @@
                             <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3 class="timeline-title" th:text="${formation.name}">Formation</h3>
+                                    <h4 class="timeline-title" th:text="${formation.name}">Formation</h4>
                                     <span class="company" th:if="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} |">School - 2007 - 2009</span>
                                     <span class="company" th:unless="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
