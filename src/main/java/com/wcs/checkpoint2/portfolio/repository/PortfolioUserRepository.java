@@ -9,10 +9,6 @@ import java.util.UUID;
 @Repository
 public interface PortfolioUserRepository extends JpaRepository<User, UUID> {
 
-//    @Query(" select u from User u " +
-//            " where u.username = ?1")
-//    Optional<User> findUserWithName(String username);
-
     default User findByUsername(String username) {
         return null;
     }
