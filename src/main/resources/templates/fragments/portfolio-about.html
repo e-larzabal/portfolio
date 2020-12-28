@@ -11,9 +11,19 @@
                 <div class="col-md-5">
                     <div th:if="${contact != null}">
                         <ul class="info">
-                            <li><span class="first-block">Nom :</span><span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span></li>
-                            <li><span class="first-block">Téléphone :</span><span class="second-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span></li>
-                            <li><span class="first-block">Email :</span><span class="second-block" th:utext="${contact.email}">info@yoursite.com</span></li>
+                            <li><span class="first-block">Nom :</span>
+                                <span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span>
+                            </li>
+                            <li><span class="first-block">Téléphone :</span>
+                                <a title="Appeler le numéro de téléphone mobile" th:href="|tel:${contact.getAddress().getPhone()}|">
+                                    <span class="apropos-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span>
+                                </a>
+                            </li>
+                            <li><span class="first-block">Email :</span>
+                                <a title="Envoyer un email (nouvelle page)" th:href="|mailto:${contact.email}|" target="_blank">
+                                    <span class="apropos-block" th:utext="${contact.email}">info@yoursite.com</span>
+                                </a>
+                            </li>
                             <!-- <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li> -->
                             <!--<li><span class="first-block">Adresse :</span><span class="second-block" th:utext="|${contact.getAddress().getLine1()} &lt;br/&gt;
                                 ${contact.getAddress().getLine2()} &lt;br/&gt;
