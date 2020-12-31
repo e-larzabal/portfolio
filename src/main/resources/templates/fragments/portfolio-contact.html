@@ -19,7 +19,7 @@
             </div>
 
             <div class="contact-grid-item-form">
-                <form action="#" method="post" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
+                <form action="#" method="post" target="_blank" th:data-parameter="${contact.email}" onsubmit="sendMail(this.getAttribute('data-parameter')); return false;" enctype="text/plain">
                     <div class="row form-group">
                         <div class="col-md-8">
                             <label for="firstName" hidden></label>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Envoyer le message" class="btn btn-primary" placeholder="Open your mailbox">
+                        <input type="submit" value="Envoyer le message" class="btn btn-primary" placeholder="Ouvrir votre boite mail">
                     </div>
                 </form>
             </div>
