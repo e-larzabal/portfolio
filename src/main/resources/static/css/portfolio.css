@@ -40,9 +40,17 @@ section{
     display: inline-block;
 }
 
+address {
+    /*display : none;*/
+    margin-bottom: 0;
+    font-style: normal;
+    line-height: normal;
+    font-style: normal;
+}
+
 /*
- flexbox
- */
+flexbox
+*/
 
 .flex-row {
     display: flex;

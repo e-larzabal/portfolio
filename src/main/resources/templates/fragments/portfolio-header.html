@@ -9,12 +9,12 @@
                             <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
 
                                 <div class="profile-thumb" style="background: url(/img/lauburu01.jpg);"></div>
-                                <address>
+                                <div>
                                     <div th:if="${contact != null}">
                                         <h1><span th:text="|${contact.firstName} ${contact.lastName}|">firstname lastName</span></h1>
                                         <h3><span th:text="${contact.profession}">profession</span></h3>
                                     </div>
-                                </address>
+                                </div>
 
                                 <div>
                                     <ul class="fh5co-social-icons">
