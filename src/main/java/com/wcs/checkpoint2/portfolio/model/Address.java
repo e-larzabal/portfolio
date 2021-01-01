@@ -44,5 +44,6 @@ public class Address {
         this.zipCode = zipCode;
     }
     public String getPhone() { return phone; }
+    public String getPhoneWithoutSpace() { return phone.replaceAll(" ","").replace("(0)",""); }
     public void setPhone(String phone) { this.phone = phone; }
 }

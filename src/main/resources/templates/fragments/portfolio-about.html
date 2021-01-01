@@ -16,7 +16,7 @@
                                     <span class="second-block" th:text="|${contact.firstName} ${contact.lastName}|">Louie Jie Mahusay</span>
                                 </li>
                                 <li><span class="first-block">Téléphone :</span>
-                                    <a title="Appeler le numéro de téléphone mobile" th:href="|tel:${contact.getAddress().getPhone()}|">
+                                    <a title="Appeler le numéro de téléphone mobile" th:href="|tel:${contact.getAddress().getPhoneWithoutSpace()}|">
                                         <span class="apropos-block" th:text="${contact.getAddress().getPhone()}">+ 1235 2355 98</span>
                                     </a>
                                 </li>
