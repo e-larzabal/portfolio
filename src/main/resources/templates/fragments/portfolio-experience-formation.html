@@ -23,7 +23,7 @@
                                     <span class="company" th:unless="${#dates.year(experience.dateBegin)} == ${#dates.year(experience.dateEnd)}" th:text="|${experience.society} * ${#dates.year(experience.dateBegin)} - ${#dates.year(experience.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
                                 <div class="timeline-body">
-                                    <p th:utext="${experience.description}">description</p>
+                                    <div th:utext="${experience.description}">description</div>
                                 </div>
                             </div>
                         </li>
@@ -41,7 +41,7 @@
                                     <span class="company" th:unless="${#dates.year(formation.dateBegin)} == ${#dates.year(formation.dateEnd)}" th:text="|${formation.schoolName} - ${#dates.year(formation.dateBegin)} - ${#dates.year(formation.dateEnd)}|">School - 2007 - 2009</span>
                                 </div>
                                 <div class="timeline-body">
-                                    <p th:utext="${formation.description}">description</p>
+                                    <div th:utext="${formation.description}">description</div>
                                 </div>
                             </div>
                         </li>

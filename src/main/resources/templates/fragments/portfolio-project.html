@@ -13,16 +13,16 @@
                     <article class="card" th:each="project : ${projects}">
 
                             <!--<label for="document" hidden="hidden">document:</label>-->
-                            <a id="document" href="" class="work" target="_blank" title="Télécharger le document du projet .pdf (nouvelle page)"
+                            <a class="projectdocument work" href="" target="_blank" title="Télécharger le document du projet .pdf (nouvelle page)"
                                th:href="|/download/${project.getDocument()}|"
                                th:style="|background-image: url(${project.getLogoPath()}); |" >
                             </a>
 
                             <!--<label for="github" hidden="hidden">github:</label>-->
-                            <a id="github" href=""                target="_blank" title="Aller sur le code source Github du projet (nouvelle page)"
+                            <a class="projectgithub" href=""        target="_blank" title="Aller sur le code source Github du projet (nouvelle page)"
                                th:href="${project.getGithub()}" >
                                 <h3 th:text="${project.name}">Project Name</h3>
-                                <div class="" th:utext="${project.description}">Description</div>
+                                <div th:utext="${project.description}">Description</div>
                             </a>
 
                     </article>

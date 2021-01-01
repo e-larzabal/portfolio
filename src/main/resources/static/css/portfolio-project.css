@@ -12,17 +12,20 @@ article:hover {
     line-height: 1.7;
 }
 
-a#document{
-    background-position: 50% 50%; /* image of project */
+.projectdocument{
+    background-position: 50% 50%;
 }
 
-a#github{
-    padding: 3px 3px; /* description of project */
+.projectgithub{
+    padding: 3px 3px;
     color: #4d4d4d;
-    /*background-color: #fff ;*/
 }
 
-a#github div, a#github h3{
+.projectgithub:hover{
+    color: #4d4d4d;
+}
+
+.projectgithub div, .projectgithub h3{
     padding: 3px 5px 3px 5px;
 }
 
@@ -52,7 +55,7 @@ a#github div, a#github h3{
         margin-top: 1em;
     }
 
-    a#github {
+    a.projectgithub {
         flex: 1 0 auto;
         display: flex;
         flex-direction: column;
