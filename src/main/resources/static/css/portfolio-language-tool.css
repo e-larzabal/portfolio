@@ -8,6 +8,8 @@ img{
     border:none;
 }
 
+
+
 .grid-container div img:hover{
     -moz-transform: scale(1.2) rotate(-7deg);
     -webkit-transform: scale(1.2) rotate(-7deg);
@@ -22,6 +24,10 @@ img{
     -o-box-shadow: 4px 4px 10px #777;
 }
 
+.container{
+    justify-content: center;
+}
+
 .grid-container div{
     align-self: center;
     text-align: center;
@@ -31,5 +37,6 @@ img{
     display: grid;
     grid-gap: 2em;
     grid-template-columns: repeat(auto-fill,180px);
+    justify-content: center;
 }
 
