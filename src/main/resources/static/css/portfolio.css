@@ -48,6 +48,12 @@ address {
     font-style: normal;
 }
 
+.icon-CV{
+    font-size: larger;
+    font-weight: bold;
+}
+
+
 /*
 flexbox
 */
