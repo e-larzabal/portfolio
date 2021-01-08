@@ -114,8 +114,11 @@ section #fh5co-consult .choose {
     margin: 30px 0px 20px 0;
 }
 
+.extern-link{
+    color : darkslateblue;
+}
 
 strong a:visited {
-    color: #761c19;
+    color: darkolivegreen;
 }
 
