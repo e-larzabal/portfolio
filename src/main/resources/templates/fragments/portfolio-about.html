@@ -21,7 +21,7 @@
                                     </a>
                                 </li>
                                 <li><span class="first-block">Email :</span>
-                                    <a title="Envoyer un email (nouvelle page)" th:href="|mailto:${contact.email}|" target="_blank">
+                                    <a title="Envoyer un email (nouvelle page)" th:href="|mailto:${contact.email}|" target="_blank" rel="noreferrer noopener">
                                         <span class="apropos-block" th:utext="${contact.email}">info@yoursite.com</span>
                                     </a>
                                 </li>
@@ -43,14 +43,14 @@
                             <!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
                             <!-- <li><a href="#"><i class="icon-facebook3"></i></a></li>  -->
                             <li>
-                                <a href="#" th:href="${contact.linkedInLink}" target="_blank" title="Aller sur le profil LinkedIn (nouvelle page)">
+                                <a href="#" th:href="${contact.linkedInLink}" target="_blank" rel="noreferrer noopener" title="Aller sur le profil LinkedIn (nouvelle page)">
                                     <i class="icon-linkedin2" ></i>
                                     <span class="screen-reader-text">LinkedIn link</span>
                                 </a>
                             </li>
                             <!-- <li><a href="#"><i class="icon-dribbble2"></i></a></li>  -->
                             <li>
-                                <a href="#" th:href="${contact.githubLink}" target="_blank" title="Aller sur le profil GitHub (nouvelle page)">
+                                <a href="#" th:href="${contact.githubLink}" target="_blank" rel="noreferrer noopener" title="Aller sur le profil GitHub (nouvelle page)">
                                     <i class="icon-github2" ></i>
                                     <span class="screen-reader-text">Github link</span>
                                 </a>

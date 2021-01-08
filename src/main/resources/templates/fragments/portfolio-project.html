@@ -19,7 +19,7 @@
                             </a>
 
                             <!--<label for="github" hidden="hidden">github:</label>-->
-                            <a class="projectgithub" href=""        target="_blank" title="Aller sur le code source Github du projet (nouvelle page)"
+                            <a class="projectgithub" href=""        target="_blank" rel="noreferrer noopener" title="Aller sur le code source Github du projet (nouvelle page)"
                                th:href="${project.getGithub()}" >
                                 <h3 th:text="${project.name}">Project Name</h3>
                                 <div th:utext="${project.description}">Description</div>
