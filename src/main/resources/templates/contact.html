@@ -56,21 +56,21 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="school-birthDate">Birthdate :</label>
-                                <input id="school-birthDate" class="form-control" name="birthDate" placeholder="birthDate" required th:field="*{birthDate}" type="date">
+                                <input id="school-birthDate" class="form-control" name="birthDate" placeholder="birthdate" required th:field="*{birthDate}" type="date">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="school-githubLink">Github link :</label>
-                                <input id="school-githubLink" class="form-control" name="githubLink" placeholder="githubLink" required th:field="*{githubLink}" type="url">
+                                <input id="school-githubLink" class="form-control" name="githubLink" placeholder="github Link" required th:field="*{githubLink}" type="url">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="school-linkedInLink">LinkedIn link :</label>
-                                <input id="school-linkedInLink" class="form-control" name="linkedInLink" placeholder="linkedInLink" required th:field="*{linkedInLink}" type="url">
+                                <input id="school-linkedInLink" class="form-control" name="linkedInLink" placeholder="linkedIn Link" required th:field="*{linkedInLink}" type="url">
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-line1">Address line 1 :</label>
-                                <input id="address-line1" class="form-control" name="address-line1" placeholder="address-line1" th:field="*{address.line1}"
+                                <input id="address-line1" class="form-control" name="address-line1" placeholder="address first line" th:field="*{address.line1}"
                                        type="text" maxlength="255" required >
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-line2">Address line 2 :</label>
-                                <input id="address-line2" class="form-control" name="address-line2" placeholder="address-line2" th:field="*{address.line2}"
+                                <input id="address-line2" class="form-control" name="address-line2" placeholder="address second line" th:field="*{address.line2}"
                                        type="text" maxlength="255" required >
                             </div>
                         </div>
@@ -101,14 +101,22 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-zipcode">Address zip code :</label>
-                                <input id="address-zipcode" class="form-control" name="address-zipcode" placeholder="address-zipcode" required th:field="*{address.zipCode}" type="number">
+                                <input id="address-zipcode" class="form-control" name="address-zipcode" placeholder="zipcode" required th:field="*{address.zipCode}" type="number">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-city">Address city :</label>
-                                <input id="address-city" class="form-control" name="address-city" placeholder="address-city" th:field="*{address.city}"
+                                <input id="address-city" class="form-control" name="address-city" placeholder="city" th:field="*{address.city}"
+                                       type="text" maxlength="255" required >
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-8 flex-form-div">
+                                <label for="address-country">Country :</label>
+                                <input id="address-country" class="form-control" name="address-country" placeholder="country" th:field="*{address.country}"
                                        type="text" maxlength="255" required >
                             </div>
                         </div>
@@ -116,14 +124,14 @@
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="address-phone">Phone number :</label>
-                                <input id="address-phone" class="form-control" name="address-phone" placeholder="address-phone" required th:field="*{address.phone}" type="tel">
+                                <input id="address-phone" class="form-control" name="address-phone" placeholder="phone number" required th:field="*{address.phone}" type="tel">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-8 flex-form-div">
                                 <label for="contact-email">Email :</label>
-                                <input id="contact-email" class="form-control" name="contact-email" placeholder="contact-email" required th:field="*{email}" type="email">
+                                <input id="contact-email" class="form-control" name="contact-email" placeholder="email" required th:field="*{email}" type="email">
                             </div>
                         </div>
 
@@ -131,7 +139,7 @@
                             <div class="col-md-8 ">
                                 <label for="contact-description">Presentation :</label>
                                 <textarea id="contact-description" class="form-control" name="contact-description" cols="30" rows="10"
-                                          placeholder="contact-description" required th:field="*{description}"
+                                          placeholder="description" required th:field="*{description}"
                                           maxlength="3000" onkeyup="countChars(this);">
                                     Your message
                                 </textarea>

@@ -9,14 +9,16 @@ public class Address {
     private String city;
     private Integer zipCode;
     private String phone;
+    private String country;
 
     public Address() { }
 
-    public Address(String line1, String line2, String city, Integer zipCode) {
+    public Address(String line1, String line2, String city, Integer zipCode, String country) {
         this.line1 = line1;
         this.line2 = line2;
         this.city = city;
         this.zipCode = zipCode;
+        this.country = country;
     }
 
     public String getLine1() {
@@ -46,4 +48,6 @@ public class Address {
     public String getPhone() { return phone; }
     public String getPhoneWithoutSpace() { return phone.replaceAll(" ","").replace("(0)",""); }
     public void setPhone(String phone) { this.phone = phone; }
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
 }

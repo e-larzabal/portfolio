@@ -43,13 +43,14 @@ public class ContactController {
     public String postContact(@ModelAttribute Contact contact) {
 
         if (contact.getAddress() == null) {
-            Address myAddress = new Address("","","",0);
+            Address myAddress = new Address("","","",0,"");
             contact.setAddress(myAddress);
         } else {
             if (contact.getAddress().getLine1().equals(null)) contact.getAddress().setLine1("");
             if (contact.getAddress().getLine2().equals(null)) contact.getAddress().setLine2("");
             if (contact.getAddress().getZipCode().equals(null)) contact.getAddress().setZipCode(0);
             if (contact.getAddress().getCity().equals(null)) contact.getAddress().setCity("");
+            if (contact.getAddress().getCountry().equals(null)) contact.getAddress().setCountry("");
         }
 
         if (contact.getUuid() == null){

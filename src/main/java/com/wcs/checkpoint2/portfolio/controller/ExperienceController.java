@@ -45,13 +45,14 @@ public class ExperienceController {
     public String postContact(@ModelAttribute Experience experience) {
 
         if (experience.getAddress() == null) {
-            Address myAddress = new Address("","","",0);
+            Address myAddress = new Address("","","",0,"");
             experience.setAddress(myAddress);
         } else {
             if (experience.getAddress().getLine1().equals(null)) experience.getAddress().setLine1("");
             if (experience.getAddress().getLine2().equals(null)) experience.getAddress().setLine2("");
             if (experience.getAddress().getZipCode().equals(null)) experience.getAddress().setZipCode(0);
             if (experience.getAddress().getCity().equals(null)) experience.getAddress().setCity("");
+            if (experience.getAddress().getCountry().equals(null)) experience.getAddress().setCountry("");
         }
 
         if (experience.getUuid() == null){
