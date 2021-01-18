@@ -32,7 +32,7 @@
                             <div><h3 id="h3-formation">Formation</h3></div>
                         </li>
 
-                        <li th:each="formation,iter : ${formations}" th:class="${iter.odd}? 'timeline-inverted animate-box' : 'animate-box timeline-unverted' ">
+                        <li th:each="formation,iter : ${formations}" th:class="${iter.odd}? 'timeline-inverted animate-box ul-align-left' : 'animate-box timeline-unverted ul-align-right' ">
                             <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
