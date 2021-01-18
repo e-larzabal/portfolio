@@ -8,7 +8,9 @@
     overflow: hidden;
 }
 
-div.profile-thumb[style]{
+#logo-animated{
+    background-image: url(/img/lauburu01.jpg);
+
     /* Transition to normal state */
     transition: border 0.2s, transform 0.2s 0.2s;
 
@@ -22,7 +24,7 @@ div.profile-thumb[style]{
     animation-play-state: running;
 }
 
-div.profile-thumb[style]:hover {
+#logo-animated:hover{
     transform: scale(1.1);
     border: 3px outset #4d4d4d;
 
