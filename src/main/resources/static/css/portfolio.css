@@ -17,6 +17,15 @@
 @import url('portfolio-project.css');
 @import url('portfolio-skill.css');
 
+#fh5co-header .display-tc .fh5co-social-icons li a i {
+    font-size: 44px;
+}
+
+#fh5co-about .fh5co-social-icons li a {
+    width: 44px;
+    height: 44px;
+    padding: 10px 10px 2px 12px;
+}
 
 .gototop a {
     margin: 0.3em;
