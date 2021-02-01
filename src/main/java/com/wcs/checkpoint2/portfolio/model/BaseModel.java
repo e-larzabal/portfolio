@@ -25,8 +25,8 @@ public class BaseModel {
     }
     public String getDescription() { return description; }
     public void setDescription(String description) {
-        if (description.length() > 3000){
-            this.description = description.substring(0,3000);
+        if (description.length() > 5000){
+            this.description = description.substring(0,5000);
         } else {
           this.description = description;
         }

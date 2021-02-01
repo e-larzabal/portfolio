@@ -11,7 +11,7 @@ function showThePassword() {
 
 
 function countChars(obj){
-    let maxLength = 3000;
+    let maxLength = 5000;
     let strLength = obj.value.length;
     let charRemain = (maxLength - strLength);
 
