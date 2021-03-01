@@ -17,6 +17,10 @@
 @import url('portfolio-project.css');
 @import url('portfolio-skill.css');
 
+h5 {
+    font-size: 17px;
+}
+
 #fh5co-header .display-tc .fh5co-social-icons li a i {
     font-size: 44px;
 }
